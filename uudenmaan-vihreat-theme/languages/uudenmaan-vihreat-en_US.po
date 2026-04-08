@@ -1,0 +1,141 @@
+# English translation of Uudenmaan Vihreät theme
+# Copyright (C) 2026 Uudenmaan Vihreät ry
+msgid ""
+msgstr ""
+"Project-Id-Version: Uudenmaan Vihreät 1.2.0\n"
+"POT-Creation-Date: 2026-04-08\n"
+"PO-Revision-Date: 2026-04-08\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Siirry pääsisältöön"
+msgstr "Skip to main content"
+
+msgid "Avaa valikko"
+msgstr "Open menu"
+
+msgid "Päänavigaatio"
+msgstr "Main navigation"
+
+msgid "Kielivalinta"
+msgstr "Language selection"
+
+msgid "Sivusto"
+msgstr "Website"
+
+msgid "Yhteystiedot"
+msgstr "Contact"
+
+msgid "Seuraa meitä"
+msgstr "Follow us"
+
+msgid "Kuntapolitiikka"
+msgstr "Municipal politics"
+
+msgid "Vihreät vaikuttavat ympäri Uudenmaan — valtuustoissa, lautakunnissa ja arjen päätöksissä."
+msgstr "The Greens make an impact across Uusimaa — in councils, committees and everyday decisions."
+
+msgid "Kotikuntasi vihreät"
+msgstr "The Greens in your municipality"
+
+msgid "Yhdistyksen pj"
+msgstr "Chair of local association"
+
+msgid "Valtuustoryhmän pj"
+msgstr "Chair of council group"
+
+msgid "Yhdistyksen sivut →"
+msgstr "Association website →"
+
+msgid "Aiemmat vaalit"
+msgstr "Past elections"
+
+msgid "Vihreiden vaalimenestys Uudellamaalla — tulokset, valitut edustajat ja äänimäärät vaaleittain."
+msgstr "The Greens' electoral performance in Uusimaa — results, elected representatives and vote counts by election."
+
+msgid "Eduskuntavaalit"
+msgstr "Parliamentary elections"
+
+msgid "Kuntavaalit"
+msgstr "Municipal elections"
+
+msgid "Aluevaalit"
+msgstr "Wellbeing services county elections"
+
+msgid "Europarlamenttivaalit"
+msgstr "European Parliament elections"
+
+msgid "EU-vaaleissa paikat jaetaan valtakunnallisesti."
+msgstr "In EU elections, seats are allocated nationally."
+
+msgid "Presidentinvaalit"
+msgstr "Presidential elections"
+
+msgid "Vuosi"
+msgstr "Year"
+
+msgid "Äänimäärä"
+msgstr "Votes"
+
+msgid "Kannatus"
+msgstr "Support"
+
+msgid "Kansanedustajia"
+msgstr "MPs"
+
+msgid "Valtuutettuja"
+msgstr "Councillors"
+
+msgid "Aluevaltuutettuja"
+msgstr "County councillors"
+
+msgid "Kierros"
+msgstr "Round"
+
+msgid "Ehdokas"
+msgstr "Candidate"
+
+msgid "Hyvinvointialueet"
+msgstr "Wellbeing services counties"
+
+msgid "Faktaa piiristä"
+msgstr "Facts about the district"
+
+msgid "Jäsentä"
+msgstr "Members"
+
+msgid "Kuntaa"
+msgstr "Municipalities"
+
+msgid "Kansanedustajaa"
+msgstr "MPs"
+
+msgid "Valtuutettua"
+msgstr "Councillors"
+
+msgid "Mediayhteyshenkilöt"
+msgstr "Media contacts"
+
+msgid "Logot & kuvamateriaali"
+msgstr "Logos & image material"
+
+msgid "Kuvapankki"
+msgstr "Image bank"
+
+msgid "Viimeisimmät puolueen tiedotteet"
+msgstr "Latest party press releases"
+
+msgid "Uudenmaan Vihreiden tiedotteet"
+msgstr "Uusimaa Greens press releases"
+
+msgid "Tilaa vihreiden uutiskirje"
+msgstr "Subscribe to the Greens' newsletter"
+
+msgid "Lue lisää →"
+msgstr "Read more →"
+
+msgid "Kaikki tapahtumat →"
+msgstr "All events →"

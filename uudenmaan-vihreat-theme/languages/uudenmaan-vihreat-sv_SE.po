@@ -1,0 +1,141 @@
+# Swedish translation of Uudenmaan Vihreät theme
+# Copyright (C) 2026 Uudenmaan Vihreät ry
+msgid ""
+msgstr ""
+"Project-Id-Version: Uudenmaan Vihreät 1.2.0\n"
+"POT-Creation-Date: 2026-04-08\n"
+"PO-Revision-Date: 2026-04-08\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Siirry pääsisältöön"
+msgstr "Gå till huvudinnehållet"
+
+msgid "Avaa valikko"
+msgstr "Öppna menyn"
+
+msgid "Päänavigaatio"
+msgstr "Huvudnavigation"
+
+msgid "Kielivalinta"
+msgstr "Språkval"
+
+msgid "Sivusto"
+msgstr "Webbplats"
+
+msgid "Yhteystiedot"
+msgstr "Kontaktuppgifter"
+
+msgid "Seuraa meitä"
+msgstr "Följ oss"
+
+msgid "Kuntapolitiikka"
+msgstr "Kommunalpolitik"
+
+msgid "Vihreät vaikuttavat ympäri Uudenmaan — valtuustoissa, lautakunnissa ja arjen päätöksissä."
+msgstr "De Gröna verkar i hela Nyland — i fullmäktige, nämnder och vardagliga beslut."
+
+msgid "Kotikuntasi vihreät"
+msgstr "De gröna i din hemkommun"
+
+msgid "Yhdistyksen pj"
+msgstr "Föreningens ordförande"
+
+msgid "Valtuustoryhmän pj"
+msgstr "Fullmäktigegruppens ordförande"
+
+msgid "Yhdistyksen sivut →"
+msgstr "Föreningens webbplats →"
+
+msgid "Aiemmat vaalit"
+msgstr "Tidigare val"
+
+msgid "Vihreiden vaalimenestys Uudellamaalla — tulokset, valitut edustajat ja äänimäärät vaaleittain."
+msgstr "De Grönas valframgångar i Nyland — resultat, valda representanter och röstantal per val."
+
+msgid "Eduskuntavaalit"
+msgstr "Riksdagsval"
+
+msgid "Kuntavaalit"
+msgstr "Kommunalval"
+
+msgid "Aluevaalit"
+msgstr "Välfärdsområdesval"
+
+msgid "Europarlamenttivaalit"
+msgstr "Europaparlamentsval"
+
+msgid "EU-vaaleissa paikat jaetaan valtakunnallisesti."
+msgstr "I EU-valen fördelas platserna nationellt."
+
+msgid "Presidentinvaalit"
+msgstr "Presidentval"
+
+msgid "Vuosi"
+msgstr "År"
+
+msgid "Äänimäärä"
+msgstr "Antal röster"
+
+msgid "Kannatus"
+msgstr "Stöd"
+
+msgid "Kansanedustajia"
+msgstr "Riksdagsledamöter"
+
+msgid "Valtuutettuja"
+msgstr "Fullmäktigeledamöter"
+
+msgid "Aluevaltuutettuja"
+msgstr "Välfärdsområdesledamöter"
+
+msgid "Kierros"
+msgstr "Omgång"
+
+msgid "Ehdokas"
+msgstr "Kandidat"
+
+msgid "Hyvinvointialueet"
+msgstr "Välfärdsområden"
+
+msgid "Faktaa piiristä"
+msgstr "Fakta om distriktet"
+
+msgid "Jäsentä"
+msgstr "Medlemmar"
+
+msgid "Kuntaa"
+msgstr "Kommuner"
+
+msgid "Kansanedustajaa"
+msgstr "Riksdagsledamöter"
+
+msgid "Valtuutettua"
+msgstr "Fullmäktigeledamöter"
+
+msgid "Mediayhteyshenkilöt"
+msgstr "Mediakontakter"
+
+msgid "Logot & kuvamateriaali"
+msgstr "Logotyper & bildmaterial"
+
+msgid "Kuvapankki"
+msgstr "Bildbank"
+
+msgid "Viimeisimmät puolueen tiedotteet"
+msgstr "Senaste pressmeddelanden från partiet"
+
+msgid "Uudenmaan Vihreiden tiedotteet"
+msgstr "Nylands Grönas pressmeddelanden"
+
+msgid "Tilaa vihreiden uutiskirje"
+msgstr "Prenumerera på de grönas nyhetsbrev"
+
+msgid "Lue lisää →"
+msgstr "Läs mer →"
+
+msgid "Kaikki tapahtumat →"
+msgstr "Alla evenemang →"

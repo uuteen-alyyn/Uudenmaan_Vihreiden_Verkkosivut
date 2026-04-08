@@ -1,0 +1,148 @@
+# Copyright (C) 2026 Uudenmaan Vihreät ry
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Uudenmaan Vihreät 1.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-08\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# header.php
+msgid "Siirry pääsisältöön"
+msgstr ""
+
+msgid "Avaa valikko"
+msgstr ""
+
+msgid "Päänavigaatio"
+msgstr ""
+
+msgid "Kielivalinta"
+msgstr ""
+
+# footer.php
+msgid "Sivusto"
+msgstr ""
+
+msgid "Yhteystiedot"
+msgstr ""
+
+msgid "Seuraa meitä"
+msgstr ""
+
+# page-kunnat.php
+msgid "Kuntapolitiikka"
+msgstr ""
+
+msgid "Vihreät vaikuttavat ympäri Uudenmaan — valtuustoissa, lautakunnissa ja arjen päätöksissä."
+msgstr ""
+
+msgid "Kotikuntasi vihreät"
+msgstr ""
+
+msgid "Yhdistyksen pj"
+msgstr ""
+
+msgid "Valtuustoryhmän pj"
+msgstr ""
+
+msgid "Yhdistyksen sivut →"
+msgstr ""
+
+# page-aiemmat-vaalit.php
+msgid "Aiemmat vaalit"
+msgstr ""
+
+msgid "Vihreiden vaalimenestys Uudellamaalla — tulokset, valitut edustajat ja äänimäärät vaaleittain."
+msgstr ""
+
+msgid "Eduskuntavaalit"
+msgstr ""
+
+msgid "Kuntavaalit"
+msgstr ""
+
+msgid "Aluevaalit"
+msgstr ""
+
+msgid "Europarlamenttivaalit"
+msgstr ""
+
+msgid "EU-vaaleissa paikat jaetaan valtakunnallisesti."
+msgstr ""
+
+msgid "Presidentinvaalit"
+msgstr ""
+
+msgid "Vuosi"
+msgstr ""
+
+msgid "Äänimäärä"
+msgstr ""
+
+msgid "Kannatus"
+msgstr ""
+
+msgid "Kansanedustajia"
+msgstr ""
+
+msgid "Valtuutettuja"
+msgstr ""
+
+msgid "Aluevaltuutettuja"
+msgstr ""
+
+msgid "Kierros"
+msgstr ""
+
+msgid "Ehdokas"
+msgstr ""
+
+# page-hyvinvointialueet.php
+msgid "Hyvinvointialueet"
+msgstr ""
+
+# page-medialle.php
+msgid "Faktaa piiristä"
+msgstr ""
+
+msgid "Jäsentä"
+msgstr ""
+
+msgid "Kuntaa"
+msgstr ""
+
+msgid "Kansanedustajaa"
+msgstr ""
+
+msgid "Valtuutettua"
+msgstr ""
+
+msgid "Mediayhteyshenkilöt"
+msgstr ""
+
+msgid "Logot & kuvamateriaali"
+msgstr ""
+
+msgid "Kuvapankki"
+msgstr ""
+
+msgid "Viimeisimmät puolueen tiedotteet"
+msgstr ""
+
+msgid "Uudenmaan Vihreiden tiedotteet"
+msgstr ""
+
+# front-page.php
+msgid "Tilaa vihreiden uutiskirje"
+msgstr ""
+
+msgid "Lue lisää →"
+msgstr ""
+
+msgid "Kaikki tapahtumat →"
+msgstr ""

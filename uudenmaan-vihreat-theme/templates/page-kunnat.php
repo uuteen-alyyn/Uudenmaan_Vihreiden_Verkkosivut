@@ -2,16 +2,16 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Kuntapolitiikka</h1>
+      <h1><?php esc_html_e( 'Kuntapolitiikka', 'uudenmaan-vihreat' ); ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Vihreät vaikuttavat ympäri Uudenmaan — valtuustoissa, lautakunnissa ja arjen päätöksissä.
+        <?php esc_html_e( 'Vihreät vaikuttavat ympäri Uudenmaan — valtuustoissa, lautakunnissa ja arjen päätöksissä.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>
   <section class="section">
     <div class="container">
 
-      <h2>Kotikuntasi vihreät</h2>
+      <h2><?php esc_html_e( 'Kotikuntasi vihreät', 'uudenmaan-vihreat' ); ?></h2>
 
       <div class="kunnat-grid">
         <?php
@@ -47,12 +47,12 @@
           <h3 class="kunta-card__name"><?php echo esc_html( $k['kunta'] ); ?></h3>
           <p class="kunta-card__yhdistys"><?php echo esc_html( $k['yhdistys'] ); ?></p>
           <dl class="kunta-card__contacts">
-            <dt>Yhdistyksen pj</dt>
+            <dt><?php esc_html_e( 'Yhdistyksen pj', 'uudenmaan-vihreat' ); ?></dt>
             <dd><?php echo esc_html( $k['yh_pj'] ); ?>
               <?php if ( $k['yh_email'] ) : ?><br><a href="mailto:<?php echo esc_attr( $k['yh_email'] ); ?>"><?php echo esc_html( $k['yh_email'] ); ?></a><?php endif; ?>
             </dd>
             <?php if ( $k['vr_pj'] ) : ?>
-            <dt>Valtuustoryhmän pj</dt>
+            <dt><?php esc_html_e( 'Valtuustoryhmän pj', 'uudenmaan-vihreat' ); ?></dt>
             <dd><?php echo esc_html( $k['vr_pj'] ); ?>
               <?php if ( $k['vr_email'] ) : ?><br><a href="mailto:<?php echo esc_attr( $k['vr_email'] ); ?>"><?php echo esc_html( $k['vr_email'] ); ?></a><?php endif; ?>
             </dd>
@@ -60,7 +60,7 @@
           </dl>
           <?php if ( $k['yh_url'] ) : ?>
           <p class="kunta-card__link">
-            <a href="<?php echo esc_url( $k['yh_url'] ); ?>" target="_blank" rel="noopener noreferrer">Yhdistyksen sivut →</a>
+            <a href="<?php echo esc_url( $k['yh_url'] ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Yhdistyksen sivut →', 'uudenmaan-vihreat' ); ?></a>
           </p>
           <?php endif; ?>
         </div>
