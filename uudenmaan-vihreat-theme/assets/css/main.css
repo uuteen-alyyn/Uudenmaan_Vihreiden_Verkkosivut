@@ -335,7 +335,7 @@ p:last-child { margin-bottom: 0; }
   justify-content: space-between;
   align-items: center;
 }
-.footer-bottom a { color: rgba(255,255,255,.6); }
+.footer-bottom a { color: var(--color-light-green); }
 .footer-bottom a:hover { color: var(--color-white); }
 
 /* ── Hero ────────────────────────────────────────────────────── */
@@ -879,3 +879,27 @@ p:last-child { margin-bottom: 0; }
   text-decoration: none;
 }
 .kunta-card__link a:hover { text-decoration: underline; }
+
+/* ── Vaalit-taulukko ── */
+.vaalit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+.vaalit-table th {
+  background: var(--color-dark-bg);
+  color: #fff;
+  text-align: left;
+  padding: .6rem 1rem;
+  font-weight: 700;
+}
+.vaalit-table td {
+  padding: .55rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+.vaalit-table tbody tr:nth-child(even) { background: var(--color-grey); }
+.vaalit-table tbody tr:hover { background: var(--color-light-green); }
+@media (max-width: 560px) {
+  .vaalit-table th, .vaalit-table td { padding: .5rem .6rem; font-size: .85rem; }
+}

@@ -2,8 +2,10 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Meistä</h1>
-      <p class="ingress" style="color:rgba(255,255,255,.85);">Uudenmaan Vihreät on Vihreiden piirijärjestö, joka toimii koko Uudenmaan vaalipiirin alueella.</p>
+      <h1>Tietosuoja</h1>
+      <p class="ingress" style="color:rgba(255,255,255,.85);">
+        EU:n yleisen tietosuoja-asetuksen mukaiset rekisteri- ja tietosuojaselosteet.
+      </p>
     </div>
   </div>
   <section class="section">
@@ -11,9 +13,6 @@
       <div class="entry-content">
         <?php the_content(); ?>
       </div>
-      <p style="margin-top:2rem;">
-        <a href="<?php echo esc_url( home_url( '/tietosuojaseloste/' ) ); ?>">Tietosuojaseloste →</a>
-      </p>
     </div>
   </section>
 </main>

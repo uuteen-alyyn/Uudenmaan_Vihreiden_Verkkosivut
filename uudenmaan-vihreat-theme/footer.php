@@ -56,7 +56,7 @@
       <span>© <span class="js-current-year"><?php echo esc_html( date( 'Y' ) ); ?></span> Uudenmaan Vihreät ry</span>
       <span style="color:rgba(255,255,255,.45);font-size:.8rem;">Kuvat: Reima Kuukka; Kansanedustajien kuvat Eduskunta</span>
       <span>
-        <a href="[Tietosuoja-linkki tähän]">Tietosuojaseloste</a>
+        <a href="<?php echo esc_url( home_url( '/tietosuojaseloste/' ) ); ?>">Tietosuojaseloste</a>
         &nbsp;·&nbsp;
         <a href="<?php echo esc_url( home_url( '/saavutettavuus/' ) ); ?>">Saavutettavuusseloste</a>
       </span>

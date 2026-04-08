@@ -38,24 +38,45 @@
       <h2 style="margin-top:2.5rem;">Faktaa piiristä</h2>
       <div class="fact-box" style="margin-top:1rem;">
         <div class="fact-item">
-          <div class="fact-item__value">[lkm]</div>
+          <div class="fact-item__value">1 500</div>
           <div class="fact-item__label">Jäsentä</div>
         </div>
         <div class="fact-item">
-          <div class="fact-item__value">[lkm]</div>
-          <div class="fact-item__label">Paikallisyhdistystä</div>
+          <div class="fact-item__value">25</div>
+          <div class="fact-item__label">Kuntaa</div>
         </div>
         <div class="fact-item">
-          <div class="fact-item__value">[lkm]</div>
+          <div class="fact-item__value">3</div>
           <div class="fact-item__label">Kansanedustajaa</div>
         </div>
         <div class="fact-item">
-          <div class="fact-item__value">[lkm]</div>
-          <div class="fact-item__label">Kunnanvaltuutettua</div>
+          <div class="fact-item__value">97</div>
+          <div class="fact-item__label">Valtuutettua</div>
         </div>
       </div>
 
-      <!-- Viimeisimmät tiedotteet -->
+      <!-- Uudenmaan Vihreiden tiedotteet -->
+      <h2 style="margin-top:2.5rem;">Uudenmaan Vihreiden tiedotteet</h2>
+      <?php
+      $piiri_posts = get_posts( [ 'numberposts' => 5, 'post_status' => 'publish', 'post_type' => 'post' ] );
+      if ( $piiri_posts ) :
+          $feed_items = [];
+          foreach ( $piiri_posts as $p ) {
+              $feed_items[] = [
+                  'title' => get_the_title( $p ),
+                  'url'   => get_permalink( $p ),
+                  'date'  => get_the_date( 'j.n.Y', $p ),
+              ];
+          }
+          set_query_var( 'feed_items',      $feed_items );
+          set_query_var( 'feed_more_url',   home_url( '/ajankohtaista/tiedotteet/' ) );
+          set_query_var( 'feed_more_label', 'Kaikki tiedotteet →' );
+          get_template_part( 'parts/feed-list' );
+      else : ?>
+        <p style="color:#666;margin-bottom:1.5rem;">Ei vielä omia tiedotteita.</p>
+      <?php endif; ?>
+
+      <!-- Viimeisimmät puolueen tiedotteet -->
       <h2 style="margin-top:2.5rem;">Viimeisimmät puolueen tiedotteet</h2>
       <?php
       $stt_items = uuvi_get_stt_feed( 5 );

@@ -4,7 +4,7 @@
     <div class="container">
       <h1>Kansanedustajamme</h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Uudellamaalta valitut Vihreiden kansanedustajat työskentelevät eduskunnassa Uudenmaan ja koko Suomen parhaaksi.
+        Uudeltamaalta valitut Vihreiden kansanedustajat työskentelevät eduskunnassa Uudenmaan ja koko Suomen parhaaksi.
       </p>
     </div>
   </div>

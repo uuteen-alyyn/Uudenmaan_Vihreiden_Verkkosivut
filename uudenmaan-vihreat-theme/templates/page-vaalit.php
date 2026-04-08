@@ -3,7 +3,7 @@
   <div class="page-hero">
     <div class="container">
       <h1>Vaalit</h1>
-      <p class="ingress" style="color:rgba(255,255,255,.85);">Vaalit ovat demokratian sydän — ja me olemme mukana joka kerta.</p>
+      <p class="ingress" style="color:rgba(255,255,255,.85);">Vaalit ovat demokratian sydän.</p>
     </div>
   </div>
   <section class="section">

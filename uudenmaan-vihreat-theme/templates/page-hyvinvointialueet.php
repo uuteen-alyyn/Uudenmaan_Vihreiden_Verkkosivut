@@ -4,7 +4,7 @@
     <div class="container">
       <h1>Hyvinvointialueet</h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Uusimaa jakautuu viiteen hyvinvointialueeseen. Vihreät vaikuttavat jokaisella alueella — sosiaali- ja terveyspalveluissa, pelastustoimessa ja ympäristöasioissa.
+        Uusimaa jakautuu neljään hyvinvointialueeseen. Vihreät vaikuttavat jokaisella alueella. Lisäksi toimimme kunnissa, HUS:ssa ja erilaisissa alueellisissa luottamustehtävissä.
       </p>
     </div>
   </div>
@@ -24,7 +24,7 @@
             [ 'nimi' => 'Itä-Uusimaa',                     'slug' => 'ita-uusimaa',             'kuvaus' => 'Vihreät Itä-Uudenmaan hyvinvointialueella.' ],
             [ 'nimi' => 'Vantaa–Kerava',                   'slug' => 'vantaa-kerava',           'kuvaus' => 'Vihreät Vantaa–Keravan hyvinvointialueella.' ],
             [ 'nimi' => 'HUS ja maakunnalliset luottamustoimet', 'slug' => 'hus-ja-maakunnalliset', 'kuvaus' => 'Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa.' ],
-            [ 'nimi' => 'Kuntapolitiikka',                 'slug' => 'kuntapolitiikka',         'kuvaus' => 'Paikallisyhdistykset ja kuntavaikuttaminen.' ],
+            [ 'nimi' => 'Kuntapolitiikka',                 'slug' => 'kunnat',                  'kuvaus' => 'Paikallisyhdistykset ja kuntavaikuttaminen.' ],
         ];
         foreach ( $alueet as $alue ) :
             $url = home_url( '/hyvinvointialueet/' . $alue['slug'] . '/' );
