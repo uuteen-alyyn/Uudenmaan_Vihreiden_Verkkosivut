@@ -18,20 +18,22 @@
 
       <div class="grid-3">
         <?php
+        // FI page IDs → card descriptions
         $alueet = [
-            [ 'nimi' => 'Länsi-Uusimaa',                   'slug' => 'lansi-uusimaa',          'kuvaus' => 'Vihreät Länsi-Uudenmaan hyvinvointialueella.' ],
-            [ 'nimi' => 'Keski-Uusimaa',                   'slug' => 'keski-uusimaa',           'kuvaus' => 'Vihreät Keski-Uudenmaan hyvinvointialueella.' ],
-            [ 'nimi' => 'Itä-Uusimaa',                     'slug' => 'ita-uusimaa',             'kuvaus' => 'Vihreät Itä-Uudenmaan hyvinvointialueella.' ],
-            [ 'nimi' => 'Vantaa–Kerava',                   'slug' => 'vantaa-kerava',           'kuvaus' => 'Vihreät Vantaa–Keravan hyvinvointialueella.' ],
-            [ 'nimi' => 'HUS ja maakunnalliset luottamustoimet', 'slug' => 'hus-ja-maakunnalliset', 'kuvaus' => 'Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa.' ],
-            [ 'nimi' => 'Kuntapolitiikka',                 'slug' => 'kunnat',                  'kuvaus' => 'Paikallisyhdistykset ja kuntavaikuttaminen.' ],
+            [ 'fi_id' => 18, 'desc' => __( 'Vihreät Länsi-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
+            [ 'fi_id' => 19, 'desc' => __( 'Vihreät Keski-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
+            [ 'fi_id' => 20, 'desc' => __( 'Vihreät Itä-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
+            [ 'fi_id' => 21, 'desc' => __( 'Vihreät Vantaa–Keravan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
+            [ 'fi_id' => 22, 'desc' => __( 'Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa.', 'uudenmaan-vihreat' ) ],
+            [ 'fi_id' => 23, 'desc' => __( 'Paikallisyhdistykset ja kuntavaikuttaminen.', 'uudenmaan-vihreat' ) ],
         ];
         foreach ( $alueet as $alue ) :
-            $url = home_url( '/hyvinvointialueet/' . $alue['slug'] . '/' );
+            $url   = uuvi_translated_url( $alue['fi_id'] );
+            $title = uuvi_translated_title( $alue['fi_id'] );
         ?>
           <a class="region-card" href="<?php echo esc_url( $url ); ?>">
-            <h3><?php echo esc_html( $alue['nimi'] ); ?></h3>
-            <p><?php echo esc_html( $alue['kuvaus'] ); ?></p>
+            <h3><?php echo esc_html( $title ); ?></h3>
+            <p><?php echo esc_html( $alue['desc'] ); ?></p>
           </a>
         <?php endforeach; ?>
       </div>

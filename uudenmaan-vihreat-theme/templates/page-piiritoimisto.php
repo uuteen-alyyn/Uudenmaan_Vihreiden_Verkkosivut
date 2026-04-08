@@ -58,31 +58,31 @@ $img = get_template_directory_uri() . '/assets/images/';
 
       <!-- Yleinen yhteystieto -->
       <div style="margin-top:3rem;padding:2rem;background:var(--color-grey);border-radius:8px;">
-        <h2 style="font-size:1.25rem;margin-bottom:1rem;">Yleinen yhteystieto</h2>
-        <p>Sähköposti: <a href="mailto:<?php echo esc_attr( get_theme_mod( 'uuvi_email', 'info@uudenmaanvihreat.fi' ) ); ?>"><?php echo uuvi_mod( 'uuvi_email' ) ?: 'info@uudenmaanvihreat.fi'; ?></a></p>
+        <h2 style="font-size:1.25rem;margin-bottom:1rem;"><?php esc_html_e( 'Yleinen yhteystieto', 'uudenmaan-vihreat' ); ?></h2>
+        <p><?php esc_html_e( 'Sähköposti', 'uudenmaan-vihreat' ); ?>: <a href="mailto:<?php echo esc_attr( get_theme_mod( 'uuvi_email', 'info@uudenmaanvihreat.fi' ) ); ?>"><?php echo esc_html( uuvi_mod( 'uuvi_email' ) ?: 'info@uudenmaanvihreat.fi' ); ?></a></p>
         <p style="margin-top:0.5rem;">
           <strong>Uudenmaan Vihreät ry</strong><br>
-          <?php echo uuvi_mod( 'uuvi_osoite' ) ?: 'Mannerheimintie 15b, A-porras, 4.krs'; ?><br>
-          <?php echo uuvi_mod( 'uuvi_postiosoite' ) ?: '00260 Helsinki'; ?>
+          <?php echo esc_html( uuvi_mod( 'uuvi_osoite' ) ?: 'Mannerheimintie 15b, A-porras, 4.krs' ); ?><br>
+          <?php echo esc_html( uuvi_mod( 'uuvi_postiosoite' ) ?: '00260 Helsinki' ); ?>
         </p>
-        <p style="margin-top:0.5rem;">Y-tunnus: <?php echo uuvi_mod( 'uuvi_ytunnus' ) ?: '1087570-8'; ?></p>
+        <p style="margin-top:0.5rem;">Y-tunnus: <?php echo esc_html( uuvi_mod( 'uuvi_ytunnus' ) ?: '1087570-8' ); ?></p>
       </div>
 
       <!-- Laskutustiedot -->
       <div style="margin-top:2rem;padding:2rem;background:var(--color-grey);border-radius:8px;">
-        <h2 style="font-size:1.25rem;margin-bottom:1rem;">Laskutustiedot</h2>
-        <p><strong>Uudenmaan Vihreät ry</strong><br>Ostolaskujen vastaanotto</p>
-        <p style="margin-top:0.75rem;"><strong>Verkkolasku</strong><br>
-          Verkkolaskuosoite: <?php echo uuvi_mod( 'uuvi_verkkolasku_osoite' ) ?: '003710875708'; ?><br>
-          Välittäjä: <?php echo uuvi_mod( 'uuvi_verkkolasku_valittaja' ) ?: '003708599126 (OpenText)'; ?>
+        <h2 style="font-size:1.25rem;margin-bottom:1rem;"><?php esc_html_e( 'Laskutustiedot', 'uudenmaan-vihreat' ); ?></h2>
+        <p><strong>Uudenmaan Vihreät ry</strong><br><?php esc_html_e( 'Ostolaskujen vastaanotto', 'uudenmaan-vihreat' ); ?></p>
+        <p style="margin-top:0.75rem;"><strong><?php esc_html_e( 'Verkkolasku', 'uudenmaan-vihreat' ); ?></strong><br>
+          <?php esc_html_e( 'Verkkolaskuosoite', 'uudenmaan-vihreat' ); ?>: <?php echo esc_html( uuvi_mod( 'uuvi_verkkolasku_osoite' ) ?: '003710875708' ); ?><br>
+          <?php esc_html_e( 'Välittäjä', 'uudenmaan-vihreat' ); ?>: <?php echo esc_html( uuvi_mod( 'uuvi_verkkolasku_valittaja' ) ?: '003708599126 (OpenText)' ); ?>
         </p>
-        <p style="margin-top:0.75rem;"><strong>Sähköposti</strong><br>
-          <a href="mailto:<?php echo esc_attr( get_theme_mod( 'uuvi_lasku_email', 'fennoa.507906@erin.posti.com' ) ); ?>"><?php echo uuvi_mod( 'uuvi_lasku_email' ) ?: 'fennoa.507906@erin.posti.com'; ?></a>
+        <p style="margin-top:0.75rem;"><strong><?php esc_html_e( 'Sähköposti', 'uudenmaan-vihreat' ); ?></strong><br>
+          <a href="mailto:<?php echo esc_attr( get_theme_mod( 'uuvi_lasku_email', 'fennoa.507906@erin.posti.com' ) ); ?>"><?php echo esc_html( uuvi_mod( 'uuvi_lasku_email' ) ?: 'fennoa.507906@erin.posti.com' ); ?></a>
         </p>
-        <p style="margin-top:0.75rem;"><strong>Posti</strong><br>
-          <?php echo uuvi_mod( 'uuvi_lasku_posti_nimi' ) ?: 'Uudenmaan Vihreät ry, Nylands Gröna rf'; ?><br>
-          <?php echo uuvi_mod( 'uuvi_lasku_posti_pl' ) ?: 'PL 66712'; ?><br>
-          <?php echo uuvi_mod( 'uuvi_lasku_posti_numero' ) ?: '01051 LASKUT'; ?>
+        <p style="margin-top:0.75rem;"><strong><?php esc_html_e( 'Posti', 'uudenmaan-vihreat' ); ?></strong><br>
+          <?php echo esc_html( uuvi_mod( 'uuvi_lasku_posti_nimi' ) ?: 'Uudenmaan Vihreät ry, Nylands Gröna rf' ); ?><br>
+          <?php echo esc_html( uuvi_mod( 'uuvi_lasku_posti_pl' ) ?: 'PL 66712' ); ?><br>
+          <?php echo esc_html( uuvi_mod( 'uuvi_lasku_posti_numero' ) ?: '01051 LASKUT' ); ?>
         </p>
       </div>
 

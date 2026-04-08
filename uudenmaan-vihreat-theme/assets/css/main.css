@@ -907,21 +907,18 @@ p:last-child { margin-bottom: 0; }
 /* ── Kielivalitsin ── */
 .lang-switcher {
   display: flex;
-  gap: .25rem;
   align-items: center;
+  gap: .15rem;
   margin-left: 1rem;
   flex-shrink: 0;
 }
-.lang-switcher ul {
+.lang-switcher li {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: .15rem;
+  display: inline-flex;
 }
-.lang-switcher li { display: flex; }
-.lang-switcher a,
-.lang-switcher span {
+.lang-switcher a {
   display: inline-block;
   padding: .2rem .45rem;
   font-size: .75rem;
@@ -929,14 +926,10 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: .04em;
   text-transform: uppercase;
   border-radius: 3px;
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.8);
   text-decoration: none;
   transition: background .15s, color .15s;
 }
 .lang-switcher a:hover { background: rgba(255,255,255,.15); color: #fff; }
-.lang-switcher .current-lang a,
-.lang-switcher li.current-lang span {
-  background: var(--color-bright-green);
-  color: #fff;
-}
+.lang-switcher .current-lang a { background: var(--color-bright-green); color: #fff; }
 @media (max-width: 768px) { .lang-switcher { display: none; } }

@@ -156,7 +156,76 @@ msgid "Viimeisimmät puolueen tiedotteet"
 msgstr ""
 
 # front-page.php
+msgid "Rakennetaan parempaa Uuttamaata yhdessä"
+msgstr ""
+
+msgid "Uudenmaan Vihreät tekee vihreää politiikkaa kaikkialla Uudellamaalla — kunnissa, hyvinvointialueilla ja eduskunnassa."
+msgstr ""
+
+msgid "Tule mukaan"
+msgstr ""
+
+msgid "Liity jäseneksi"
+msgstr ""
+
+msgid "Miten voimme auttaa?"
+msgstr ""
+
+msgid "Tule mukaan toimintaan"
+msgstr ""
+
+msgid "Löydä oma tapasi vaikuttaa — kampanjoinnista kokouksiin."
+msgstr ""
+
+msgid "Yhteystiedot, tiedotteet ja ladattava kuva-aineisto."
+msgstr ""
+
+msgid "Mediasivu →"
+msgstr ""
+
+msgid "Ota yhteyttä"
+msgstr ""
+
+msgid "Löydä oikea henkilö tai ota yhteys piiritoimistoon."
+msgstr ""
+
+msgid "Kaikki uutiset →"
+msgstr ""
+
+msgid "Tapahtumat"
+msgstr ""
+
+msgid "Tule mukaan Uudenmaan Vihreiden tapahtumiin — kalenterista löydät menotiedot koko Uudellamaalla!"
+msgstr ""
+
+msgid "Katso tapahtumakalenteri →"
+msgstr ""
+
 msgid "Tilaa vihreiden uutiskirje"
+msgstr ""
+
+msgid "Haluatko pysyä ajan tasalla Vihreiden toiminnasta? Tilaa uutiskirjeemme ja saa tuoreimmat uutiset, menotiedot ja kannanotot suoraan sähköpostiisi."
+msgstr ""
+
+msgid "Tilaa uutiskirje →"
+msgstr ""
+
+msgid "Vihreiden valtakunnalliset tiedotteet STT:n uutishuoneesta."
+msgstr ""
+
+msgid "Kaikki tiedotteet uutishuoneessa →"
+msgstr ""
+
+msgid "Vihreät ajatukset, tarinat ja puheenvuorot koottuna Verde-lehdessä."
+msgstr ""
+
+msgid "Lue Verde-lehteä →"
+msgstr ""
+
+msgid "Vihreät ajatukset ja tarinat — "
+msgstr ""
+
+msgid "lue Verde-lehteä verdelehti.fi:ssä"
 msgstr ""
 
 msgid "Lue lisää →"
@@ -167,6 +236,12 @@ msgstr ""
 
 # page-ajankohtaista.php
 msgid "Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta."
+msgstr ""
+
+msgid "Uudemmat"
+msgstr ""
+
+msgid "Vanhemmat"
 msgstr ""
 
 # page-vaalit.php
@@ -186,7 +261,7 @@ msgid "Uudenmaan Vihreiden tavoitteet tulevissa vaaleissa."
 msgstr ""
 
 # page-yleiskokous.php
-msgid "Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin, joka kokoontuu kerran vuodessa."
+msgid "Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin."
 msgstr ""
 
 # page-tietosuojaseloste.php
@@ -221,6 +296,216 @@ msgstr ""
 msgid "Vihreä politiikka syntyy ihmisten yhteisestä tekemisestä. Löydä oma tapasi vaikuttaa."
 msgstr ""
 
+msgid "Näin pääset mukaan"
+msgstr ""
+
+msgid "Osallistu tapahtumiin"
+msgstr ""
+
+msgid "Kokous, koulutus tai kahvitilaisuus — tervetuloa sellaisena kuin olet."
+msgstr ""
+
+msgid "Ilmoittaudu vapaaehtoiseksi"
+msgstr ""
+
+msgid "Tule mukaan kampanjointiin, tapahtumiin tai kertomaan mielipiteesi politiikasta."
+msgstr ""
+
+msgid "Jäsenyys on helppo tapa tukea vihreää politiikkaa ja saada äänesi kuuluviin."
+msgstr ""
+
+msgid "Liity jäseneksi →"
+msgstr ""
+
+msgid "Mitä voin tehdä?"
+msgstr ""
+
+msgid "Jokainen panos on arvokas — valitse sinulle sopiva tapa."
+msgstr ""
+
+msgid "30 minuuttia"
+msgstr ""
+
+msgid "Pienet teot"
+msgstr ""
+
+msgid "Jaa julkaisu somessa, allekirjoita vetoomus tai ota yhteyttä kansanedustajaan. Pienetkin teot merkitsevät."
+msgstr ""
+
+msgid "2 tuntia"
+msgstr ""
+
+msgid "Tule tapahtumaan"
+msgstr ""
+
+msgid "Tule mukaan tapahtumaan tai kokoukseen, puhu vihreästä politiikasta tai jaa ehdokkaasi esitteitä naapuruston postilaatikkoon. Yhdessä olemme enemmän."
+msgstr ""
+
+msgid "2 päivää"
+msgstr ""
+
+msgid "Talkoot"
+msgstr ""
+
+msgid "Osallistu kampanjointiin vaalien alla tai lähde mukaan talkooviikonloppuun. Tehdään yhdessä näkyviä tuloksia."
+msgstr ""
+
+msgid "Koulutus & materiaalit"
+msgstr ""
+
+msgid "Tarjoamme jäsenille ja aktiiveille koulutuksia politiikasta, viestinnästä ja vaikuttamisesta."
+msgstr ""
+
+msgid "Vihreä opintokeskus Visio"
+msgstr ""
+
+msgid "Koulutuksia ja sivistystoimintaa Vihreiden arvojen pohjalta."
+msgstr ""
+
+msgid "Siirry sivustolle →"
+msgstr ""
+
+msgid "Uudenmaan koulutusalusta Vihko"
+msgstr ""
+
+msgid "Uudenmaan Vihreiden oma koulutusalusta — rekisteröidy ja aloita."
+msgstr ""
+
+msgid "Avaa Vihko →"
+msgstr ""
+
+msgid "Tulevat tapahtumat, kokoukset ja koulutukset Uudellamaalla."
+msgstr ""
+
+msgid "Katso kalenteri →"
+msgstr ""
+
+msgid "Kiinnostaako ehdokkuus?"
+msgstr ""
+
+msgid "Lähde ehdolle →"
+msgstr ""
+
+# page-piirihallitus.php structural headings
+msgid "Hallitus 2026"
+msgstr ""
+
+msgid "Varajäsenet 2026"
+msgstr ""
+
+msgid "Sisääntulojärjestyksessä"
+msgstr ""
+
+msgid "Puoluehallituksen jäsenet"
+msgstr ""
+
+msgid "Puoluevaltuusto"
+msgstr ""
+
+msgid "Piirin työalat"
+msgstr ""
+
+msgid "Koulutus"
+msgstr ""
+
+msgid "Vaalit"
+msgstr ""
+
+msgid "Vapaaehtoiset"
+msgstr ""
+
+msgid "Politiikka"
+msgstr ""
+
+msgid "Eduskuntavaaleihin asti vaalityöstä vastaa piirin vaalityöryhmä, puheenjohtaja Börje Uimonen."
+msgstr ""
+
+msgid "Piirin vaalityöryhmä"
+msgstr ""
+
+# parts/cta-buttons.php
+msgid "Lähde mukaan"
+msgstr ""
+
+msgid "Jokainen vihreä teko merkitsee — löydä oma tapasi vaikuttaa."
+msgstr ""
+
+msgid "Lahjoita"
+msgstr ""
+
+msgid "Lähde ehdolle"
+msgstr ""
+
 # page-kuntapolitiikka.php
 msgid "Paikallisyhdistykset ja kuntavaikuttaminen ympäri Uusimaata."
+msgstr ""
+
+# page-yhteystiedot.php cards
+msgid "Piirin missio, hallinto ja dokumentit."
+msgstr ""
+
+msgid "Henkilökunta, puheenjohtaja ja yleinen osoite."
+msgstr ""
+
+msgid "Hallituksen jäsenet, varajäsenet ja työalat."
+msgstr ""
+
+msgid "Mediayhteyshenkilö, logot ja tiedotteet."
+msgstr ""
+
+msgid "Uudeltamaalta valitut Vihreiden kansanedustajat."
+msgstr ""
+
+msgid "Yleinen yhteydenotto"
+msgstr ""
+
+msgid "Postiosoite"
+msgstr ""
+
+# page-hyvinvointialueet.php cards
+msgid "Vihreät Länsi-Uudenmaan hyvinvointialueella."
+msgstr ""
+
+msgid "Vihreät Keski-Uudenmaan hyvinvointialueella."
+msgstr ""
+
+msgid "Vihreät Itä-Uudenmaan hyvinvointialueella."
+msgstr ""
+
+msgid "Vihreät Vantaa–Keravan hyvinvointialueella."
+msgstr ""
+
+msgid "Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa."
+msgstr ""
+
+msgid "Paikallisyhdistykset ja kuntavaikuttaminen."
+msgstr ""
+
+# page-piiritoimisto.php
+msgid "Yleinen yhteystieto"
+msgstr ""
+
+msgid "Laskutustiedot"
+msgstr ""
+
+msgid "Ostolaskujen vastaanotto"
+msgstr ""
+
+msgid "Verkkolasku"
+msgstr ""
+
+msgid "Verkkolaskuosoite"
+msgstr ""
+
+msgid "Välittäjä"
+msgstr ""
+
+msgid "Posti"
+msgstr ""
+
+# page-kansanedustajat.php
+msgid "Yhteystiedot löytyvät myös"
+msgstr ""
+
+msgid "eduskunnan sivuilta"
 msgstr ""

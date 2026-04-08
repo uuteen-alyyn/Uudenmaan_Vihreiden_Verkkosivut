@@ -225,6 +225,36 @@ add_filter( 'cron_schedules', function ( $schedules ) {
     return $schedules;
 } );
 
+// ─── Front page template for translated pages ─────────────────────────────────
+// Polylang redirects /sv/ → /sv/startsida/ (page's canonical URL).
+// That page is then served as a regular page, not as the front page, so
+// front-page.php is never chosen. This filter routes translated front pages
+// (SV/EN equivalents of page_on_front) to front-page.php regardless of URL.
+
+add_filter( 'template_include', function ( $template ) {
+    if ( ! is_page() ) {
+        return $template;
+    }
+    $fi_front = (int) get_option( 'page_on_front' );
+    if ( ! $fi_front ) {
+        return $template;
+    }
+    $post_id = get_queried_object_id();
+    if ( $post_id === $fi_front ) {
+        return $template; // FI front page uses front-page.php naturally
+    }
+    if ( function_exists( 'pll_get_post' ) ) {
+        $fi_id = pll_get_post( $post_id, 'fi' );
+        if ( (int) $fi_id === $fi_front ) {
+            $front_tpl = get_template_directory() . '/front-page.php';
+            if ( file_exists( $front_tpl ) ) {
+                return $front_tpl;
+            }
+        }
+    }
+    return $template;
+} );
+
 // ─── Page template loader ─────────────────────────────────────────────────────
 
 add_filter( 'page_template', function ( $template ) {

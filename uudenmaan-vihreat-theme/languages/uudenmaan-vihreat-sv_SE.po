@@ -42,7 +42,7 @@ msgid "Vihreät vaikuttavat ympäri Uudenmaan — valtuustoissa, lautakunnissa j
 msgstr "De Gröna verkar i hela Nyland — i fullmäktige, nämnder och vardagliga beslut."
 
 msgid "Kotikuntasi vihreät"
-msgstr "De gröna i din hemkommun"
+msgstr "De Gröna i din hemkommun"
 
 msgid "Yhdistyksen pj"
 msgstr "Föreningens ordförande"
@@ -108,10 +108,10 @@ msgid "Uusimaa jakautuu neljään hyvinvointialueeseen. Vihreät vaikuttavat jok
 msgstr "Nyland är indelat i fyra välfärdsområden. De Gröna är aktiva i alla områden. Vi verkar också i kommunerna, HUS och i olika regionala förtroendeuppdrag."
 
 msgid "Faktaa piiristä"
-msgstr "Fakta om distriktet"
+msgstr "Fakta om kretsen"
 
 msgid "Tervetuloa — löydät täältä yhteystiedot, taustatietoa piiristä sekä ladattavan kuva- ja logomateriaalin."
-msgstr "Välkommen — här hittar du kontaktuppgifter, bakgrundsinformation om distriktet samt nedladdningsbart bild- och logomaterial."
+msgstr "Välkommen — här hittar du kontaktuppgifter, bakgrundsinformation om kretsen samt nedladdningsbart bild- och logomaterial."
 
 msgid "Puheenjohtaja"
 msgstr "Ordförande"
@@ -149,8 +149,77 @@ msgstr "Kampanjbilder och porträttfoton finns tillgängliga i Google Drive."
 msgid "Viimeisimmät puolueen tiedotteet"
 msgstr "Senaste pressmeddelanden från partiet"
 
+msgid "Rakennetaan parempaa Uuttamaata yhdessä"
+msgstr "Tillsammans bygger vi ett bättre Nyland"
+
+msgid "Uudenmaan Vihreät tekee vihreää politiikkaa kaikkialla Uudellamaalla — kunnissa, hyvinvointialueilla ja eduskunnassa."
+msgstr "Nylands Gröna bedriver grön politik i hela Nyland — i kommuner, välfärdsområden och i riksdagen."
+
+msgid "Tule mukaan"
+msgstr "Engagera dig"
+
+msgid "Liity jäseneksi"
+msgstr "Bli medlem"
+
+msgid "Miten voimme auttaa?"
+msgstr "Hur kan vi hjälpa?"
+
+msgid "Tule mukaan toimintaan"
+msgstr "Engagera dig i verksamheten"
+
+msgid "Löydä oma tapasi vaikuttaa — kampanjoinnista kokouksiin."
+msgstr "Hitta ditt eget sätt att påverka — från kampanjering till möten."
+
+msgid "Yhteystiedot, tiedotteet ja ladattava kuva-aineisto."
+msgstr "Kontaktuppgifter, pressmeddelanden och nedladdningsbart bildmaterial."
+
+msgid "Mediasivu →"
+msgstr "Mediasidan →"
+
+msgid "Ota yhteyttä"
+msgstr "Kontakta oss"
+
+msgid "Löydä oikea henkilö tai ota yhteys piiritoimistoon."
+msgstr "Hitta rätt person eller kontakta kansliet."
+
+msgid "Kaikki uutiset →"
+msgstr "Alla nyheter →"
+
+msgid "Tapahtumat"
+msgstr "Evenemang"
+
+msgid "Tule mukaan Uudenmaan Vihreiden tapahtumiin — kalenterista löydät menotiedot koko Uudellamaalla!"
+msgstr "Delta i Nylands Grönas evenemang — i kalendern hittar du information om evenemang i hela Nyland!"
+
+msgid "Katso tapahtumakalenteri →"
+msgstr "Se evenemangskalendern →"
+
 msgid "Tilaa vihreiden uutiskirje"
-msgstr "Prenumerera på de grönas nyhetsbrev"
+msgstr "Prenumerera på De Grönas nyhetsbrev"
+
+msgid "Haluatko pysyä ajan tasalla Vihreiden toiminnasta? Tilaa uutiskirjeemme ja saa tuoreimmat uutiset, menotiedot ja kannanotot suoraan sähköpostiisi."
+msgstr "Vill du hålla dig uppdaterad om De Grönas verksamhet? Prenumerera på vårt nyhetsbrev och få de senaste nyheterna, evenemangsinformationen och ställningstagandena direkt till din e-post."
+
+msgid "Tilaa uutiskirje →"
+msgstr "Prenumerera på nyhetsbrevet →"
+
+msgid "Vihreiden valtakunnalliset tiedotteet STT:n uutishuoneesta."
+msgstr "De Grönas riksomfattande pressmeddelanden från STT:s nyhetsrum."
+
+msgid "Kaikki tiedotteet uutishuoneessa →"
+msgstr "Alla pressmeddelanden i nyhetsrummet →"
+
+msgid "Vihreät ajatukset, tarinat ja puheenvuorot koottuna Verde-lehdessä."
+msgstr "Gröna tankar, berättelser och anföranden samlade i Verde-tidningen."
+
+msgid "Lue Verde-lehteä →"
+msgstr "Läs Verde-tidningen →"
+
+msgid "Vihreät ajatukset ja tarinat — "
+msgstr "Gröna tankar och berättelser — "
+
+msgid "lue Verde-lehteä verdelehti.fi:ssä"
+msgstr "läs Verde-tidningen på verdelehti.fi"
 
 msgid "Lue lisää →"
 msgstr "Läs mer →"
@@ -161,11 +230,17 @@ msgstr "Alla evenemang →"
 msgid "Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta."
 msgstr "Nyheter, ställningstaganden och information om Nylands Grönas verksamhet."
 
+msgid "Uudemmat"
+msgstr "Nyare"
+
+msgid "Vanhemmat"
+msgstr "Äldre"
+
 msgid "Vaalit ovat demokratian sydän."
 msgstr "Val är demokratins hjärta."
 
 msgid "Uudenmaan Vihreät on Vihreiden piirijärjestö, joka toimii koko Uudenmaan vaalipiirin alueella."
-msgstr "Nylands Gröna är Grönas distriktsorganisation som verkar inom hela Nylands valkrets."
+msgstr "Nylands Gröna är Grönas kretsorganisation som verkar inom hela Nylands valkrets."
 
 msgid "Vihreät tarvitsee rohkeita ehdokkaita joka kunnasta. Sinulla on annettavaa — autamme sinut matkaan."
 msgstr "De Gröna behöver modiga kandidater från varje kommun. Du har något att ge — vi hjälper dig på vägen."
@@ -173,23 +248,23 @@ msgstr "De Gröna behöver modiga kandidater från varje kommun. Du har något a
 msgid "Uudenmaan Vihreiden tavoitteet tulevissa vaaleissa."
 msgstr "Nylands Grönas mål inför kommande val."
 
-msgid "Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin, joka kokoontuu kerran vuodessa."
-msgstr "Allmänna mötet är Nylands Grönas högsta beslutande organ och samlas en gång om året."
+msgid "Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin."
+msgstr "Allmänna mötet är Nylands Grönas högsta beslutande organ."
 
 msgid "EU:n yleisen tietosuoja-asetuksen mukaiset rekisteri- ja tietosuojaselosteet."
 msgstr "Register- och dataskyddsbeskrivningar enligt EU:s allmänna dataskyddsförordning."
 
 msgid "Piiritoimisto palvelee jäseniä, yhdistyksiä ja mediaa. Ota rohkeasti yhteyttä."
-msgstr "Distriktskansliet betjänar medlemmar, föreningar och media. Ta gärna kontakt."
+msgstr "Kansliet betjänar medlemmar, föreningar och media. Ta gärna kontakt."
 
 msgid "Piirihallitus vastaa Uudenmaan Vihreiden toiminnan johtamisesta yleiskokouksien välillä."
-msgstr "Distriktsstyrelsen ansvarar för ledningen av Nylands Grönas verksamhet mellan allmänna möten."
+msgstr "Kretstyrelsen ansvarar för ledningen av Nylands Grönas verksamhet mellan allmänna möten."
 
 msgid "Uudeltamaalta valitut Vihreiden kansanedustajat työskentelevät eduskunnassa Uudenmaan ja koko Suomen parhaaksi."
 msgstr "De Grönas riksdagsledamöter valda från Nyland arbetar i riksdagen för Nylands och hela Finlands bästa."
 
 msgid "Löydä oikea henkilö tai ota yhteyttä piiriin — olemme täällä sinua varten."
-msgstr "Hitta rätt person eller kontakta distriktet — vi finns här för dig."
+msgstr "Hitta rätt person eller kontakta kretsen — vi finns här för dig."
 
 msgid "Uudenmaan tulevat vihreät tapahtumat."
 msgstr "Kommande gröna evenemang i Nyland."
@@ -200,5 +275,209 @@ msgstr "Nylands Grönas pressmeddelanden, ställningstaganden och anföranden f�
 msgid "Vihreä politiikka syntyy ihmisten yhteisestä tekemisestä. Löydä oma tapasi vaikuttaa."
 msgstr "Grön politik uppstår ur människors gemensamma handlande. Hitta ditt eget sätt att påverka."
 
+msgid "Näin pääset mukaan"
+msgstr "Så här kommer du med"
+
+msgid "Osallistu tapahtumiin"
+msgstr "Delta i evenemang"
+
+msgid "Kokous, koulutus tai kahvitilaisuus — tervetuloa sellaisena kuin olet."
+msgstr "Möte, utbildning eller kaffeträff — välkommen precis som du är."
+
+msgid "Ilmoittaudu vapaaehtoiseksi"
+msgstr "Anmäl dig som volontär"
+
+msgid "Tule mukaan kampanjointiin, tapahtumiin tai kertomaan mielipiteesi politiikasta."
+msgstr "Kom med i kampanjering, evenemang eller att dela din åsikt om politik."
+
+msgid "Jäsenyys on helppo tapa tukea vihreää politiikkaa ja saada äänesi kuuluviin."
+msgstr "Medlemskap är ett enkelt sätt att stödja grön politik och göra din röst hörd."
+
+msgid "Liity jäseneksi →"
+msgstr "Bli medlem →"
+
+msgid "Mitä voin tehdä?"
+msgstr "Vad kan jag göra?"
+
+msgid "Jokainen panos on arvokas — valitse sinulle sopiva tapa."
+msgstr "Varje insats är värdefull — välj det sätt som passar dig."
+
+msgid "30 minuuttia"
+msgstr "30 minuter"
+
+msgid "Pienet teot"
+msgstr "Små handlingar"
+
+msgid "Jaa julkaisu somessa, allekirjoita vetoomus tai ota yhteyttä kansanedustajaan. Pienetkin teot merkitsevät."
+msgstr "Dela ett inlägg i sociala medier, skriv under en petition eller kontakta en riksdagsledamot. Även små handlingar spelar roll."
+
+msgid "2 tuntia"
+msgstr "2 timmar"
+
+msgid "Tule tapahtumaan"
+msgstr "Delta i ett evenemang"
+
+msgid "Tule mukaan tapahtumaan tai kokoukseen, puhu vihreästä politiikasta tai jaa ehdokkaasi esitteitä naapuruston postilaatikkoon. Yhdessä olemme enemmän."
+msgstr "Delta i ett evenemang eller möte, prata om grön politik eller dela din kandidats broschyrer i grannskapets brevlådor. Tillsammans är vi mer."
+
+msgid "2 päivää"
+msgstr "2 dagar"
+
+msgid "Talkoot"
+msgstr "Talkot"
+
+msgid "Osallistu kampanjointiin vaalien alla tai lähde mukaan talkooviikonloppuun. Tehdään yhdessä näkyviä tuloksia."
+msgstr "Delta i kampanjering inför valet eller anslut dig till en talkovhelg. Låt oss göra synliga resultat tillsammans."
+
+msgid "Koulutus & materiaalit"
+msgstr "Utbildning & material"
+
+msgid "Tarjoamme jäsenille ja aktiiveille koulutuksia politiikasta, viestinnästä ja vaikuttamisesta."
+msgstr "Vi erbjuder utbildningar i politik, kommunikation och påverkansarbete för medlemmar och aktiva."
+
+msgid "Vihreä opintokeskus Visio"
+msgstr "Grönt studiecenter Visio"
+
+msgid "Koulutuksia ja sivistystoimintaa Vihreiden arvojen pohjalta."
+msgstr "Utbildningar och bildningsverksamhet utifrån De Grönas värderingar."
+
+msgid "Siirry sivustolle →"
+msgstr "Gå till webbplatsen →"
+
+msgid "Uudenmaan koulutusalusta Vihko"
+msgstr "Nylands utbildningsplattform Vihko"
+
+msgid "Uudenmaan Vihreiden oma koulutusalusta — rekisteröidy ja aloita."
+msgstr "Nylands Grönas egen utbildningsplattform — registrera dig och kom igång."
+
+msgid "Avaa Vihko →"
+msgstr "Öppna Vihko →"
+
+msgid "Tulevat tapahtumat, kokoukset ja koulutukset Uudellamaalla."
+msgstr "Kommande evenemang, möten och utbildningar i Nyland."
+
+msgid "Katso kalenteri →"
+msgstr "Se kalendern →"
+
+msgid "Kiinnostaako ehdokkuus?"
+msgstr "Är du intresserad av att kandidera?"
+
+msgid "Lähde ehdolle →"
+msgstr "Ställ upp som kandidat →"
+
+msgid "Hallitus 2026"
+msgstr "Styrelsen 2026"
+
+msgid "Varajäsenet 2026"
+msgstr "Ersättare 2026"
+
+msgid "Sisääntulojärjestyksessä"
+msgstr "I inträdesordning"
+
+msgid "Puoluehallituksen jäsenet"
+msgstr "Partisstyrelsens ledamöter"
+
+msgid "Puoluevaltuusto"
+msgstr "Partifullmäktige"
+
+msgid "Piirin työalat"
+msgstr "Kretsens arbetsområden"
+
+msgid "Koulutus"
+msgstr "Utbildning"
+
+msgid "Vaalit"
+msgstr "Val"
+
+msgid "Vapaaehtoiset"
+msgstr "Volontärer"
+
+msgid "Politiikka"
+msgstr "Politik"
+
+msgid "Eduskuntavaaleihin asti vaalityöstä vastaa piirin vaalityöryhmä, puheenjohtaja Börje Uimonen."
+msgstr "Fram till riksdagsvalet ansvarar kretsens valarbetsgrupp för valarbetet, ordförande Börje Uimonen."
+
+msgid "Piirin vaalityöryhmä"
+msgstr "Kretsens valarbetsgrupp"
+
+msgid "Lähde mukaan"
+msgstr "Engagera dig"
+
+msgid "Jokainen vihreä teko merkitsee — löydä oma tapasi vaikuttaa."
+msgstr "Varje grön handling spelar roll — hitta ditt eget sätt att påverka."
+
+msgid "Lahjoita"
+msgstr "Donera"
+
+msgid "Lähde ehdolle"
+msgstr "Ställ upp som kandidat"
+
 msgid "Paikallisyhdistykset ja kuntavaikuttaminen ympäri Uusimaata."
 msgstr "Lokalföreningar och kommunalt påverkansarbete runt om i Nyland."
+
+msgid "Piirin missio, hallinto ja dokumentit."
+msgstr "Kretsens uppdrag, förvaltning och dokument."
+
+msgid "Henkilökunta, puheenjohtaja ja yleinen osoite."
+msgstr "Personal, ordförande och allmän adress."
+
+msgid "Hallituksen jäsenet, varajäsenet ja työalat."
+msgstr "Styrelsens medlemmar, ersättare och arbetsområden."
+
+msgid "Mediayhteyshenkilö, logot ja tiedotteet."
+msgstr "Mediekontakt, logotyper och pressmeddelanden."
+
+msgid "Uudeltamaalta valitut Vihreiden kansanedustajat."
+msgstr "De Grönas riksdagsledamöter valda från Nyland."
+
+msgid "Yleinen yhteydenotto"
+msgstr "Allmän kontakt"
+
+msgid "Postiosoite"
+msgstr "Postadress"
+
+msgid "Vihreät Länsi-Uudenmaan hyvinvointialueella."
+msgstr "De Gröna i Västra Nylands välfärdsområde."
+
+msgid "Vihreät Keski-Uudenmaan hyvinvointialueella."
+msgstr "De Gröna i Mellersta Nylands välfärdsområde."
+
+msgid "Vihreät Itä-Uudenmaan hyvinvointialueella."
+msgstr "De Gröna i Östra Nylands välfärdsområde."
+
+msgid "Vihreät Vantaa–Keravan hyvinvointialueella."
+msgstr "De Gröna i Vanda–Kervo välfärdsområde."
+
+msgid "Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa."
+msgstr "De Gröna i HUS-området och i regionala förtroendeuppdrag."
+
+msgid "Paikallisyhdistykset ja kuntavaikuttaminen."
+msgstr "Lokalföreningar och kommunalt påverkansarbete."
+
+msgid "Yleinen yhteystieto"
+msgstr "Allmän kontaktuppgift"
+
+msgid "Laskutustiedot"
+msgstr "Fakturauppgifter"
+
+msgid "Ostolaskujen vastaanotto"
+msgstr "Mottagning av inköpsfakturor"
+
+msgid "Verkkolasku"
+msgstr "E-faktura"
+
+msgid "Verkkolaskuosoite"
+msgstr "E-fakturadress"
+
+msgid "Välittäjä"
+msgstr "Förmedlare"
+
+msgid "Posti"
+msgstr "Post"
+
+msgid "Yhteystiedot löytyvät myös"
+msgstr "Kontaktuppgifter finns också"
+
+msgid "eduskunnan sivuilta"
+msgstr "på riksdagens webbplats"

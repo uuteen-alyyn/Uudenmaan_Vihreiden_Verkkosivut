@@ -25,7 +25,7 @@
         <p style="color:#666;">Lisää kansanedustajat wp-admin → Henkilöstö → Lisää uusi (ryhmä: Kansanedustajat).</p>
       <?php endif; ?>
       <p style="margin-top:2rem;font-size:.9rem;color:#666;">
-        Yhteystiedot löytyvät myös <a href="https://www.eduskunta.fi/FI/kansanedustajat/Sivut/default.aspx" target="_blank" rel="noopener noreferrer">eduskunnan sivuilta</a>.
+        <?php esc_html_e( 'Yhteystiedot löytyvät myös', 'uudenmaan-vihreat' ); ?> <a href="https://www.eduskunta.fi/FI/kansanedustajat/Sivut/default.aspx" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'eduskunnan sivuilta', 'uudenmaan-vihreat' ); ?></a>.
       </p>
     </div>
   </section>

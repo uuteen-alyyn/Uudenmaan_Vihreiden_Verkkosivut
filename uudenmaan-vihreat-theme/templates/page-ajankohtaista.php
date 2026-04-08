@@ -39,14 +39,14 @@
         </div>
         <div style="margin-top:3rem;display:flex;justify-content:center;gap:1rem;">
           <?php
-          $prev = get_previous_posts_link( '← Uudemmat', $query->max_num_pages );
-          $next = get_next_posts_link( 'Vanhemmat →', $query->max_num_pages );
+          $prev = get_previous_posts_link( '← ' . __( 'Uudemmat', 'uudenmaan-vihreat' ), $query->max_num_pages );
+          $next = get_next_posts_link( __( 'Vanhemmat', 'uudenmaan-vihreat' ) . ' →', $query->max_num_pages );
           if ( $prev ) echo '<span class="btn btn--outline">' . $prev . '</span>';
           if ( $next ) echo '<span class="btn btn--outline">' . $next . '</span>';
           ?>
         </div>
       <?php else : ?>
-        <p>Ei vielä artikkeleita.</p>
+        <p style="color:#666;"><?php esc_html_e( 'Ei vielä artikkeleita.', 'uudenmaan-vihreat' ); ?></p>
       <?php endif; ?>
     </div>
   </section>

@@ -8,11 +8,6 @@ get_header();
   <?php while ( have_posts() ) : the_post(); ?>
     <div class="page-hero">
       <div class="container">
-        <p class="breadcrumb">
-          <span><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Etusivu</a></span>
-          <span><a href="<?php echo esc_url( home_url( '/ajankohtaista/' ) ); ?>">Ajankohtaista</a></span>
-          <span><?php the_title(); ?></span>
-        </p>
         <h1><?php the_title(); ?></h1>
         <p class="ingress" style="color:rgba(255,255,255,.75);margin-top:.5rem;font-size:1rem;">
           <time datetime="<?php the_date( 'Y-m-d' ); ?>"><?php the_date( 'j.n.Y' ); ?></time>

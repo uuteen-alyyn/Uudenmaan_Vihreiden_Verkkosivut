@@ -3,7 +3,7 @@
   <div class="page-hero">
     <div class="container">
       <h1><?php echo esc_html( get_the_title() ); ?></h1>
-      <p class="ingress" style="color:rgba(255,255,255,.85);"><?php esc_html_e( 'Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin, joka kokoontuu kerran vuodessa.', 'uudenmaan-vihreat' ); ?></p>
+      <p class="ingress" style="color:rgba(255,255,255,.85);"><?php esc_html_e( 'Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin.', 'uudenmaan-vihreat' ); ?></p>
     </div>
   </div>
   <section class="section">

@@ -149,8 +149,77 @@ msgstr "Campaign photos and portraits are available in Google Drive."
 msgid "Viimeisimmät puolueen tiedotteet"
 msgstr "Latest party press releases"
 
+msgid "Rakennetaan parempaa Uuttamaata yhdessä"
+msgstr "Together we build a better Uusimaa"
+
+msgid "Uudenmaan Vihreät tekee vihreää politiikkaa kaikkialla Uudellamaalla — kunnissa, hyvinvointialueilla ja eduskunnassa."
+msgstr "Uusimaa Greens do green politics across Uusimaa — in municipalities, wellbeing services counties and Parliament."
+
+msgid "Tule mukaan"
+msgstr "Get involved"
+
+msgid "Liity jäseneksi"
+msgstr "Become a member"
+
+msgid "Miten voimme auttaa?"
+msgstr "How can we help?"
+
+msgid "Tule mukaan toimintaan"
+msgstr "Get involved in our activities"
+
+msgid "Löydä oma tapasi vaikuttaa — kampanjoinnista kokouksiin."
+msgstr "Find your own way to make an impact — from campaigning to meetings."
+
+msgid "Yhteystiedot, tiedotteet ja ladattava kuva-aineisto."
+msgstr "Contact info, press releases and downloadable image material."
+
+msgid "Mediasivu →"
+msgstr "Media page →"
+
+msgid "Ota yhteyttä"
+msgstr "Contact us"
+
+msgid "Löydä oikea henkilö tai ota yhteys piiritoimistoon."
+msgstr "Find the right person or contact the district office."
+
+msgid "Kaikki uutiset →"
+msgstr "All news →"
+
+msgid "Tapahtumat"
+msgstr "Events"
+
+msgid "Tule mukaan Uudenmaan Vihreiden tapahtumiin — kalenterista löydät menotiedot koko Uudellamaalla!"
+msgstr "Join Uusimaa Greens events — find event information across Uusimaa in the calendar!"
+
+msgid "Katso tapahtumakalenteri →"
+msgstr "See event calendar →"
+
 msgid "Tilaa vihreiden uutiskirje"
 msgstr "Subscribe to the Greens' newsletter"
+
+msgid "Haluatko pysyä ajan tasalla Vihreiden toiminnasta? Tilaa uutiskirjeemme ja saa tuoreimmat uutiset, menotiedot ja kannanotot suoraan sähköpostiisi."
+msgstr "Want to stay up to date on the Greens' activities? Subscribe to our newsletter and get the latest news, event information and statements straight to your email."
+
+msgid "Tilaa uutiskirje →"
+msgstr "Subscribe to newsletter →"
+
+msgid "Vihreiden valtakunnalliset tiedotteet STT:n uutishuoneesta."
+msgstr "The Greens' national press releases from STT's news room."
+
+msgid "Kaikki tiedotteet uutishuoneessa →"
+msgstr "All press releases in the news room →"
+
+msgid "Vihreät ajatukset, tarinat ja puheenvuorot koottuna Verde-lehdessä."
+msgstr "Green thoughts, stories and speeches collected in Verde magazine."
+
+msgid "Lue Verde-lehteä →"
+msgstr "Read Verde magazine →"
+
+msgid "Vihreät ajatukset ja tarinat — "
+msgstr "Green thoughts and stories — "
+
+msgid "lue Verde-lehteä verdelehti.fi:ssä"
+msgstr "read Verde magazine at verdelehti.fi"
 
 msgid "Lue lisää →"
 msgstr "Read more →"
@@ -160,6 +229,12 @@ msgstr "All events →"
 
 msgid "Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta."
 msgstr "News, statements and information about the Uusimaa Greens' activities."
+
+msgid "Uudemmat"
+msgstr "Newer"
+
+msgid "Vanhemmat"
+msgstr "Older"
 
 msgid "Vaalit ovat demokratian sydän."
 msgstr "Elections are the heart of democracy."
@@ -173,8 +248,8 @@ msgstr "The Greens need brave candidates from every municipality. You have somet
 msgid "Uudenmaan Vihreiden tavoitteet tulevissa vaaleissa."
 msgstr "The Uusimaa Greens' goals for upcoming elections."
 
-msgid "Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin, joka kokoontuu kerran vuodessa."
-msgstr "The general meeting is the Uusimaa Greens' highest decision-making body, convening once a year."
+msgid "Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin."
+msgstr "The general meeting is the Uusimaa Greens' highest decision-making body."
 
 msgid "EU:n yleisen tietosuoja-asetuksen mukaiset rekisteri- ja tietosuojaselosteet."
 msgstr "Register and privacy policy statements in accordance with the EU General Data Protection Regulation."
@@ -200,5 +275,209 @@ msgstr "Uusimaa Greens press releases, statements and speeches for media."
 msgid "Vihreä politiikka syntyy ihmisten yhteisestä tekemisestä. Löydä oma tapasi vaikuttaa."
 msgstr "Green politics grows from people's collective action. Find your own way to make a difference."
 
+msgid "Näin pääset mukaan"
+msgstr "How to get involved"
+
+msgid "Osallistu tapahtumiin"
+msgstr "Attend events"
+
+msgid "Kokous, koulutus tai kahvitilaisuus — tervetuloa sellaisena kuin olet."
+msgstr "A meeting, training or coffee gathering — welcome as you are."
+
+msgid "Ilmoittaudu vapaaehtoiseksi"
+msgstr "Sign up as a volunteer"
+
+msgid "Tule mukaan kampanjointiin, tapahtumiin tai kertomaan mielipiteesi politiikasta."
+msgstr "Join campaigning, events or share your views on politics."
+
+msgid "Jäsenyys on helppo tapa tukea vihreää politiikkaa ja saada äänesi kuuluviin."
+msgstr "Membership is an easy way to support green politics and make your voice heard."
+
+msgid "Liity jäseneksi →"
+msgstr "Become a member →"
+
+msgid "Mitä voin tehdä?"
+msgstr "What can I do?"
+
+msgid "Jokainen panos on arvokas — valitse sinulle sopiva tapa."
+msgstr "Every contribution counts — choose the way that suits you."
+
+msgid "30 minuuttia"
+msgstr "30 minutes"
+
+msgid "Pienet teot"
+msgstr "Small actions"
+
+msgid "Jaa julkaisu somessa, allekirjoita vetoomus tai ota yhteyttä kansanedustajaan. Pienetkin teot merkitsevät."
+msgstr "Share a post on social media, sign a petition or contact a Member of Parliament. Even small actions matter."
+
+msgid "2 tuntia"
+msgstr "2 hours"
+
+msgid "Tule tapahtumaan"
+msgstr "Attend an event"
+
+msgid "Tule mukaan tapahtumaan tai kokoukseen, puhu vihreästä politiikasta tai jaa ehdokkaasi esitteitä naapuruston postilaatikkoon. Yhdessä olemme enemmän."
+msgstr "Join an event or meeting, talk about green politics or distribute your candidate's leaflets in neighbourhood mailboxes. Together we are more."
+
+msgid "2 päivää"
+msgstr "2 days"
+
+msgid "Talkoot"
+msgstr "Volunteer weekend"
+
+msgid "Osallistu kampanjointiin vaalien alla tai lähde mukaan talkooviikonloppuun. Tehdään yhdessä näkyviä tuloksia."
+msgstr "Take part in campaigning ahead of elections or join a volunteer weekend. Let's make visible results together."
+
+msgid "Koulutus & materiaalit"
+msgstr "Training & materials"
+
+msgid "Tarjoamme jäsenille ja aktiiveille koulutuksia politiikasta, viestinnästä ja vaikuttamisesta."
+msgstr "We offer training in politics, communications and advocacy for members and activists."
+
+msgid "Vihreä opintokeskus Visio"
+msgstr "Green Study Centre Visio"
+
+msgid "Koulutuksia ja sivistystoimintaa Vihreiden arvojen pohjalta."
+msgstr "Training and educational activities based on the Greens' values."
+
+msgid "Siirry sivustolle →"
+msgstr "Go to website →"
+
+msgid "Uudenmaan koulutusalusta Vihko"
+msgstr "Uusimaa training platform Vihko"
+
+msgid "Uudenmaan Vihreiden oma koulutusalusta — rekisteröidy ja aloita."
+msgstr "Uusimaa Greens' own training platform — register and get started."
+
+msgid "Avaa Vihko →"
+msgstr "Open Vihko →"
+
+msgid "Tulevat tapahtumat, kokoukset ja koulutukset Uudellamaalla."
+msgstr "Upcoming events, meetings and training in Uusimaa."
+
+msgid "Katso kalenteri →"
+msgstr "See calendar →"
+
+msgid "Kiinnostaako ehdokkuus?"
+msgstr "Interested in standing as a candidate?"
+
+msgid "Lähde ehdolle →"
+msgstr "Stand as a candidate →"
+
+msgid "Hallitus 2026"
+msgstr "Board 2026"
+
+msgid "Varajäsenet 2026"
+msgstr "Deputy members 2026"
+
+msgid "Sisääntulojärjestyksessä"
+msgstr "In order of entry"
+
+msgid "Puoluehallituksen jäsenet"
+msgstr "Party board members"
+
+msgid "Puoluevaltuusto"
+msgstr "Party council"
+
+msgid "Piirin työalat"
+msgstr "District working areas"
+
+msgid "Koulutus"
+msgstr "Training"
+
+msgid "Vaalit"
+msgstr "Elections"
+
+msgid "Vapaaehtoiset"
+msgstr "Volunteers"
+
+msgid "Politiikka"
+msgstr "Policy"
+
+msgid "Eduskuntavaaleihin asti vaalityöstä vastaa piirin vaalityöryhmä, puheenjohtaja Börje Uimonen."
+msgstr "Until the parliamentary elections, the district's election working group led by chair Börje Uimonen is responsible for election work."
+
+msgid "Piirin vaalityöryhmä"
+msgstr "District election working group"
+
+msgid "Lähde mukaan"
+msgstr "Get involved"
+
+msgid "Jokainen vihreä teko merkitsee — löydä oma tapasi vaikuttaa."
+msgstr "Every green action counts — find your own way to make a difference."
+
+msgid "Lahjoita"
+msgstr "Donate"
+
+msgid "Lähde ehdolle"
+msgstr "Stand as a candidate"
+
 msgid "Paikallisyhdistykset ja kuntavaikuttaminen ympäri Uusimaata."
 msgstr "Local associations and municipal advocacy across Uusimaa."
+
+msgid "Piirin missio, hallinto ja dokumentit."
+msgstr "The district's mission, governance and documents."
+
+msgid "Henkilökunta, puheenjohtaja ja yleinen osoite."
+msgstr "Staff, chair and general address."
+
+msgid "Hallituksen jäsenet, varajäsenet ja työalat."
+msgstr "Board members, deputy members and working areas."
+
+msgid "Mediayhteyshenkilö, logot ja tiedotteet."
+msgstr "Media contact, logos and press releases."
+
+msgid "Uudeltamaalta valitut Vihreiden kansanedustajat."
+msgstr "The Greens' Members of Parliament elected from Uusimaa."
+
+msgid "Yleinen yhteydenotto"
+msgstr "General contact"
+
+msgid "Postiosoite"
+msgstr "Postal address"
+
+msgid "Vihreät Länsi-Uudenmaan hyvinvointialueella."
+msgstr "The Greens in Western Uusimaa wellbeing services county."
+
+msgid "Vihreät Keski-Uudenmaan hyvinvointialueella."
+msgstr "The Greens in Central Uusimaa wellbeing services county."
+
+msgid "Vihreät Itä-Uudenmaan hyvinvointialueella."
+msgstr "The Greens in Eastern Uusimaa wellbeing services county."
+
+msgid "Vihreät Vantaa–Keravan hyvinvointialueella."
+msgstr "The Greens in the Vantaa–Kerava wellbeing services county."
+
+msgid "Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa."
+msgstr "The Greens in the HUS area and regional trustee positions."
+
+msgid "Paikallisyhdistykset ja kuntavaikuttaminen."
+msgstr "Local associations and municipal advocacy."
+
+msgid "Yleinen yhteystieto"
+msgstr "General contact information"
+
+msgid "Laskutustiedot"
+msgstr "Billing information"
+
+msgid "Ostolaskujen vastaanotto"
+msgstr "Purchase invoice reception"
+
+msgid "Verkkolasku"
+msgstr "E-invoice"
+
+msgid "Verkkolaskuosoite"
+msgstr "E-invoice address"
+
+msgid "Välittäjä"
+msgstr "Operator"
+
+msgid "Posti"
+msgstr "Post"
+
+msgid "Yhteystiedot löytyvät myös"
+msgstr "Contact details are also available"
+
+msgid "eduskunnan sivuilta"
+msgstr "on the Parliament website"
