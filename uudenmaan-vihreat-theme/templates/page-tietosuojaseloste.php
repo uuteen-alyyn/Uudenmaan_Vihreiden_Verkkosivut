@@ -2,9 +2,9 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Tietosuoja</h1>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        EU:n yleisen tietosuoja-asetuksen mukaiset rekisteri- ja tietosuojaselosteet.
+        <?php esc_html_e( 'EU:n yleisen tietosuoja-asetuksen mukaiset rekisteri- ja tietosuojaselosteet.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>

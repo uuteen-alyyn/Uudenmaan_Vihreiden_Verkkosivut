@@ -2,9 +2,9 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Vaalitavoitteemme</h1>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Uudenmaan Vihreiden tavoitteet tulevissa vaaleissa.
+        <?php esc_html_e( 'Uudenmaan Vihreiden tavoitteet tulevissa vaaleissa.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>

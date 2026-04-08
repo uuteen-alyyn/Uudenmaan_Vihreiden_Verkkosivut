@@ -2,7 +2,7 @@
 # Copyright (C) 2026 Uudenmaan Vihreät ry
 msgid ""
 msgstr ""
-"Project-Id-Version: Uudenmaan Vihreät 1.2.0\n"
+"Project-Id-Version: Uudenmaan Vihreät 1.3.0\n"
 "POT-Creation-Date: 2026-04-08\n"
 "PO-Revision-Date: 2026-04-08\n"
 "Language: sv_SE\n"
@@ -31,6 +31,9 @@ msgstr "Kontaktuppgifter"
 
 msgid "Seuraa meitä"
 msgstr "Följ oss"
+
+msgid "Tietosuojaseloste →"
+msgstr "Dataskyddsbeskrivning →"
 
 msgid "Kuntapolitiikka"
 msgstr "Kommunalpolitik"
@@ -101,8 +104,20 @@ msgstr "Kandidat"
 msgid "Hyvinvointialueet"
 msgstr "Välfärdsområden"
 
+msgid "Uusimaa jakautuu neljään hyvinvointialueeseen. Vihreät vaikuttavat jokaisella alueella. Lisäksi toimimme kunnissa, HUS:ssa ja erilaisissa alueellisissa luottamustehtävissä."
+msgstr "Nyland är indelat i fyra välfärdsområden. De Gröna är aktiva i alla områden. Vi verkar också i kommunerna, HUS och i olika regionala förtroendeuppdrag."
+
 msgid "Faktaa piiristä"
 msgstr "Fakta om distriktet"
+
+msgid "Tervetuloa — löydät täältä yhteystiedot, taustatietoa piiristä sekä ladattavan kuva- ja logomateriaalin."
+msgstr "Välkommen — här hittar du kontaktuppgifter, bakgrundsinformation om distriktet samt nedladdningsbart bild- och logomaterial."
+
+msgid "Puheenjohtaja"
+msgstr "Ordförande"
+
+msgid "Toiminnanjohtaja"
+msgstr "Verksamhetsledare"
 
 msgid "Jäsentä"
 msgstr "Medlemmar"
@@ -119,17 +134,20 @@ msgstr "Fullmäktigeledamöter"
 msgid "Mediayhteyshenkilöt"
 msgstr "Mediakontakter"
 
+msgid "Uudenmaan Vihreiden tiedotteet"
+msgstr "Nylands Grönas pressmeddelanden"
+
 msgid "Logot & kuvamateriaali"
 msgstr "Logotyper & bildmaterial"
 
 msgid "Kuvapankki"
 msgstr "Bildbank"
 
+msgid "Kampanjointikuvat ja henkilökuvat ovat saatavilla Google Drivessä."
+msgstr "Kampanjbilder och porträttfoton finns tillgängliga i Google Drive."
+
 msgid "Viimeisimmät puolueen tiedotteet"
 msgstr "Senaste pressmeddelanden från partiet"
-
-msgid "Uudenmaan Vihreiden tiedotteet"
-msgstr "Nylands Grönas pressmeddelanden"
 
 msgid "Tilaa vihreiden uutiskirje"
 msgstr "Prenumerera på de grönas nyhetsbrev"
@@ -139,3 +157,48 @@ msgstr "Läs mer →"
 
 msgid "Kaikki tapahtumat →"
 msgstr "Alla evenemang →"
+
+msgid "Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta."
+msgstr "Nyheter, ställningstaganden och information om Nylands Grönas verksamhet."
+
+msgid "Vaalit ovat demokratian sydän."
+msgstr "Val är demokratins hjärta."
+
+msgid "Uudenmaan Vihreät on Vihreiden piirijärjestö, joka toimii koko Uudenmaan vaalipiirin alueella."
+msgstr "Nylands Gröna är Grönas distriktsorganisation som verkar inom hela Nylands valkrets."
+
+msgid "Vihreät tarvitsee rohkeita ehdokkaita joka kunnasta. Sinulla on annettavaa — autamme sinut matkaan."
+msgstr "De Gröna behöver modiga kandidater från varje kommun. Du har något att ge — vi hjälper dig på vägen."
+
+msgid "Uudenmaan Vihreiden tavoitteet tulevissa vaaleissa."
+msgstr "Nylands Grönas mål inför kommande val."
+
+msgid "Yleiskokous on Uudenmaan Vihreiden ylin päättävä elin, joka kokoontuu kerran vuodessa."
+msgstr "Allmänna mötet är Nylands Grönas högsta beslutande organ och samlas en gång om året."
+
+msgid "EU:n yleisen tietosuoja-asetuksen mukaiset rekisteri- ja tietosuojaselosteet."
+msgstr "Register- och dataskyddsbeskrivningar enligt EU:s allmänna dataskyddsförordning."
+
+msgid "Piiritoimisto palvelee jäseniä, yhdistyksiä ja mediaa. Ota rohkeasti yhteyttä."
+msgstr "Distriktskansliet betjänar medlemmar, föreningar och media. Ta gärna kontakt."
+
+msgid "Piirihallitus vastaa Uudenmaan Vihreiden toiminnan johtamisesta yleiskokouksien välillä."
+msgstr "Distriktsstyrelsen ansvarar för ledningen av Nylands Grönas verksamhet mellan allmänna möten."
+
+msgid "Uudeltamaalta valitut Vihreiden kansanedustajat työskentelevät eduskunnassa Uudenmaan ja koko Suomen parhaaksi."
+msgstr "De Grönas riksdagsledamöter valda från Nyland arbetar i riksdagen för Nylands och hela Finlands bästa."
+
+msgid "Löydä oikea henkilö tai ota yhteyttä piiriin — olemme täällä sinua varten."
+msgstr "Hitta rätt person eller kontakta distriktet — vi finns här för dig."
+
+msgid "Uudenmaan tulevat vihreät tapahtumat."
+msgstr "Kommande gröna evenemang i Nyland."
+
+msgid "Uudenmaan Vihreiden tiedotteet, kannanotot ja puheenvuorot medialle."
+msgstr "Nylands Grönas pressmeddelanden, ställningstaganden och anföranden för media."
+
+msgid "Vihreä politiikka syntyy ihmisten yhteisestä tekemisestä. Löydä oma tapasi vaikuttaa."
+msgstr "Grön politik uppstår ur människors gemensamma handlande. Hitta ditt eget sätt att påverka."
+
+msgid "Paikallisyhdistykset ja kuntavaikuttaminen ympäri Uusimaata."
+msgstr "Lokalföreningar och kommunalt påverkansarbete runt om i Nyland."

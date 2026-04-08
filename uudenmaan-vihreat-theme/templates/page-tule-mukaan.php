@@ -6,9 +6,9 @@ $pics = get_template_directory_uri() . '/assets/images/placeholders/';
 
   <div class="page-hero">
     <div class="container">
-      <h1>Tule mukaan</h1>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Vihreä politiikka syntyy ihmisten yhteisestä tekemisestä. Löydä oma tapasi vaikuttaa.
+        <?php esc_html_e( 'Vihreä politiikka syntyy ihmisten yhteisestä tekemisestä. Löydä oma tapasi vaikuttaa.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>

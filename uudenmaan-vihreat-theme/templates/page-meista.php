@@ -2,8 +2,8 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Meistä</h1>
-      <p class="ingress" style="color:rgba(255,255,255,.85);">Uudenmaan Vihreät on Vihreiden piirijärjestö, joka toimii koko Uudenmaan vaalipiirin alueella.</p>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
+      <p class="ingress" style="color:rgba(255,255,255,.85);"><?php esc_html_e( 'Uudenmaan Vihreät on Vihreiden piirijärjestö, joka toimii koko Uudenmaan vaalipiirin alueella.', 'uudenmaan-vihreat' ); ?></p>
     </div>
   </div>
   <section class="section">
@@ -12,7 +12,7 @@
         <?php the_content(); ?>
       </div>
       <p style="margin-top:2rem;">
-        <a href="<?php echo esc_url( home_url( '/tietosuojaseloste/' ) ); ?>">Tietosuojaseloste →</a>
+        <a href="<?php echo esc_url( home_url( '/tietosuojaseloste/' ) ); ?>"><?php esc_html_e( 'Tietosuojaseloste →', 'uudenmaan-vihreat' ); ?></a>
       </p>
     </div>
   </section>

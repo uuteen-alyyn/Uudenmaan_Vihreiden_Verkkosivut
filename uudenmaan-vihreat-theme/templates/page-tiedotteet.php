@@ -2,9 +2,9 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Tiedotteet</h1>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Uudenmaan Vihreiden tiedotteet, kannanotot ja puheenvuorot medialle.
+        <?php esc_html_e( 'Uudenmaan Vihreiden tiedotteet, kannanotot ja puheenvuorot medialle.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>

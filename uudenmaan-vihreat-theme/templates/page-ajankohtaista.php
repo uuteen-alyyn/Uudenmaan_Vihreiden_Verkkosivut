@@ -2,9 +2,9 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Ajankohtaista</h1>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta.
+        <?php esc_html_e( 'Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>
@@ -32,7 +32,7 @@
                 <p class="card__meta"><time datetime="<?php the_date( 'Y-m-d' ); ?>"><?php the_date( 'j.n.Y' ); ?></time><?php $cats = get_the_category(); if ( $cats ) echo ' · ' . esc_html( $cats[0]->name ); ?></p>
                 <h2 class="card__title" style="font-size:1.1rem;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <p class="card__excerpt"><?php the_excerpt(); ?></p>
-                <a class="card__link" href="<?php the_permalink(); ?>">Lue lisää →</a>
+                <a class="card__link" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Lue lisää →', 'uudenmaan-vihreat' ); ?></a>
               </div>
             </article>
           <?php endwhile; wp_reset_postdata(); ?>

@@ -187,20 +187,40 @@ add_filter( 'cron_schedules', function ( $schedules ) {
 
 add_filter( 'page_template', function ( $template ) {
     if ( is_page() ) {
-        $slug   = get_post_field( 'post_name', get_queried_object_id() );
-        $custom = get_template_directory() . "/templates/page-{$slug}.php";
+        $post_id = get_queried_object_id();
+        $slug    = get_post_field( 'post_name', $post_id );
+        $custom  = get_template_directory() . "/templates/page-{$slug}.php";
         if ( file_exists( $custom ) ) {
             return $custom;
         }
 
+        // For multilingual (Polylang): fall back to the Finnish (default) translation's slug
+        if ( function_exists( 'pll_get_post' ) ) {
+            $fi_id = pll_get_post( $post_id, 'fi' );
+            if ( $fi_id && $fi_id !== $post_id ) {
+                $fi_slug = get_post_field( 'post_name', $fi_id );
+                $custom  = get_template_directory() . "/templates/page-{$fi_slug}.php";
+                if ( file_exists( $custom ) ) {
+                    return $custom;
+                }
+                // Check if Finnish page is a hyvinvointialue sub-page
+                $fi_parent_id = wp_get_post_parent_id( $fi_id );
+                if ( $fi_parent_id ) {
+                    $fi_parent_slug = get_post_field( 'post_name', $fi_parent_id );
+                    if ( $fi_parent_slug === 'hyvinvointialueet' ) {
+                        $alue = get_template_directory() . '/templates/page-alue.php';
+                        if ( file_exists( $alue ) ) {
+                            return $alue;
+                        }
+                    }
+                }
+            }
+        }
+
         // Check parent slug for sub-pages
-        $parent_id = wp_get_post_parent_id( get_queried_object_id() );
+        $parent_id = wp_get_post_parent_id( $post_id );
         if ( $parent_id ) {
             $parent_slug = get_post_field( 'post_name', $parent_id );
-            $custom      = get_template_directory() . "/templates/page-{$slug}.php";
-            if ( file_exists( $custom ) ) {
-                return $custom;
-            }
             // Hyvinvointialueet sub-pages share one template
             if ( $parent_slug === 'hyvinvointialueet' ) {
                 $alue = get_template_directory() . '/templates/page-alue.php';

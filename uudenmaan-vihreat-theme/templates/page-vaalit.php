@@ -2,8 +2,8 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Vaalit</h1>
-      <p class="ingress" style="color:rgba(255,255,255,.85);">Vaalit ovat demokratian sydän.</p>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
+      <p class="ingress" style="color:rgba(255,255,255,.85);"><?php esc_html_e( 'Vaalit ovat demokratian sydän.', 'uudenmaan-vihreat' ); ?></p>
     </div>
   </div>
   <section class="section">

@@ -2,19 +2,19 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Aiemmat vaalit</h1>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Vihreiden vaalimenestys Uudellamaalla — tulokset, valitut edustajat ja äänimäärät vaaleittain.
+        <?php esc_html_e( 'Vihreiden vaalimenestys Uudellamaalla — tulokset, valitut edustajat ja äänimäärät vaaleittain.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>
   <section class="section">
     <div class="container entry-content">
 
-      <h2>Eduskuntavaalit</h2>
+      <h2><?php esc_html_e( 'Eduskuntavaalit', 'uudenmaan-vihreat' ); ?></h2>
       <table class="vaalit-table">
         <thead>
-          <tr><th>Vuosi</th><th>Äänimäärä</th><th>Kannatus</th><th>Kansanedustajia</th></tr>
+          <tr><th><?php esc_html_e( 'Vuosi', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Äänimäärä', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kannatus', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kansanedustajia', 'uudenmaan-vihreat' ); ?></th></tr>
         </thead>
         <tbody>
           <tr><td>2003</td><td>47 033</td><td>10,5 %</td><td>4</td></tr>
@@ -26,10 +26,10 @@
         </tbody>
       </table>
 
-      <h2>Kuntavaalit</h2>
+      <h2><?php esc_html_e( 'Kuntavaalit', 'uudenmaan-vihreat' ); ?></h2>
       <table class="vaalit-table">
         <thead>
-          <tr><th>Vuosi</th><th>Äänimäärä</th><th>Kannatus</th><th>Valtuutettuja</th></tr>
+          <tr><th><?php esc_html_e( 'Vuosi', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Äänimäärä', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kannatus', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Valtuutettuja', 'uudenmaan-vihreat' ); ?></th></tr>
         </thead>
         <tbody>
           <tr><td>2004</td><td>39 547</td><td>10,4 %</td><td>82</td></tr>
@@ -41,12 +41,12 @@
         </tbody>
       </table>
 
-      <h2>Aluevaalit</h2>
+      <h2><?php esc_html_e( 'Aluevaalit', 'uudenmaan-vihreat' ); ?></h2>
 
       <h3>Itä-Uusimaa</h3>
       <table class="vaalit-table">
         <thead>
-          <tr><th>Vuosi</th><th>Äänimäärä</th><th>Kannatus</th><th>Aluevaltuutettuja</th></tr>
+          <tr><th><?php esc_html_e( 'Vuosi', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Äänimäärä', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kannatus', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Aluevaltuutettuja', 'uudenmaan-vihreat' ); ?></th></tr>
         </thead>
         <tbody>
           <tr><td>2022</td><td>2 782</td><td>7,3 %</td><td>4</td></tr>
@@ -57,7 +57,7 @@
       <h3>Keski-Uusimaa</h3>
       <table class="vaalit-table">
         <thead>
-          <tr><th>Vuosi</th><th>Äänimäärä</th><th>Kannatus</th><th>Aluevaltuutettuja</th></tr>
+          <tr><th><?php esc_html_e( 'Vuosi', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Äänimäärä', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kannatus', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Aluevaltuutettuja', 'uudenmaan-vihreat' ); ?></th></tr>
         </thead>
         <tbody>
           <tr><td>2022</td><td>4 691</td><td>6,6 %</td><td>4</td></tr>
@@ -68,7 +68,7 @@
       <h3>Länsi-Uusimaa</h3>
       <table class="vaalit-table">
         <thead>
-          <tr><th>Vuosi</th><th>Äänimäärä</th><th>Kannatus</th><th>Aluevaltuutettuja</th></tr>
+          <tr><th><?php esc_html_e( 'Vuosi', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Äänimäärä', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kannatus', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Aluevaltuutettuja', 'uudenmaan-vihreat' ); ?></th></tr>
         </thead>
         <tbody>
           <tr><td>2022</td><td>20 846</td><td>11,7 %</td><td>10</td></tr>
@@ -79,7 +79,7 @@
       <h3>Vantaa–Kerava</h3>
       <table class="vaalit-table">
         <thead>
-          <tr><th>Vuosi</th><th>Äänimäärä</th><th>Kannatus</th><th>Aluevaltuutettuja</th></tr>
+          <tr><th><?php esc_html_e( 'Vuosi', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Äänimäärä', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kannatus', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Aluevaltuutettuja', 'uudenmaan-vihreat' ); ?></th></tr>
         </thead>
         <tbody>
           <tr><td>2022</td><td>11 037</td><td>12,9 %</td><td>9</td></tr>
@@ -87,11 +87,11 @@
         </tbody>
       </table>
 
-      <h2>Europarlamenttivaalit</h2>
-      <p style="margin-bottom:.75rem;color:#555;">EU-vaaleissa paikat jaetaan valtakunnallisesti.</p>
+      <h2><?php esc_html_e( 'Europarlamenttivaalit', 'uudenmaan-vihreat' ); ?></h2>
+      <p style="margin-bottom:.75rem;color:#555;"><?php esc_html_e( 'EU-vaaleissa paikat jaetaan valtakunnallisesti.', 'uudenmaan-vihreat' ); ?></p>
       <table class="vaalit-table">
         <thead>
-          <tr><th>Vuosi</th><th>Äänimäärä</th><th>Kannatus</th></tr>
+          <tr><th><?php esc_html_e( 'Vuosi', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Äänimäärä', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kannatus', 'uudenmaan-vihreat' ); ?></th></tr>
         </thead>
         <tbody>
           <tr><td>2004</td><td>38 254</td><td>13,0 %</td></tr>
@@ -102,10 +102,10 @@
         </tbody>
       </table>
 
-      <h2>Presidentinvaalit</h2>
+      <h2><?php esc_html_e( 'Presidentinvaalit', 'uudenmaan-vihreat' ); ?></h2>
       <table class="vaalit-table">
         <thead>
-          <tr><th>Vuosi</th><th>Kierros</th><th>Ehdokas</th><th>Äänimäärä</th><th>Kannatus</th></tr>
+          <tr><th><?php esc_html_e( 'Vuosi', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kierros', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Ehdokas', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Äänimäärä', 'uudenmaan-vihreat' ); ?></th><th><?php esc_html_e( 'Kannatus', 'uudenmaan-vihreat' ); ?></th></tr>
         </thead>
         <tbody>
           <tr><td>2006</td><td>1.</td><td>Heidi Hautala</td><td>21 230</td><td>4,2 %</td></tr>

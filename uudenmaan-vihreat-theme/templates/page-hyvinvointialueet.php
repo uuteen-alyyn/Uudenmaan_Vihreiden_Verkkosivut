@@ -2,9 +2,9 @@
 <main id="main-content">
   <div class="page-hero">
     <div class="container">
-      <h1>Hyvinvointialueet</h1>
+      <h1><?php echo esc_html( get_the_title() ); ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.85);">
-        Uusimaa jakautuu neljään hyvinvointialueeseen. Vihreät vaikuttavat jokaisella alueella. Lisäksi toimimme kunnissa, HUS:ssa ja erilaisissa alueellisissa luottamustehtävissä.
+        <?php esc_html_e( 'Uusimaa jakautuu neljään hyvinvointialueeseen. Vihreät vaikuttavat jokaisella alueella. Lisäksi toimimme kunnissa, HUS:ssa ja erilaisissa alueellisissa luottamustehtävissä.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>
