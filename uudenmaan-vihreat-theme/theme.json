@@ -1,0 +1,120 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        { "slug": "dark-bg",       "color": "#284734", "name": "Tumma vihreä (tausta)" },
+        { "slug": "dark-text",     "color": "#006845", "name": "Tumma vihreä (teksti)" },
+        { "slug": "bright-green",  "color": "#009639", "name": "Kirkas vihreä" },
+        { "slug": "light-green",   "color": "#D9EA9A", "name": "Vaalea vihreä" },
+        { "slug": "grey",          "color": "#EBEBEC", "name": "Harmaa" },
+        { "slug": "white",         "color": "#FFFFFF", "name": "Valkoinen" },
+        { "slug": "black",         "color": "#000000", "name": "Musta" },
+        { "slug": "fire",          "color": "#F06400", "name": "Tuli (vain taustaksi)" },
+        { "slug": "ochre",         "color": "#DAAA00", "name": "Okra (vain taustaksi)" },
+        { "slug": "peach",         "color": "#F8CFA9", "name": "Persikka" },
+        { "slug": "evening",       "color": "#006272", "name": "Ilta" },
+        { "slug": "moss",          "color": "#5A5E00", "name": "Sammal" },
+        { "slug": "plum",          "color": "#70273D", "name": "Luumu" },
+        { "slug": "sand",          "color": "#D6D2C4", "name": "Hiekka" },
+        { "slug": "sky",           "color": "#BBDDE6", "name": "Taivas" },
+        { "slug": "oat",           "color": "#E4D77E", "name": "Kaura" }
+      ],
+      "custom": false,
+      "customDuotone": false,
+      "customGradient": false
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Krana Fat A\", \"Krana Fat B\", \"Barlow Semi Condensed\", Arial, sans-serif",
+          "slug": "heading",
+          "name": "Otsikko (Krana Fat)"
+        },
+        {
+          "fontFamily": "\"IBM Plex Sans\", Arial, sans-serif",
+          "slug": "body",
+          "name": "Leipäteksti (IBM Plex Sans)"
+        },
+        {
+          "fontFamily": "\"IBM Plex Mono\", monospace",
+          "slug": "mono",
+          "name": "Mono (IBM Plex Mono)"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "small",        "size": "0.875rem", "name": "Pieni" },
+        { "slug": "normal",       "size": "1rem",     "name": "Normaali" },
+        { "slug": "medium",       "size": "1.25rem",  "name": "Keskisuuri" },
+        { "slug": "large",        "size": "1.5rem",   "name": "Suuri" },
+        { "slug": "x-large",      "size": "2rem",     "name": "Erittäin suuri" },
+        { "slug": "xx-large",     "size": "3rem",     "name": "Jättimäinen" }
+      ],
+      "customFontSize": false
+    },
+    "spacing": {
+      "spacingScale": {
+        "steps": 7,
+        "mediumStep": 1.5,
+        "unit": "rem",
+        "operator": "*",
+        "increment": 1.5
+      },
+      "units": ["px", "em", "rem", "%", "vw"]
+    },
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1200px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#FFFFFF",
+      "text": "#000000"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--body)",
+      "fontSize": "var(--wp--preset--font-size--normal)",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "h1": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--heading)",
+          "fontWeight": "800",
+          "lineHeight": "1.15"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--heading)",
+          "fontWeight": "800",
+          "lineHeight": "1.2"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--heading)",
+          "fontWeight": "700",
+          "lineHeight": "1.25"
+        }
+      },
+      "link": {
+        "color": { "text": "#006845" },
+        ":hover": { "color": { "text": "#009639" } }
+      },
+      "button": {
+        "color": {
+          "background": "#009639",
+          "text": "#FFFFFF"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--heading)",
+          "fontWeight": "700"
+        }
+      }
+    }
+  }
+}

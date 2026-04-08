@@ -1,0 +1,18 @@
+# WordPress
+wp-content/uploads/
+wp-content/cache/
+
+# Docker volumes
+mysql_data/
+.docker/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Kuvat (suuret binääritiedostot — lisää tarvittaessa Git LFS)
+Pictures/
