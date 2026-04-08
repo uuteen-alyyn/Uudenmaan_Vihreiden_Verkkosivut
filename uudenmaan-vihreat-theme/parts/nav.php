@@ -13,46 +13,70 @@
 <?php
 /**
  * Fallback nav — shown when no menu is assigned in wp-admin.
- * Update the WP menu in Ulkoasu → Valikot to override this.
+ * Uses Finnish page IDs as the canonical reference; uuvi_translated_url()
+ * and uuvi_translated_title() return the correct language version via Polylang.
+ *
+ * FI page IDs:
+ *   7=Ajankohtaista, 15=Tiedotteet, 14=Tapahtumakalenteri, 13=Yleiskokous,
+ *   8=Tule mukaan, 9=Vaalit, 16=Vaalitavoitteemme, 17=Ehdolle vaaleihin, 229=Aiemmat vaalit,
+ *   10=Hyvinvointialueet, 18=Länsi, 19=Keski, 20=Itä, 21=Vantaa-Kerava, 22=HUS, 23=Kunnat,
+ *   11=Yhteystiedot, 130=Meistä, 12=Medialle, 27=Kansanedustajat, 26=Piirihallitus, 25=Toimisto
  */
 function uuvi_fallback_nav(): void {
     $menu = [
-        [ 'label' => 'Ajankohtaista', 'url' => home_url( '/ajankohtaista/' ), 'children' => [
-            [ 'label' => 'Tiedotteet',         'url' => home_url( '/tiedotteet/' ) ],
-            [ 'label' => 'Tapahtumakalenteri', 'url' => home_url( '/tapahtumakalenteri/' ) ],
-            [ 'label' => 'Yleiskokous',        'url' => home_url( '/yleiskokous/' ) ],
-        ]],
-        [ 'label' => 'Tule mukaan', 'url' => home_url( '/tule-mukaan/' ) ],
-        [ 'label' => 'Vaalit',      'url' => home_url( '/vaalit/' ), 'children' => [
-            [ 'label' => 'Vaalitavoitteemme', 'url' => home_url( '/vaalit/vaalitavoitteemme/' ) ],
-            [ 'label' => 'Ehdolle vaaleihin', 'url' => home_url( '/vaalit/ehdolle-vaaleihin/' ) ],
-        ]],
-        [ 'label' => 'Hyvinvointialueet ja kunnat', 'url' => home_url( '/hyvinvointialueet/' ), 'children' => [
-            [ 'label' => 'Länsi-Uusimaa',             'url' => home_url( '/hyvinvointialueet/lansi-uusimaa/' ) ],
-            [ 'label' => 'Keski-Uusimaa',             'url' => home_url( '/hyvinvointialueet/keski-uusimaa/' ) ],
-            [ 'label' => 'Itä-Uusimaa',               'url' => home_url( '/hyvinvointialueet/ita-uusimaa/' ) ],
-            [ 'label' => 'Vantaa–Kerava',             'url' => home_url( '/hyvinvointialueet/vantaa-kerava/' ) ],
-            [ 'label' => 'HUS ja maakunnalliset',     'url' => home_url( '/hyvinvointialueet/hus-ja-maakunnalliset/' ) ],
-            [ 'label' => 'Kunnat',                    'url' => home_url( '/hyvinvointialueet/kunnat/' ) ],
-        ]],
-        [ 'label' => 'Yhteystiedot', 'url' => home_url( '/yhteystiedot/' ), 'children' => [
-            [ 'label' => 'Meistä',             'url' => home_url( '/meista/' ) ],
-            [ 'label' => 'Medialle',           'url' => home_url( '/medialle/' ) ],
-            [ 'label' => 'Kansanedustajamme',  'url' => home_url( '/yhteystiedot/kansanedustajat/' ) ],
-            [ 'label' => 'Piirihallitus',      'url' => home_url( '/yhteystiedot/piirihallitus/' ) ],
-            [ 'label' => 'Toimisto',           'url' => home_url( '/yhteystiedot/piiritoimisto/' ) ],
-        ]],
+        [
+            'id'       => 7,
+            'children' => [
+                [ 'id' => 15 ],
+                [ 'id' => 14 ],
+                [ 'id' => 13 ],
+            ],
+        ],
+        [ 'id' => 8 ],
+        [
+            'id'       => 9,
+            'children' => [
+                [ 'id' => 16 ],
+                [ 'id' => 17 ],
+                [ 'id' => 229 ],
+            ],
+        ],
+        [
+            'id'       => 10,
+            'children' => [
+                [ 'id' => 18 ],
+                [ 'id' => 19 ],
+                [ 'id' => 20 ],
+                [ 'id' => 21 ],
+                [ 'id' => 22 ],
+                [ 'id' => 23 ],
+            ],
+        ],
+        [
+            'id'       => 11,
+            'children' => [
+                [ 'id' => 130 ],
+                [ 'id' => 12  ],
+                [ 'id' => 27  ],
+                [ 'id' => 26  ],
+                [ 'id' => 25  ],
+            ],
+        ],
     ];
 
     echo '<ul id="primary-menu" class="nav-menu">';
     foreach ( $menu as $item ) {
         $has_children = ! empty( $item['children'] );
         echo '<li class="' . ( $has_children ? 'has-children' : '' ) . '">';
-        echo '<a href="' . esc_url( $item['url'] ) . '">' . esc_html( $item['label'] ) . '</a>';
+        echo '<a href="' . esc_url( uuvi_translated_url( $item['id'] ) ) . '">'
+             . esc_html( uuvi_translated_title( $item['id'] ) )
+             . '</a>';
         if ( $has_children ) {
             echo '<ul class="sub-menu">';
             foreach ( $item['children'] as $child ) {
-                echo '<li><a href="' . esc_url( $child['url'] ) . '">' . esc_html( $child['label'] ) . '</a></li>';
+                echo '<li><a href="' . esc_url( uuvi_translated_url( $child['id'] ) ) . '">'
+                     . esc_html( uuvi_translated_title( $child['id'] ) )
+                     . '</a></li>';
             }
             echo '</ul>';
         }

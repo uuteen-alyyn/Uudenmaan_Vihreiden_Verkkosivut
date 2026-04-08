@@ -47,6 +47,27 @@ add_action( 'after_setup_theme', function () {
     add_image_size( 'portrait',   400, 400, true );    // 1:1 portraits
 } );
 
+// ─── Polylang: reload textdomain after language is determined from URL ────────
+// load_theme_textdomain() in after_setup_theme fires before Polylang has parsed
+// the URL (/sv/, /en/) and applied its locale filter. We reload on 'init'
+// (priority 20) by which time Polylang has already set the correct locale.
+add_action( 'init', function () {
+    // Explicitly use Polylang's current language locale to avoid determine_locale() issues.
+    if ( function_exists( 'pll_current_language' ) ) {
+        $locale = pll_current_language( 'locale' );
+    }
+    if ( empty( $locale ) ) {
+        $locale = determine_locale();
+    }
+    if ( $locale && $locale !== 'fi' ) {
+        $mofile = get_template_directory() . '/languages/uudenmaan-vihreat-' . $locale . '.mo';
+        if ( file_exists( $mofile ) ) {
+            unload_textdomain( 'uudenmaan-vihreat' );
+            load_textdomain( 'uudenmaan-vihreat', $mofile );
+        }
+    }
+}, 20 );
+
 // ─── Navigation menus ────────────────────────────────────────────────────────
 
 add_action( 'after_setup_theme', function () {
@@ -55,6 +76,27 @@ add_action( 'after_setup_theme', function () {
         'footer'  => __( 'Alatunniste', 'uudenmaan-vihreat' ),
     ] );
 } );
+
+// ─── Polylang translation helpers ────────────────────────────────────────────
+// Returns the permalink for a page in the current language, given the FI page ID.
+function uuvi_translated_url( int $fi_id ): string {
+    if ( function_exists( 'pll_get_post' ) ) {
+        $id = pll_get_post( $fi_id ) ?: $fi_id;
+    } else {
+        $id = $fi_id;
+    }
+    return get_permalink( $id ) ?: '#';
+}
+
+// Returns the title for a page in the current language, given the FI page ID.
+function uuvi_translated_title( int $fi_id ): string {
+    if ( function_exists( 'pll_get_post' ) ) {
+        $id = pll_get_post( $fi_id ) ?: $fi_id;
+    } else {
+        $id = $fi_id;
+    }
+    return get_the_title( $id );
+}
 
 // ─── Enqueue scripts & styles ────────────────────────────────────────────────
 
