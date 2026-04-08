@@ -5,6 +5,63 @@ Gutenberg-yhteensopiva, ei riippuvuutta kaupallisesta page builderista.
 
 ---
 
+## Sivuston nykytila
+
+### Valmiit sivut
+
+| Sivu | URL | Tila |
+|---|---|---|
+| Etusivu | `/` | Valmis — hero, pikavalinnat, ajankohtaista, tapahtumat-linkki, CTA-napit, uutiskirje, STT-feed, Verde-feed |
+| Ajankohtaista | `/ajankohtaista/` | Valmis |
+| Yleiskokous | `/yleiskokous/` | Valmis — kuva + sisältö |
+| Tapahtumakalenteri | `/tapahtumakalenteri/` | Valmis — custom ICS-parseri, filtterit (kategoria + kaupunki), manuaalinen päivitysnappi |
+| Tiedotteet | `/ajankohtaista/tiedotteet/` | Valmis — omat tiedotteet + STT-feed + Verde-feed |
+| Tule mukaan | `/tule-mukaan/` | Valmis |
+| Vaalit | `/vaalit/` | Valmis |
+| — Vaalitavoitteemme | `/vaalit/vaalitavoitteemme/` | Valmis |
+| — Ehdolle vaaleihin | `/vaalit/ehdolle-vaaleihin/` | Valmis — kuva + sisältö |
+| — Aiemmat vaalit | `/vaalit/aiemmat-vaalit/` | Valmis — vaalit 2003–2025 taulukoina |
+| Hyvinvointialueet ja kunnat | `/hyvinvointialueet/` | Valmis |
+| — Länsi-Uusimaa | `/hyvinvointialueet/lansi-uusimaa/` | Valmis — ryhmäkuva + karttakuva |
+| — Keski-Uusimaa | `/hyvinvointialueet/keski-uusimaa/` | Valmis — karttakuva |
+| — Itä-Uusimaa | `/hyvinvointialueet/ita-uusimaa/` | Valmis — ryhmäkuva + karttakuva |
+| — Vantaa–Kerava | `/hyvinvointialueet/vantaa-kerava/` | Valmis — ryhmäkuva + karttakuva |
+| — HUS ja maakunnalliset | `/hyvinvointialueet/hus-ja-maakunnalliset/` | Valmis |
+| — Kuntapolitiikka | `/hyvinvointialueet/kunnat/` | Valmis — 25 kuntakorttia yhdistyslinkeillä |
+| Yhteystiedot | `/yhteystiedot/` | Valmis |
+| — Meistä | `/meista/` | Valmis — tietosuojalinkki |
+| — Piiritoimisto | `/yhteystiedot/piiritoimisto/` | Valmis — henkilöstökortit CPT:stä |
+| — Piirihallitus | `/yhteystiedot/piirihallitus/` | Valmis |
+| — Kansanedustajamme | `/yhteystiedot/kansanedustajat/` | Valmis |
+| Medialle | `/medialle/` | Valmis — mediayhteyshenkilöt, faktalaatikko, omat tiedotteet, STT-feed, logot |
+| Tietosuojaseloste | `/tietosuojaseloste/` | Valmis — alkuperäisen sivuston teksti + Google Docs -linkit |
+
+### Avoimet placeholder-kohdat
+
+Etsi tiedostoista nämä merkkijonot ja korvaa oikeilla arvoilla:
+
+| Placeholder | Sijainti | Kohde |
+|---|---|---|
+| `[Linkki Google Forms -lomakkeeseen tähän]` | page-tule-mukaan.php | Vapaaehtoislomake |
+| `[Facebook-URL tähän]` | footer.php | Facebook-sivu |
+| `[Instagram-URL tähän]` | footer.php | Instagram-tili |
+| `[X-URL tähän]` | footer.php | X (Twitter) -tili |
+| `[Google Drive -URL tähän]` | page-medialle.php | Kuvapankki |
+| `[Latauslinkki tähän]` | page-medialle.php | Logotiedostojen latauslinkit |
+| `[lkm]` | faktalaatikot | Numerot jotka muuttuvat |
+
+### Ulkoiset integraatiot
+
+| Integraatio | Tila | Huomio |
+|---|---|---|
+| ICS-tapahtumakalenteri | Toimii | URL: `https://tapahtumat.vihreaturku.fi/events.ics?region=01` — välimuisti 1 h, manuaalinen päivitysnappi adminille |
+| STT-uutisfeed | Toimii | Vihreät-uutishuone, välimuisti 1 h |
+| Verde RSS | Toimii | verdelehti.fi/rss/, välimuisti 1 h |
+| Uutiskirje | Toimii | actionnetwork.org/forms/uutiskirje |
+| Sosiaalinen media | Placeholder | Facebook, Instagram, X-linkit puuttuvat |
+
+---
+
 ## Paikallinen kehitys (Docker Compose)
 
 **Vaatimukset:** Docker Desktop tai Docker Engine + Compose v2
@@ -14,16 +71,13 @@ Gutenberg-yhteensopiva, ei riippuvuutta kaupallisesta page builderista.
 docker compose up -d
 
 # 2. Avaa selaimessa
-open http://localhost:8080
+open http://localhost:8081
 
 # 3. Asenna WordPress (seuraa ohjattua asennusta)
 #    Tietokanta-asetukset täytetään automaattisesti docker-compose.yml:stä
 
 # 4. Aktivoi teema
 #    WordPress-hallinta → Ulkoasu → Teemat → Uudenmaan Vihreät → Aktivoi
-
-# 5. Luo menu
-#    Hallinta → Ulkoasu → Valikot → Luo "Päänavigaatio" ja aseta sijaintiin "Päänavigaatio"
 ```
 
 Teeman tiedostot on liitetty Docker-volyymiin — muutokset näkyvät suoraan selaimessa ilman kontin uudelleenkäynnistystä.
@@ -50,38 +104,106 @@ zip -r uudenmaan-vihreat-theme.zip uudenmaan-vihreat-theme/
 
 ### Ensiasetukset aktivoinnin jälkeen
 
-1. **Pysyvät linkit:** Hallinta → Asetukset → Pysyvät linkit → Valitse "Julkaisun nimi" → Tallenna
+1. **Pysyvät linkit:** Hallinta → Asetukset → Pysyvät linkit → "Julkaisun nimi" → Tallenna
 2. **Valikko:** Hallinta → Ulkoasu → Valikot → Luo valikko ja aseta sijaintiin "Päänavigaatio"
 3. **Etusivu:** Hallinta → Asetukset → Lukeminen → Etusivu näyttää → Staattinen sivu → valitse "Etusivu"
 
 ### Luo sivut näillä slugeilla
 
-| Sivu | Slug |
-|---|---|
-| Etusivu | `/` |
-| Ajankohtaista | `/ajankohtaista/` |
-| Yleiskokous | `/yleiskokous/` |
-| Tapahtumakalenteri | `/tapahtumakalenteri/` |
-| Tiedotteet | `/tiedotteet/` |
-| Tule mukaan | `/tule-mukaan/` |
-| Vaalit | `/vaalit/` |
-| Hyvinvointialueet | `/hyvinvointialueet/` |
-| — Länsi-Uusimaa | `/hyvinvointialueet/lansi-uusimaa/` |
-| — Keski-Uusimaa | `/hyvinvointialueet/keski-uusimaa/` |
-| — Itä-Uusimaa | `/hyvinvointialueet/ita-uusimaa/` |
-| — Vantaa–Kerava | `/hyvinvointialueet/vantaa-kerava/` |
-| — HUS ja maakunnalliset | `/hyvinvointialueet/hus-ja-maakunnalliset/` |
-| — Kuntapolitiikka | `/hyvinvointialueet/kuntapolitiikka/` |
-| Yhteystiedot | `/yhteystiedot/` |
-| — Meistä | `/yhteystiedot/meista/` |
-| — Piiritoimisto | `/yhteystiedot/piiritoimisto/` |
-| — Piirihallitus | `/yhteystiedot/piirihallitus/` |
-| Medialle | `/medialle/` |
-| — Kansanedustajamme | `/yhteystiedot/kansanedustajat/` |
+| Sivu | Slug | Yläsivu |
+|---|---|---|
+| Etusivu | `etusivu` | — |
+| Ajankohtaista | `ajankohtaista` | — |
+| Yleiskokous | `yleiskokous` | Ajankohtaista |
+| Tapahtumakalenteri | `tapahtumakalenteri` | Ajankohtaista |
+| Tiedotteet | `tiedotteet` | Ajankohtaista |
+| Tule mukaan | `tule-mukaan` | — |
+| Vaalit | `vaalit` | — |
+| Vaalitavoitteemme | `vaalitavoitteemme` | Vaalit |
+| Ehdolle vaaleihin | `ehdolle-vaaleihin` | Vaalit |
+| Aiemmat vaalit | `aiemmat-vaalit` | Vaalit |
+| Hyvinvointialueet ja kunnat | `hyvinvointialueet` | — |
+| Länsi-Uusimaa | `lansi-uusimaa` | Hyvinvointialueet |
+| Keski-Uusimaa | `keski-uusimaa` | Hyvinvointialueet |
+| Itä-Uusimaa | `ita-uusimaa` | Hyvinvointialueet |
+| Vantaa–Kerava | `vantaa-kerava` | Hyvinvointialueet |
+| HUS ja maakunnalliset | `hus-ja-maakunnalliset` | Hyvinvointialueet |
+| Kuntapolitiikka | `kunnat` | Hyvinvointialueet |
+| Yhteystiedot | `yhteystiedot` | — |
+| Meistä | `meista` | — |
+| Piiritoimisto | `piiritoimisto` | Yhteystiedot |
+| Piirihallitus | `piirihallitus` | Yhteystiedot |
+| Kansanedustajamme | `kansanedustajat` | Yhteystiedot |
+| Medialle | `medialle` | — |
+| Tietosuojaseloste | `tietosuojaseloste` | — |
 
-### Asenna lisäosat
+---
 
-- **ICS Calendar** — tapahtumakalenteria varten (`/tapahtumakalenteri/`)
+## Sisällön päivittäminen
+
+### Tavallinen tekstisisältö
+
+Suurin osa sivuista käyttää `the_content()` — muokkaa sisältöä suoraan WordPress-editorista (**Sivut → valitse sivu → Muokkaa**).
+
+Poikkeukset — nämä sivut renderöivät sisällön PHP-templatesta, ei editorista:
+
+| Sivu | Template | Mitä muokataan |
+|---|---|---|
+| Kuntapolitiikka | `templates/page-kunnat.php` | Kuntien tiedot suoraan PHP-arrayssä |
+| Aiemmat vaalit | `templates/page-aiemmat-vaalit.php` | Vaalitulokset HTML-taulukoissa |
+| Hyvinvointialueet-lista | `templates/page-hyvinvointialueet.php` | Alueiden nimet ja kuvaukset |
+
+### Henkilöstö (piiritoimisto)
+
+Henkilöstö hallitaan Custom Post Type -rakenteella:
+
+1. WordPress-hallinta → **Henkilöstö → Lisää uusi**
+2. Täytä: nimi, titteli, sähköposti, puhelin, kuva
+3. Aseta **Ryhmä**-taksonomiasta oikea ryhmä: `Johto`, `Poliittiset sihteerit`, `Paikallisyhdistykset`, `Vaalityöntekijät`
+4. Julkaise — henkilö ilmestyy automaattisesti piiritoimisto-sivulle
+
+### Tapahtumakalenteri
+
+Tapahtumat haetaan automaattisesti ICS-syötteestä tunnin välein. Voit pakottaa päivityksen:
+
+- Kirjaudu sisään adminina
+- Avaa `/tapahtumakalenteri/`
+- Klikkaa **"Päivitä kalenteri"** -linkkiä sivun yläreunassa
+
+### Faktalaatikko (medialle-sivu)
+
+Päivitä luvut suoraan tiedostossa `templates/page-medialle.php`:
+
+```php
+<div class="fact-item__value">1 500</div>  <!-- Jäseniä -->
+<div class="fact-item__value">25</div>     <!-- Kuntaa -->
+<div class="fact-item__value">3</div>      <!-- Kansanedustajia -->
+<div class="fact-item__value">97</div>     <!-- Valtuutettuja -->
+```
+
+### Vaalitulokset (aiemmat vaalit)
+
+Lisää uusi rivi tiedostossa `templates/page-aiemmat-vaalit.php` oikean taulukon `<tbody>`-osioon:
+
+```html
+<tr><td>2029</td><td>XX XXX</td><td>XX,X %</td><td>X</td></tr>
+```
+
+### Tietosuojaseloste
+
+Sisältö on tallennettu WordPress-tietokantaan — muokkaa normaalisti editorista sivulla `/tietosuojaseloste/`.
+
+### Yhteystiedot (puheenjohtaja, toiminnanjohtaja)
+
+Päivitä WordPress-hallinnasta: **Ulkoasu → Mukauta → Yhteystiedot**
+
+### Kuntapolitiikka-kortit
+
+Muokkaa tiedostoa `templates/page-kunnat.php` — jokainen kunta on yksi taulukkorivi PHP-arrayssä:
+
+```php
+[ 'kunta' => 'Espoo', 'yhdistys' => 'Espoon Vihreät', 'yh_url' => '...', 'yh_pj' => '...', 'yh_email' => '...', 'vr_pj' => '...', 'vr_email' => '...' ],
+```
 
 ---
 
@@ -89,32 +211,36 @@ zip -r uudenmaan-vihreat-theme.zip uudenmaan-vihreat-theme/
 
 ```
 uudenmaan-vihreat-theme/
-├── style.css           — Teemaotsikko
-├── theme.json          — Gutenberg design tokens (värit, typografia)
-├── functions.php       — Enqueue, valikot, kuva-ajot, feed-haut
-├── header.php          — Sivuston yläosa + navigaatio
-├── footer.php          — Sivuston alaosa
-├── front-page.php      — Etusivu (7 osiota)
-├── page.php            — Yleinen sivupohja
-├── single.php          — Yksittäinen artikkeli
-├── archive.php         — Artikkeliarkisto
-├── templates/          — Sivukohtaiset pohjat
+├── style.css                    — Teemaotsikko (versio)
+├── theme.json                   — Gutenberg design tokens (värit, typografia)
+├── functions.php                — Enqueue, valikot, kuva-ajot, feed-haut, template loader
+├── header.php / footer.php      — Sivuston ylä- ja alaosa
+├── front-page.php               — Etusivu
+├── page.php / single.php / archive.php
+├── inc/
+│   ├── setup-pages.php          — Sivujen ja valikkojen luonti asennuksessa
+│   ├── customizer.php           — Yhteystiedot Customizer-paneelissa
+│   ├── henkilosto-cpt.php       — Henkilöstö Custom Post Type
+│   └── tapahtumat-parser.php    — ICS-kalenteri parseri + [uuvi_tapahtumat]-shortcode
+├── templates/
 │   ├── page-ajankohtaista.php
 │   ├── page-yleiskokous.php
 │   ├── page-tapahtumakalenteri.php
 │   ├── page-tiedotteet.php
 │   ├── page-tule-mukaan.php
 │   ├── page-vaalit.php
+│   ├── page-aiemmat-vaalit.php
 │   ├── page-hyvinvointialueet.php
-│   ├── page-alue.php           — Jaettu pohja hyvinvointialueille
-│   ├── page-kuntapolitiikka.php
+│   ├── page-alue.php            — Jaettu pohja hyvinvointialueille
+│   ├── page-kunnat.php          — Kuntapolitiikka (25 kuntaa)
 │   ├── page-yhteystiedot.php
 │   ├── page-meista.php
 │   ├── page-piiritoimisto.php
 │   ├── page-piirihallitus.php
 │   ├── page-medialle.php
-│   └── page-kansanedustajat.php
-├── parts/              — Uudelleenkäytettävät osat
+│   ├── page-kansanedustajat.php
+│   └── page-tietosuojaseloste.php
+├── parts/
 │   ├── nav.php
 │   ├── hero.php
 │   ├── cta-buttons.php
@@ -122,32 +248,13 @@ uudenmaan-vihreat-theme/
 │   ├── cards-latest.php
 │   └── people-list.php
 └── assets/
-    ├── css/main.css    — Kaikki tyylit
-    ├── js/main.js      — Navigaatio + pienet toiminnallisuudet
+    ├── css/main.css             — Kaikki tyylit
+    ├── js/main.js               — Navigaatio + toiminnallisuudet
+    ├── js/tapahtumat.js         — Tapahtumakalenteri-filtterit
     ├── images/
-    │   ├── logo/       — Vihreiden logot (RGB + NEG)
-    │   ├── staff/      — Henkilöstön kuvat
+    │   ├── logo/                — Vihreiden logot (RGB + NEG)
+    │   ├── hva/                 — Hyvinvointialueiden ryhmä- ja karttakuvat
+    │   ├── staff/               — Henkilöstön kuvat
     │   └── placeholders/
-    └── fonts/          — Krana Fat A/B (.woff2, jos saatavilla)
+    └── fonts/                   — Krana Fat A/B (.woff2)
 ```
-
----
-
-## Avoimet placeholder-kohdat
-
-Etsi tiedostoista nämä merkkijonot ja korvaa oikeilla arvoilla:
-
-| Placeholder | Kohde |
-|---|---|
-| `[Linkki puolueen jäsenrekisteriin tähän]` | Vihreiden jäseneksi liittyminen |
-| `[Linkki lahjoitussivulle tähän]` | Lahjoitussivu |
-| `[Linkki puolueen ehdokassivulle tähän]` | Ehdokkaaksi ilmoittautuminen |
-| `[Linkki Google Forms -lomakkeeseen tähän]` | Vapaaehtoislomake |
-| `[Uusimaa-kalenteri-URL tähän]` | ICS-kalenteri URL |
-| `[Facebook-URL tähän]` | Facebook-sivu |
-| `[Instagram-URL tähän]` | Instagram-tili |
-| `[X-URL tähän]` | X (Twitter) -tili |
-| `[Google Drive -URL tähän]` | Kuvapankki |
-| `[Tietosuoja-linkki tähän]` | Tietosuojaseloste |
-| `[Mediayhteyshenkilön nimi tähän]` | Mediavastaava |
-| `[Mediayhteyshenkilön sähköposti tähän]` | Mediavastaavan sähköposti |
