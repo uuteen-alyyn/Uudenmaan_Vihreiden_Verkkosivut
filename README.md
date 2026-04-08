@@ -2,6 +2,7 @@
 
 WordPress-teema osoitteelle [uudenmaanvihreat.fi](https://www.uudenmaanvihreat.fi/).
 Gutenberg-yhteensopiva, ei riippuvuutta kaupallisesta page builderista.
+Kolmikielinen: **FI / SV / EN** (Polylang 3.8+).
 
 ---
 
@@ -28,9 +29,9 @@ Gutenberg-yhteensopiva, ei riippuvuutta kaupallisesta page builderista.
 | — Vantaa–Kerava | `/hyvinvointialueet/vantaa-kerava/` | Valmis — ryhmäkuva + karttakuva |
 | — HUS ja maakunnalliset | `/hyvinvointialueet/hus-ja-maakunnalliset/` | Valmis |
 | — Kuntapolitiikka | `/hyvinvointialueet/kunnat/` | Valmis — 25 kuntakorttia yhdistyslinkeillä |
-| Yhteystiedot | `/yhteystiedot/` | Valmis |
-| — Meistä | `/meista/` | Valmis — tietosuojalinkki |
-| — Piiritoimisto | `/yhteystiedot/piiritoimisto/` | Valmis — henkilöstökortit CPT:stä |
+| Yhteystiedot | `/yhteystiedot/` | Valmis — kortit käyttävät käännettyä URL:ia |
+| — Meistä | `/meista/` | Valmis — tietosuojalinkki käännetty |
+| — Piiritoimisto | `/yhteystiedot/piiritoimisto/` | Valmis — henkilöstökortit CPT:stä, laskutustiedot käännetty |
 | — Piirihallitus | `/yhteystiedot/piirihallitus/` | Valmis |
 | — Kansanedustajamme | `/yhteystiedot/kansanedustajat/` | Valmis |
 | Medialle | `/medialle/` | Valmis — mediayhteyshenkilöt, faktalaatikko, omat tiedotteet, STT-feed, logot |
@@ -59,6 +60,61 @@ Etsi tiedostoista nämä merkkijonot ja korvaa oikeilla arvoilla:
 | Verde RSS | Toimii | verdelehti.fi/rss/, välimuisti 1 h |
 | Uutiskirje | Toimii | actionnetwork.org/forms/uutiskirje |
 | Sosiaalinen media | Placeholder | Facebook, Instagram, X-linkit puuttuvat |
+
+---
+
+## Monikielisyys (FI / SV / EN)
+
+Sivusto käyttää **Polylang**-laajennosta. Jokaisesta FI-sivusta luodaan SV- ja EN-käännössivu WP-adminissa.
+
+### Käännöstiedostot
+
+```
+languages/
+├── uudenmaan-vihreat.pot      — Lähdetiedosto (kaikki merkkijonot)
+├── uudenmaan-vihreat-sv_SE.po — Ruotsinkieliset käännökset (muokattava)
+├── uudenmaan-vihreat-sv_SE.mo — Käännetty binääri (generoitu)
+├── uudenmaan-vihreat-en_US.po — Englanninkieliset käännökset (muokattava)
+└── uudenmaan-vihreat-en_US.mo — Käännetty binääri (generoitu)
+```
+
+Muokkaa aina `.po`-tiedostoa, jonka jälkeen generoi `.mo`-tiedosto. Koska host-käyttäjällä ei ole kirjoitusoikeutta Docker-kontin tiedostoihin, kompiloi `.mo` näin:
+
+```bash
+# Kompiloi .po → .mo Python-skriptillä (msgfmt ei tarvita)
+python3 compile_po.py languages/uudenmaan-vihreat-sv_SE.po /tmp/uudenmaan-vihreat-sv_SE.mo
+
+# Kopioi konttiin
+docker cp /tmp/uudenmaan-vihreat-sv_SE.mo wordpress:/tmp/
+docker exec wordpress cp /tmp/uudenmaan-vihreat-sv_SE.mo \
+  /var/www/html/wp-content/themes/uudenmaan-vihreat-theme/languages/
+```
+
+### Apufunktiot käännetyille linkeille
+
+Kaikki sivupohjat käyttävät FI-sivutunnisteita navigointilinkeissä:
+
+```php
+uuvi_translated_url( int $fi_page_id )   // palauttaa käännetyn sivun URL:n
+uuvi_translated_title( int $fi_page_id ) // palauttaa käännetyn sivun otsikon
+```
+
+Tärkeimmät FI-sivutunnisteet:
+
+| ID | Sivu |
+|---|---|
+| 7 | Ajankohtaista |
+| 8 | Tule mukaan |
+| 9 | Vaalit |
+| 10 | Hyvinvointialueet |
+| 11 | Yhteystiedot |
+| 12 | Medialle |
+| 13 | Yleiskokous |
+| 17 | Ehdolle vaaleihin |
+| 25 | Piiritoimisto |
+| 26 | Piirihallitus |
+| 27 | Kansanedustajat |
+| 130 | Meistä |
 
 ---
 
@@ -107,6 +163,7 @@ zip -r uudenmaan-vihreat-theme.zip uudenmaan-vihreat-theme/
 1. **Pysyvät linkit:** Hallinta → Asetukset → Pysyvät linkit → "Julkaisun nimi" → Tallenna
 2. **Valikko:** Hallinta → Ulkoasu → Valikot → Luo valikko ja aseta sijaintiin "Päänavigaatio"
 3. **Etusivu:** Hallinta → Asetukset → Lukeminen → Etusivu näyttää → Staattinen sivu → valitse "Etusivu"
+4. **Polylang:** Asenna ja aktivoi Polylang-laajennus. Luo käännössivut jokaiselle FI-sivulle.
 
 ### Luo sivut näillä slugeilla
 
@@ -151,7 +208,12 @@ Poikkeukset — nämä sivut renderöivät sisällön PHP-templatesta, ei editor
 |---|---|---|
 | Kuntapolitiikka | `templates/page-kunnat.php` | Kuntien tiedot suoraan PHP-arrayssä |
 | Aiemmat vaalit | `templates/page-aiemmat-vaalit.php` | Vaalitulokset HTML-taulukoissa |
-| Hyvinvointialueet-lista | `templates/page-hyvinvointialueet.php` | Alueiden nimet ja kuvaukset |
+| Hyvinvointialueet-lista | `templates/page-hyvinvointialueet.php` | Korttien kuvaukset PHP-arrayssä |
+| Yhteystiedot-lista | `templates/page-yhteystiedot.php` | Korttien kuvaukset PHP-arrayssä |
+
+### Artikkelit (Ajankohtaista)
+
+Uudet tiedotteet ja uutiset lisätään normaalisti **Artikkelit → Lisää uusi**. Artikkelin kuva asetetaan editorin oikeasta sivupalkista kohdasta **Pääkuva** — jos pääkuvaa ei aseteta, artikkeli näytetään kuvattomana.
 
 ### Henkilöstö (piiritoimisto)
 
@@ -213,9 +275,10 @@ Muokkaa tiedostoa `templates/page-kunnat.php` — jokainen kunta on yksi taulukk
 uudenmaan-vihreat-theme/
 ├── style.css                    — Teemaotsikko (versio)
 ├── theme.json                   — Gutenberg design tokens (värit, typografia)
-├── functions.php                — Enqueue, valikot, kuva-ajot, feed-haut, template loader
+├── functions.php                — Enqueue, valikot, kuva-ajot, feed-haut, template loader,
+│                                  uuvi_translated_url/title() apufunktiot
 ├── header.php / footer.php      — Sivuston ylä- ja alaosa
-├── front-page.php               — Etusivu
+├── front-page.php               — Etusivu (myös SV/EN etusivut template_include-filtterin kautta)
 ├── page.php / single.php / archive.php
 ├── inc/
 │   ├── setup-pages.php          — Sivujen ja valikkojen luonti asennuksessa
@@ -230,10 +293,10 @@ uudenmaan-vihreat-theme/
 │   ├── page-tule-mukaan.php
 │   ├── page-vaalit.php
 │   ├── page-aiemmat-vaalit.php
-│   ├── page-hyvinvointialueet.php
-│   ├── page-alue.php            — Jaettu pohja hyvinvointialueille
-│   ├── page-kunnat.php          — Kuntapolitiikka (25 kuntaa)
-│   ├── page-yhteystiedot.php
+│   ├── page-hyvinvointialueet.php   — Kortit käyttävät uuvi_translated_url/title()
+│   ├── page-alue.php                — Jaettu pohja hyvinvointialueille
+│   ├── page-kunnat.php              — Kuntapolitiikka (25 kuntaa)
+│   ├── page-yhteystiedot.php        — Kortit käyttävät uuvi_translated_url/title()
 │   ├── page-meista.php
 │   ├── page-piiritoimisto.php
 │   ├── page-piirihallitus.php
@@ -247,6 +310,10 @@ uudenmaan-vihreat-theme/
 │   ├── feed-list.php
 │   ├── cards-latest.php
 │   └── people-list.php
+├── languages/
+│   ├── uudenmaan-vihreat.pot
+│   ├── uudenmaan-vihreat-sv_SE.po / .mo
+│   └── uudenmaan-vihreat-en_US.po / .mo
 └── assets/
     ├── css/main.css             — Kaikki tyylit
     ├── js/main.js               — Navigaatio + toiminnallisuudet
