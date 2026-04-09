@@ -165,6 +165,19 @@ zip -r uudenmaan-vihreat-theme.zip uudenmaan-vihreat-theme/
 3. **Etusivu:** Hallinta → Asetukset → Lukeminen → Etusivu näyttää → Staattinen sivu → valitse "Etusivu"
 4. **Polylang:** Asenna ja aktivoi Polylang-laajennus. Luo käännössivut jokaiselle FI-sivulle.
 
+### Sisällön tuominen (WP Export)
+
+Repossa on valmis sisältöexport kansiossa `db-export/`. **Tämä on suositeltava tapa** — se luo kaikki sivut oikeilla slugeilla ja sisällöillä automaattisesti, eikä sinun tarvitse luoda sivuja käsin alla olevan taulukon mukaan.
+
+1. Hallinta → **Työkalut → Tuo → WordPress** (asenna tuoja-laajennus jos pyydetään)
+2. Valitse tiedosto `db-export/uudenmaanvihret.WordPress.2026-04-09.xml`
+3. Klikkaa **Lataa tiedosto ja tuo**
+4. Valitse tekijäksi oma WordPress-käyttäjäsi
+5. Ruksaa **Lataa ja tuo liitetiedostot** jos haluat kuvat mukaan
+6. Klikkaa **Lähetä**
+
+> **Huom:** Export päivitetään aina kun sivujen sisältöä muutetaan merkittävästi. Uusin versio löytyy aina `db-export/`-kansiosta.
+
 ### Luo sivut näillä slugeilla
 
 | Sivu | Slug | Yläsivu |
