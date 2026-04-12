@@ -481,3 +481,6 @@ msgstr "Kontaktuppgifter finns också"
 
 msgid "eduskunnan sivuilta"
 msgstr "på riksdagens webbplats"
+
+msgid "Ehdolle eduskuntavaaleihin?"
+msgstr "Vill du kandidera i riksdagsvalet?"

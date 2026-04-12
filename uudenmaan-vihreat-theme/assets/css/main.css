@@ -933,3 +933,12 @@ p:last-child { margin-bottom: 0; }
 .lang-switcher a:hover { background: rgba(255,255,255,.15); color: #fff; }
 .lang-switcher .current-lang a { background: var(--color-bright-green); color: #fff; }
 @media (max-width: 768px) { .lang-switcher { display: none; } }
+
+/* Ehdokkaat-lista */
+.ehdokkaat-lista {
+  padding-left: 1.25rem;
+  margin-top: 1.5rem;
+}
+.ehdokkaat-lista li {
+  margin-bottom: .4rem;
+}

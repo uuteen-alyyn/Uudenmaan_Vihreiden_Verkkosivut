@@ -17,7 +17,7 @@ $pics      = get_template_directory_uri() . '/assets/images/';
   set_query_var( 'hero_image',   $pics . 'placeholders/hero-luonto.jpg' );
   set_query_var( 'hero_ctas', [
       [ 'label' => __( 'Tule mukaan', 'uudenmaan-vihreat' ),    'url' => uuvi_translated_url( 8 ),                    'style' => 'btn--primary' ],
-      [ 'label' => __( 'Liity jäseneksi', 'uudenmaan-vihreat' ), 'url' => 'https://www.vihreat.fi/liity/', 'style' => 'btn--ghost-white', 'external' => true ],
+      [ 'label' => __( 'Ehdolle eduskuntavaaleihin?', 'uudenmaan-vihreat' ), 'url' => uuvi_translated_url( 320 ), 'style' => 'btn--ghost-white' ],
   ] );
   get_template_part( 'parts/hero' );
   ?>

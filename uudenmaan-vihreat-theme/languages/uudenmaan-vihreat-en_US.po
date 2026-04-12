@@ -481,3 +481,6 @@ msgstr "Contact details are also available"
 
 msgid "eduskunnan sivuilta"
 msgstr "on the Parliament website"
+
+msgid "Ehdolle eduskuntavaaleihin?"
+msgstr "Run for Parliament in 2027?"

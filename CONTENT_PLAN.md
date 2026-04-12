@@ -11,7 +11,7 @@ Text marked `[COPY FROM LIVE SITE]` should be pasted in manually from https://ww
 - **Kuva:** `Ryhmäkuva luonnossa.jpg` (16:9, cropped for mobile)
 - **H1:** Rakennetaan parempaa Uusimaata yhdessä
 - **Ingressi:** Uudenmaan Vihreät tekee vihreää politiikkaa kaikkialla Uudellamaalla — kunnissa, hyvinvointialueilla ja eduskunnassa.
-- **CTA-painike:** "Tule mukaan" → `/tule-mukaan/`
+- **CTA-painike:** "Ehdolle eduskuntavaaleihin?" → `/vaalit/ehdokkaamme/`
 
 ### 2. Pikalinkit (3 korttia, kohderyhmittäin)
 | Kortti | Otsikko | Teksti | Linkki | Kuva |

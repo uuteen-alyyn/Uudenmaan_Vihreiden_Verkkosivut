@@ -18,7 +18,7 @@
  *
  * FI page IDs:
  *   7=Ajankohtaista, 15=Tiedotteet, 14=Tapahtumakalenteri, 13=Yleiskokous,
- *   8=Tule mukaan, 9=Vaalit, 16=Vaalitavoitteemme, 17=Ehdolle vaaleihin, 229=Aiemmat vaalit,
+ *   8=Tule mukaan, 9=Vaalit, 320=Ehdokkaamme, 16=Vaalitavoitteemme, 17=Ehdolle vaaleihin, 229=Aiemmat vaalit,
  *   10=Hyvinvointialueet, 18=Länsi, 19=Keski, 20=Itä, 21=Vantaa-Kerava, 22=HUS, 23=Kunnat,
  *   11=Yhteystiedot, 130=Meistä, 12=Medialle, 27=Kansanedustajat, 26=Piirihallitus, 25=Toimisto
  */
@@ -36,6 +36,7 @@ function uuvi_fallback_nav(): void {
         [
             'id'       => 9,
             'children' => [
+                [ 'id' => 320 ],
                 [ 'id' => 16 ],
                 [ 'id' => 17 ],
                 [ 'id' => 229 ],
