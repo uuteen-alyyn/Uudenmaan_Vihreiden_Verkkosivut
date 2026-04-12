@@ -37,6 +37,65 @@ Kolmikielinen: **FI / SV / EN** (Polylang 3.8+).
 | Medialle | `/medialle/` | Valmis — mediayhteyshenkilöt, faktalaatikko, omat tiedotteet, STT-feed, logot |
 | Tietosuojaseloste | `/tietosuojaseloste/` | Valmis — alkuperäisen sivuston teksti + Google Docs -linkit |
 
+### SEO-asetukset (tee ennen julkaisua)
+
+Teema sisältää valmiit SEO-perusteet ilman lisäosaa (Open Graph, schema, canonical, leivänmurunavigaatio), mutta täysi hakukonenäkyvyys vaatii seuraavat toimet WordPress-hallinnassa.
+
+**1. Tarkista ensin**
+- Hallinta → Asetukset → Lukeminen — varmista että "Estä hakukoneet indeksoimasta tätä sivustoa" on **ilman ruksia**
+- Hallinta → Asetukset → Pysyvät linkit — valitse **"Julkaisun nimi"** (`/%postname%/`)
+- Hallinta → Asetukset → Yleiset — varmista että WordPress-osoite käyttää **https://**
+
+**2. Asenna Rank Math SEO -laajennus**
+
+Rank Math on suositeltava SEO-laajennus (ilmainen, kattavin perusominaisuuksiltaan).
+
+1. Hallinta → Lisäosat → Lisää uusi → etsi "Rank Math SEO" → Asenna ja aktivoi
+2. Suorita Rank Math -asennusvelho:
+   - Sivustotyyppi: **Organisation**
+   - Organisaation nimi: `Uudenmaan Vihreät`
+   - Logo: käytä RGB-logoa (vaalea tausta)
+   - Yhdistä Google Search Console
+3. Rank Math → Otsikot ja meta → Yleiset asetukset:
+   - Etusivun SEO-otsikko: `Uudenmaan Vihreät – Vihreää politiikkaa koko Uudellamaalla`
+   - Etusivun metakuvaus: `Uudenmaan Vihreät on Vihreiden piirijärjestö Uudellamaalla. Teemme vihreää politiikkaa kunnissa, hyvinvointialueilla ja eduskunnassa.`
+4. Rank Math → Otsikot ja meta → Artikkelit — aseta oletusskeematyypiksi **Article**
+5. Rank Math → Sivustokartta — ota käyttöön XML-sivustokartta ja kuvasivustokartta
+
+> **Huom:** Kun Rank Math on aktiivinen, teeman omat SEO-fallback-tagit (Open Graph, schema, canonical) poistuvat automaattisesti käytöstä — ei päällekkäistä koodia.
+
+**3. Lisää sivustokartta Google Search Consoleen**
+
+1. Avaa [Google Search Console](https://search.google.com/search-console/)
+2. Lisää sivusto `https://www.uudenmaanvihreat.fi/`
+3. Lähetä sivustokartta: `https://www.uudenmaanvihreat.fi/sitemap_index.xml`
+
+**4. Aseta per-sivukohtaiset SEO-otsikot ja -kuvaukset**
+
+Avaa jokainen sivu WordPress-editorissa ja täytä Rank Mathin meta-kentät (otsikko max. 60 merkkiä, kuvaus max. 160 merkkiä). Tärkeimmät ensin:
+
+| Sivu | Esimerkki-otsikko |
+|---|---|
+| Etusivu | `Uudenmaan Vihreät – Vihreää politiikkaa Uudellamaalla` |
+| Ajankohtaista | `Ajankohtaista – Uudenmaan Vihreät` |
+| Tule mukaan | `Tule mukaan – Vaikuta lähellä sinua` |
+| Vaalit | `Vaalit – Ehdokkaat ja vaalitavoitteet` |
+| Yhteystiedot | `Yhteystiedot – Uudenmaan Vihreät` |
+
+Aseta tietosuojaseloste-sivu **noindex**-tilaan (Rank Math → Lisäasetukset → Robots Meta).
+
+**5. Lisää some-profiilit**
+
+Hallinta → Ulkoasu → Mukauta → Piirin tiedot → **Some-profiilit**
+
+Täytä Facebook-, Instagram- ja X-URLit. Footerin "Seuraa meitä" -osio ilmestyy automaattisesti kun vähintään yksi URL on asetettu.
+
+**6. Asenna kuvien optimointilaajennus**
+
+Asenna **ShortPixel** tai **Imagify** pakkaamaan kuvia ja muuntamaan ne WebP-muotoon automaattisesti. Tämä parantaa sivuston latausnopeutta (Core Web Vitals).
+
+---
+
 ### Avoimet placeholder-kohdat
 
 Etsi tiedostoista nämä merkkijonot ja korvaa oikeilla arvoilla:
@@ -44,9 +103,7 @@ Etsi tiedostoista nämä merkkijonot ja korvaa oikeilla arvoilla:
 | Placeholder | Sijainti | Kohde |
 |---|---|---|
 | `[Linkki Google Forms -lomakkeeseen tähän]` | page-tule-mukaan.php | Vapaaehtoislomake |
-| `[Facebook-URL tähän]` | footer.php | Facebook-sivu |
-| `[Instagram-URL tähän]` | footer.php | Instagram-tili |
-| `[X-URL tähän]` | footer.php | X (Twitter) -tili |
+| Some-URLit (Facebook, Instagram, X) | Ulkoasu → Mukauta → Some-profiilit | Footer-linkit |
 | `[Google Drive -URL tähän]` | page-medialle.php | Kuvapankki |
 | `[Latauslinkki tähän]` | page-medialle.php | Logotiedostojen latauslinkit |
 | `[lkm]` | faktalaatikot | Numerot jotka muuttuvat |
@@ -118,7 +175,9 @@ Tärkeimmät FI-sivutunnisteet:
 
 ---
 
-## Paikallinen kehitys (Docker Compose)
+## Paikallinen kehitys
+
+### Vaihtoehto A — Docker Compose (suositeltava)
 
 **Vaatimukset:** Docker Desktop tai Docker Engine + Compose v2
 
@@ -146,6 +205,49 @@ docker compose down
 docker compose down -v
 ```
 
+### Vaihtoehto B — Local by Flywheel
+
+1. Lataa ja asenna [Local](https://localwp.com/) (ilmainen)
+2. Luo uusi sivusto: **+ New site** → anna nimi → valitse PHP 8.2 → luo
+3. Kopioi teemakansio Local-sivuston teemoihin:
+   - **Windows:** `C:\Users\<käyttäjänimi>\Local Sites\<sivuston-nimi>\app\public\wp-content\themes\`
+   - **Mac:** `~/Local Sites/<sivuston-nimi>/app/public/wp-content/themes/`
+4. Avaa wp-admin (`http://<sivuston-nimi>.local/wp-admin`) → Ulkoasu → Teemat → aktivoi teema
+5. Aseta kieli: Asetukset → Yleiset → Sivuston kieli → **Suomi** (teema asettaa tämän automaattisesti aktivoinnissa, mutta tarkista)
+
+### Vaihtoehto C — wp-env (Node.js)
+
+**Vaatimukset:** Node.js 20+, Docker
+
+```bash
+# Asenna wp-env globaalisti
+npm install -g @wordpress/env
+
+# Käynnistä (projektin juuressa)
+npx wp-env start
+
+# Avaa selaimessa: http://localhost:8888
+# wp-admin: http://localhost:8888/wp-admin  (admin / password)
+```
+
+Kopioi teemakansio `wp-content/themes/`-hakemistoon tai lisää `.wp-env.json`-tiedosto projektin juureen:
+
+```json
+{
+  "themes": [ "./uudenmaan-vihreat-theme" ]
+}
+```
+
+### Vaihtoehto D — XAMPP / MAMP / Laragon
+
+1. Asenna XAMPP (Windows/Linux) tai MAMP (Mac) tai Laragon (Windows)
+2. Luo MySQL-tietokanta nimeltä `wordpress`
+3. Lataa WordPress osoitteesta wordpress.org/download/ ja pura `htdocs/` (XAMPP) tai `www/` (MAMP/Laragon) -kansioon
+4. Kopioi teemakansio `wp-content/themes/`-hakemistoon
+5. Asenna WordPress selaimessa ja aktivoi teema
+
+> **Kieliongelma kaikissa vaihtoehdoissa:** Jos sivusto käynnistyy englanniksi, teema korjaa kielen automaattisesti suomeksi heti aktivoinnin yhteydessä (`update_option('WPLANG', 'fi')`). Jos kieli on silti väärä, korjaa se manuaalisesti: Hallinta → Asetukset → Yleiset → Sivuston kieli → Suomi.
+
 ---
 
 ## Asennus olemassa olevaan WordPress-sivustoon
@@ -160,10 +262,23 @@ zip -r uudenmaan-vihreat-theme.zip uudenmaan-vihreat-theme/
 
 ### Ensiasetukset aktivoinnin jälkeen
 
-1. **Pysyvät linkit:** Hallinta → Asetukset → Pysyvät linkit → "Julkaisun nimi" → Tallenna
-2. **Valikko:** Hallinta → Ulkoasu → Valikot → Luo valikko ja aseta sijaintiin "Päänavigaatio"
-3. **Etusivu:** Hallinta → Asetukset → Lukeminen → Etusivu näyttää → Staattinen sivu → valitse "Etusivu"
-4. **Polylang:** Asenna ja aktivoi Polylang-laajennus. Luo käännössivut jokaiselle FI-sivulle.
+Teema hoitaa automaattisesti: sivujen luonnin oikeilla slugeilla, pysyvien linkkien rakenteen (`/%postname%/`), navigaatiovalikon luonnin ja etusivun asettamisen. Tarkista silti nämä:
+
+1. **Kieli:** Hallinta → Asetukset → Yleiset → Sivuston kieli → **Suomi** (teema asettaa tämän automaattisesti, mutta tarkista jos sivusto on englanniksi)
+2. **Pysyvät linkit:** Hallinta → Asetukset → Pysyvät linkit → varmista "Julkaisun nimi" → Tallenna (pakottaa mod_rewrite-sääntöjen päivityksen)
+3. **Laajennokset:** asenna alla olevat laajennokset (teema näyttää adminissa varoituksen jos ne puuttuvat)
+4. **Etusivu:** Hallinta → Asetukset → Lukeminen → Etusivu näyttää → Staattinen sivu → valitse "Etusivu"
+
+### Vaadittavat laajennokset
+
+Asenna nämä **ennen** kuin alat muokata sisältöä:
+
+| Laajennus | Tarkoitus | Asenna |
+|---|---|---|
+| **Polylang** | Monikielisyys (FI / SV / EN) | Lisäosat → Lisää uusi → etsi "Polylang" |
+| **ICS Calendar** | Tapahtumakalenteri | Lisäosat → Lisää uusi → etsi "ICS Calendar" |
+
+> **Huom:** Teema toimii ilman Polylangia (sivusto on silloin pelkästään suomenkielinen), mutta monikielisyys ei toimi. Ilman ICS Calendaria tapahtumakalenteri-sivu on tyhjä. Teema näyttää adminissa varoituksen kummastakin, jos ne puuttuvat.
 
 ### Sisällön tuominen (WP Export)
 
@@ -295,7 +410,9 @@ uudenmaan-vihreat-theme/
 ├── page.php / single.php / archive.php
 ├── inc/
 │   ├── setup-pages.php          — Sivujen ja valikkojen luonti asennuksessa
-│   ├── customizer.php           — Yhteystiedot Customizer-paneelissa
+│   ├── customizer.php           — Yhteystiedot + some-profiilit Customizer-paneelissa
+│   ├── seo.php                  — Open Graph, Twitter Card, canonical, JSON-LD schema,
+│   │                              leivänmurunavigaatio (fallback, ei käytössä jos SEO-lisäosa aktiivinen)
 │   ├── henkilosto-cpt.php       — Henkilöstö Custom Post Type
 │   └── tapahtumat-parser.php    — ICS-kalenteri parseri + [uuvi_tapahtumat]-shortcode
 ├── templates/
@@ -337,4 +454,83 @@ uudenmaan-vihreat-theme/
     │   ├── staff/               — Henkilöstön kuvat
     │   └── placeholders/
     └── fonts/                   — Krana Fat A/B (.woff2)
+```
+
+---
+
+## Yleisiä asennusongelmia
+
+### Sivusto on englanniksi eikä suomeksi
+
+**Oireet:** WordPress-hallinta tai sivuston teksti on englanniksi asennuksen jälkeen.
+
+**Syy:** WordPress-asennusvelho kysyy kielen ja oletuksena on englanti. Docker-asennuksessa kieli pitää asettaa erikseen.
+
+**Korjaus:**
+1. Hallinta → Asetukset → Yleiset → Sivuston kieli → valitse **Suomi** → Tallenna
+2. Teema yrittää asettaa kielen automaattisesti (`WPLANG = fi`) ensimmäisellä aktivoinnilla, mutta WordPress-asennuswizardin valinta voi ohittaa tämän.
+3. Docker-asennuksessa `docker-compose.yml` sisältää nyt `WORDPRESS_CONFIG_EXTRA: "define('WPLANG', 'fi');"` — tämä toimii vain **uusissa** asennuksissa (jos kontti on jo luotu, se ei vaikuta takautuvasti).
+
+**Jos Docker-kontti on jo olemassa ja kieli on väärä:**
+```bash
+# Aseta kieli suoraan tietokantaan WP-CLI:llä
+docker compose exec wordpress wp option update WPLANG fi --allow-root
+```
+
+---
+
+### Monikielisyys ei toimi / käännösvaihtoehtoa ei näy
+
+**Oireet:** Kielivalintaa ei näy sivustolla. `uuvi_translated_url()` palauttaa suomenkielisen URL:n kaikille kielille.
+
+**Syy:** Polylang-laajennus ei ole asennettu tai aktivoitu. Teema näyttää adminissa oranssin varoitusbannerin jos Polylang puuttuu.
+
+**Korjaus:**
+1. Lisäosat → Lisää uusi → etsi **"Polylang"** → Asenna ja aktivoi
+2. Polylang käynnistää asennusvelhon — seuraa sen ohjeita
+3. Aseta FI pääkieleksi ja lisää SV ja EN
+4. Luo jokaiselle FI-sivulle SV- ja EN-käännössivu (Sivut → valitse sivu → "+" käännössarakkeessa)
+
+> Teema toimii normaalisti ilman Polylangia — sivusto on silloin pelkästään suomenkielinen eikä kaadu.
+
+---
+
+### Tapahtumakalenteri on tyhjä
+
+**Oireet:** `/tapahtumakalenteri/`-sivu näyttää "Ei tulevia tapahtumia" tai sivupohja puuttuu kokonaan.
+
+**Syy A — ICS Calendar -laajennus puuttuu:**
+Asenna Lisäosat → Lisää uusi → etsi **"ICS Calendar"** → Asenna ja aktivoi.
+
+**Syy B — Kalenterin URL puuttuu:**
+Teema käyttää omaa ICS-parseria (`inc/tapahtumat-parser.php`) eikä ICS Calendar -laajennosta suoraan. Varmista, että teeman ICS-URL on asetettu oikein tiedostossa `inc/tapahtumat-parser.php`.
+
+---
+
+### Sivut on luotu mutta niillä on väärä pohja (näyttää pelkän tekstin)
+
+**Oireet:** Sivu kuten `/tule-mukaan/` näyttää vain otsikon ilman visuaalista rakennetta.
+
+**Syy:** WordPress-sivun `_wp_page_template`-meta ei ole asetettu, tai sivu on luotu ennen kuin teema tunnisti sen slugin.
+
+**Korjaus:** Poista sivu ja anna teeman luoda se uudelleen:
+```bash
+# Nollaa teeman sivujen luontimerkki jotta setup ajetaan uudelleen
+docker compose exec wordpress wp option delete uuvi_pages_created --allow-root
+# Päivitä sivu selaimessa — teema luo sivut uudelleen
+```
+Tai manuaalisesti: Sivut → valitse ongelmasivu → Sivupohja (oikea palkki) → valitse oikea pohja.
+
+---
+
+### "Ei konfiguraatiotiedostoa" Docker Compose -komennossa
+
+**Oireet:** `docker compose` palauttaa `no configuration file provided: not found`.
+
+**Syy:** Komento ajetaan väärästä hakemistosta.
+
+**Korjaus:** Siirry ensin projektikansioon. Huomaa **välilyönti** kansion nimessä:
+```bash
+cd "/home/santeri-leinonen/Documents/Ohjelmointiprojektit/Vihreät/UUVI verkkosivut "
+docker compose up -d
 ```

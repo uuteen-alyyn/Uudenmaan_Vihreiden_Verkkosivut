@@ -78,6 +78,25 @@ add_action( 'customize_register', function ( WP_Customize_Manager $wp_customize 
         $wp_customize->add_control( $id, [ 'label' => $args['label'], 'section' => 'uuvi_pj', 'type' => 'text' ] );
     }
 
+    // ── Some-profiilit ────────────────────────────────────────────────────────
+
+    $wp_customize->add_section( 'uuvi_some', [
+        'title'    => 'Some-profiilit',
+        'panel'    => 'uuvi_panel',
+        'priority' => 35,
+    ] );
+
+    $some_fields = [
+        'uuvi_social_facebook'  => [ 'label' => 'Facebook URL',  'default' => '' ],
+        'uuvi_social_instagram' => [ 'label' => 'Instagram URL', 'default' => '' ],
+        'uuvi_social_twitter'   => [ 'label' => 'X (Twitter) URL', 'default' => '' ],
+    ];
+
+    foreach ( $some_fields as $id => $args ) {
+        $wp_customize->add_setting( $id, [ 'default' => $args['default'], 'sanitize_callback' => 'esc_url_raw' ] );
+        $wp_customize->add_control( $id, [ 'label' => $args['label'], 'section' => 'uuvi_some', 'type' => 'url' ] );
+    }
+
     // ── Toiminnanjohtaja ──────────────────────────────────────────────────────
 
     $wp_customize->add_section( 'uuvi_tj', [

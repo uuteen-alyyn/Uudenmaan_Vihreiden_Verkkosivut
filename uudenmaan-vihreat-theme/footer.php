@@ -42,12 +42,25 @@
         <ul>
           <li><a href="mailto:info@uudenmaanvihreat.fi">info@uudenmaanvihreat.fi</a></li>
         </ul>
+        <?php
+        $facebook  = get_theme_mod( 'uuvi_social_facebook', '' );
+        $instagram = get_theme_mod( 'uuvi_social_instagram', '' );
+        $twitter   = get_theme_mod( 'uuvi_social_twitter', '' );
+        if ( $facebook || $instagram || $twitter ) :
+        ?>
         <h3 style="margin-top:1.25rem;"><?php esc_html_e( 'Seuraa meitä', 'uudenmaan-vihreat' ); ?></h3>
         <ul>
-          <li><a href="[Facebook-URL tähän]" rel="noopener noreferrer" target="_blank">Facebook</a></li>
-          <li><a href="[Instagram-URL tähän]" rel="noopener noreferrer" target="_blank">Instagram</a></li>
-          <li><a href="[X-URL tähän]" rel="noopener noreferrer" target="_blank">X (Twitter)</a></li>
+          <?php if ( $facebook ) : ?>
+          <li><a href="<?php echo esc_url( $facebook ); ?>" rel="noopener noreferrer" target="_blank">Facebook</a></li>
+          <?php endif; ?>
+          <?php if ( $instagram ) : ?>
+          <li><a href="<?php echo esc_url( $instagram ); ?>" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+          <?php endif; ?>
+          <?php if ( $twitter ) : ?>
+          <li><a href="<?php echo esc_url( $twitter ); ?>" rel="noopener noreferrer" target="_blank">X (Twitter)</a></li>
+          <?php endif; ?>
         </ul>
+        <?php endif; ?>
       </div>
 
     </div><!-- .footer-grid -->

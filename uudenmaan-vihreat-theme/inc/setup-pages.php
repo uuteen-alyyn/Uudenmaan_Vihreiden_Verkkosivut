@@ -31,6 +31,9 @@ function uuvi_create_all_pages(): void {
         }
     }
 
+    // Aseta sivuston kieli suomeksi
+    update_option( 'WPLANG', 'fi' );
+
     // Aseta permalink-rakenne (/%postname%/)
     update_option( 'permalink_structure', '/%postname%/' );
     flush_rewrite_rules( true );
@@ -85,6 +88,7 @@ function uuvi_create_nav_menu( array $ids ): void {
 
     // Vaalit
     $vaalit = $add( 'vaalit' );
+    $add( 'ehdokkaamme',         $vaalit );
     $add( 'vaalitavoitteemme',  $vaalit );
     $add( 'ehdolle-vaaleihin',  $vaalit );
     $add( 'aiemmat-vaalit',     $vaalit );
@@ -130,7 +134,7 @@ function uuvi_create_page( array $page, array $created_ids ): int {
         $parent_id = $created_ids[ $page['parent'] ];
     }
 
-    return wp_insert_post( [
+    $id = wp_insert_post( [
         'post_title'   => $page['title'],
         'post_name'    => $page['slug'],
         'post_content' => $page['content'] ?? '',
@@ -139,6 +143,12 @@ function uuvi_create_page( array $page, array $created_ids ): int {
         'post_parent'  => $parent_id,
         'post_author'  => 1,
     ] );
+
+    if ( $id && ! empty( $page['template'] ) ) {
+        update_post_meta( $id, '_wp_page_template', $page['template'] );
+    }
+
+    return $id;
 }
 
 /**
@@ -203,6 +213,13 @@ function uuvi_page_definitions(): array {
             'title'   => 'Ehdolle vaaleihin',
             'parent'  => 'vaalit',
             'content' => '',
+        ],
+        [
+            'slug'     => 'ehdokkaamme',
+            'title'    => 'Ehdokkaamme',
+            'parent'   => 'vaalit',
+            'template' => 'templates/page-ehdokkaamme.php',
+            'content'  => '',
         ],
 
         // ── Hyvinvointialueet ja kunnat ───────────────────────────────
@@ -284,8 +301,78 @@ function uuvi_page_definitions(): array {
             'title'   => 'Medialle',
             'content' => '',
         ],
+
+        // ── Saavutettavuusseloste ─────────────────────────────────
+        [
+            'slug'    => 'saavutettavuus',
+            'title'   => 'Saavutettavuusseloste',
+            'content' => uuvi_content_saavutettavuus(),
+        ],
+
+        // ── Tietosuojaseloste ─────────────────────────────────────
+        [
+            'slug'    => 'tietosuojaseloste',
+            'title'   => 'Tietosuojaseloste',
+            'content' => '',
+        ],
     ];
 }
+
+// ── Kertaluonteiset migraatiot ────────────────────────────────────────────────
+
+add_action( 'admin_init', function (): void {
+    if ( get_option( 'uuvi_migration_ehdokkaamme' ) ) return;
+
+    // Luo sivu jos puuttuu
+    $existing = get_posts( [ 'name' => 'ehdokkaamme', 'post_type' => 'page', 'post_status' => 'publish', 'numberposts' => 1 ] );
+    if ( $existing ) {
+        $page_id = $existing[0]->ID;
+    } else {
+        $vaalit = get_posts( [ 'name' => 'vaalit', 'post_type' => 'page', 'post_status' => 'publish', 'numberposts' => 1 ] );
+        $page_id = wp_insert_post( [
+            'post_title'  => 'Ehdokkaamme',
+            'post_name'   => 'ehdokkaamme',
+            'post_status' => 'publish',
+            'post_type'   => 'page',
+            'post_parent' => $vaalit ? $vaalit[0]->ID : 0,
+            'post_author' => 1,
+        ] );
+    }
+
+    if ( $page_id ) {
+        update_post_meta( $page_id, '_wp_page_template', 'templates/page-ehdokkaamme.php' );
+    }
+
+    // Lisää navigaatiovalikkoon Vaalit-kohdan alle
+    $menu = get_term_by( 'name', 'Päänavigaatio', 'nav_menu' );
+    if ( $menu && $page_id ) {
+        // Etsi Vaalit-kohdan ID valikossa
+        $menu_items  = wp_get_nav_menu_items( $menu->term_id );
+        $vaalit_item_id = 0;
+        $already_in_menu = false;
+        foreach ( $menu_items as $item ) {
+            if ( (int) $item->object_id === (int) get_posts( [ 'name' => 'vaalit', 'post_type' => 'page', 'numberposts' => 1 ] )[0]->ID ?? 0 ) {
+                $vaalit_item_id = $item->ID;
+            }
+            if ( (int) $item->object_id === (int) $page_id ) {
+                $already_in_menu = true;
+            }
+        }
+
+        if ( ! $already_in_menu ) {
+            wp_update_nav_menu_item( $menu->term_id, 0, [
+                'menu-item-title'     => 'Ehdokkaamme',
+                'menu-item-object'    => 'page',
+                'menu-item-object-id' => $page_id,
+                'menu-item-type'      => 'post_type',
+                'menu-item-status'    => 'publish',
+                'menu-item-parent-id' => $vaalit_item_id,
+            ] );
+        }
+    }
+
+    update_option( 'uuvi_migration_ehdokkaamme', '1' );
+} );
 
 // ── Sisältögeneraattorit ──────────────────────────────────────────────────────
 
@@ -303,6 +390,19 @@ function uuvi_content_vaalitavoitteet(): string {
 <p>Kohtuuhintainen asuminen ja sujuva joukkoliikenne ovat perusoikeuksia. Tiivis kaupunkirakenne, raideinvestoinnit ja kävely- ja pyöräilyväylät tekevät Uusimaasta toimivamman kaikille.</p>
 <h2>Koulutus ja kulttuuri</h2>
 <p>Laadukas varhaiskasvatus ja perusopetus ovat yhteiskunnan perusta. Haluamme turvata koulutuksen tasa-arvon ja pitää kulttuuripalvelut kaikkien saatavilla.</p>';
+}
+
+function uuvi_content_saavutettavuus(): string {
+    return '<p>Uudenmaan Vihreät ry on sitoutunut tekemään verkkosivustostaan saavutettavan kaikille käyttäjille. Tämä saavutettavuusseloste koskee sivustoa uudenmaanvihreat.fi.</p>
+<h2>Saavutettavuuden tila</h2>
+<p>Sivusto täyttää osittain <a href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> -tason AA vaatimukset. Kehitämme saavutettavuutta jatkuvasti.</p>
+<h2>Tunnetut puutteet</h2>
+<p>Selvitämme parhaillaan mahdollisia saavutettavuuspuutteita ja korjaamme ne sitä mukaa kun ne havaitaan.</p>
+<h2>Palaute ja yhteystiedot</h2>
+<p>Jos huomaat saavutettavuusongelman sivustollamme, ota yhteyttä: <a href="mailto:info@uudenmaanvihreat.fi">info@uudenmaanvihreat.fi</a></p>
+<h2>Valvontaviranomainen</h2>
+<p>Jos et ole tyytyväinen vastaukseemme, voit ottaa yhteyttä <a href="https://www.saavutettavuusvaatimukset.fi/" rel="noopener noreferrer" target="_blank">Aluehallintovirastoon</a>.</p>
+<p><em>Tämä seloste on laadittu [päivämäärä tähän].</em></p>';
 }
 
 function uuvi_content_alue( string $nimi, string $kuvaus ): string {

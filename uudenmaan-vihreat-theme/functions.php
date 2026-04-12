@@ -10,6 +10,7 @@ require_once get_template_directory() . '/inc/setup-pages.php';
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/henkilosto-cpt.php';
 require_once get_template_directory() . '/inc/tapahtumat-parser.php';
+require_once get_template_directory() . '/inc/seo.php';
 
 // Luo sivut teeman aktivoinnin yhteydessä
 add_action( 'after_switch_theme', 'uuvi_create_all_pages' );
@@ -309,3 +310,36 @@ add_filter( 'page_template', function ( $template ) {
 
 add_filter( 'excerpt_length', fn() => 20 );
 add_filter( 'excerpt_more',   fn() => '…' );
+
+// ─── Admin notices: varoita puuttuvista laajennoksista ────────────────────────
+
+add_action( 'admin_notices', function (): void {
+    $missing = [];
+
+    if ( ! defined( 'POLYLANG_VERSION' ) ) {
+        $missing[] = sprintf(
+            '<strong>Polylang</strong> — monikielisyys (FI / SV / EN). ' .
+            '<a href="%s">Asenna laajennus</a>.',
+            esc_url( admin_url( 'plugin-install.php?s=polylang&tab=search&type=term' ) )
+        );
+    }
+
+    if ( ! function_exists( 'ics_calendar' ) && ! class_exists( 'ICS_Calendar' ) ) {
+        $missing[] = sprintf(
+            '<strong>ICS Calendar</strong> — tapahtumakalenteri. ' .
+            '<a href="%s">Asenna laajennus</a>.',
+            esc_url( admin_url( 'plugin-install.php?s=ics+calendar&tab=search&type=term' ) )
+        );
+    }
+
+    if ( empty( $missing ) ) {
+        return;
+    }
+
+    echo '<div class="notice notice-warning"><p>';
+    echo '<strong>Uudenmaan Vihreät -teema:</strong> seuraavat laajennokset puuttuvat:</p><ul style="margin:.5rem 0 .5rem 1.5rem;list-style:disc;">';
+    foreach ( $missing as $item ) {
+        echo '<li>' . $item . '</li>';
+    }
+    echo '</ul></div>';
+} );

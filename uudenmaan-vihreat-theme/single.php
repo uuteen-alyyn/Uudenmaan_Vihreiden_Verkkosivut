@@ -18,11 +18,12 @@ get_header();
         </p>
       </div>
     </div>
+    <?php uuvi_breadcrumb_html(); ?>
     <div class="page-content">
       <div class="container">
         <?php if ( has_post_thumbnail() ) : ?>
           <div style="margin-bottom:2rem;border-radius:8px;overflow:hidden;">
-            <?php the_post_thumbnail( 'large', [ 'style' => 'width:100%;height:auto;' ] ); ?>
+            <?php the_post_thumbnail( 'large', [ 'alt' => get_the_title(), 'style' => 'width:100%;height:auto;' ] ); ?>
           </div>
         <?php endif; ?>
         <div class="entry-content">

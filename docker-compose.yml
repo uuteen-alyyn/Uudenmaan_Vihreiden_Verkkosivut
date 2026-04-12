@@ -23,6 +23,7 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DEBUG: "1"
+      WORDPRESS_CONFIG_EXTRA: "define('WPLANG', 'fi');"
     volumes:
       - wp_data:/var/www/html
       - /home/santeri-leinonen/Documents/Ohjelmointiprojektit/Vihreät/UUVI verkkosivut /uudenmaan-vihreat-theme:/var/www/html/wp-content/themes/uudenmaan-vihreat-theme

@@ -12,6 +12,7 @@ get_header();
       <?php endwhile; ?>
     </div>
   </div>
+  <?php uuvi_breadcrumb_html(); ?>
   <div class="page-content">
     <div class="container">
       <?php while ( have_posts() ) : the_post(); ?>

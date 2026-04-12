@@ -17,7 +17,7 @@ get_header();
         }
       ?></h1>
       <p class="ingress" style="color:rgba(255,255,255,.8);">
-        Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta.
+        <?php esc_html_e( 'Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta.', 'uudenmaan-vihreat' ); ?>
       </p>
     </div>
   </div>
