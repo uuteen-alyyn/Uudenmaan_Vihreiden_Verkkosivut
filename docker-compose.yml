@@ -26,7 +26,7 @@ services:
       WORDPRESS_CONFIG_EXTRA: "define('WPLANG', 'fi');"
     volumes:
       - wp_data:/var/www/html
-      - /home/santeri-leinonen/Documents/Ohjelmointiprojektit/Vihreät/UUVI verkkosivut /uudenmaan-vihreat-theme:/var/www/html/wp-content/themes/uudenmaan-vihreat-theme
+      - ./uudenmaan-vihreat-theme:/var/www/html/wp-content/themes/uudenmaan-vihreat-theme
 
 volumes:
   db_data:

@@ -6,6 +6,38 @@ Kolmikielinen: **FI / SV / EN** (Polylang 3.8+).
 
 ---
 
+## Pikakäynnistys (Docker)
+
+**Vaatimukset:** Git, Docker Desktop (tai Docker Engine + Compose v2)
+
+```bash
+# 1. Kloonaa repositorio
+git clone https://github.com/uuteen-alyyn/Uudenmaan_Vihreiden_Verkkosivut.git
+cd Uudenmaan_Vihreiden_Verkkosivut
+
+# 2. Käynnistä WordPress + tietokanta
+docker compose up -d
+
+# 3. Avaa selaimessa ja asenna WordPress
+open http://localhost:8081
+# Seuraa asennusvelhoa — tietokanta-asetukset täyttyvät automaattisesti
+```
+
+**Asennuksen jälkeen:**
+
+1. **Aktivoi teema:** Hallinta → Ulkoasu → Teemat → *Uudenmaan Vihreät* → Aktivoi
+   - Teema luo kaikki sivut, navigaation ja tuo henkilöstön kuvat automaattisesti
+2. **Asenna laajennokset:** Hallinta → Lisäosat → Lisää uusi → etsi ja aktivoi:
+   - **Polylang** (monikielisyys)
+   - **ICS Calendar** (tapahtumakalenteri)
+3. **Tuo sisältö:** Hallinta → Työkalut → Tuo → WordPress → valitse `db-export/uudenmaanvihret.WordPress.2026-04-21.xml`
+   - Valitse tekijäksi oma käyttäjäsi
+   - **Älä ruksaa** "Lataa ja tuo liitetiedostot" — kuvat ovat jo teeman mukana
+
+Sivusto on valmis käytettäväksi. Katso tarkemmat ohjeet ja vianetsintä alta.
+
+---
+
 ## Sivuston nykytila
 
 ### Valmiit sivut
