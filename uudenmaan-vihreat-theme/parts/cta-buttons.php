@@ -14,7 +14,11 @@
       <a class="btn btn--ghost-white" href="https://www.vihreat.fi/lahjoita/" target="_blank" rel="noopener noreferrer">
         <?php esc_html_e( 'Lahjoita', 'uudenmaan-vihreat' ); ?>
       </a>
-      <a class="btn btn--ghost-white" href="<?php echo esc_url( uuvi_translated_url( 17 ) ); ?>">
+      <?php
+      $ehdolle_page = get_page_by_path( 'ehdolle-vaaleihin' );
+      $ehdolle_url  = $ehdolle_page ? uuvi_translated_url( $ehdolle_page->ID ) : home_url( '/vaalit/ehdolle-vaaleihin/' );
+      ?>
+      <a class="btn btn--ghost-white" href="<?php echo esc_url( $ehdolle_url ); ?>">
         <?php esc_html_e( 'Lähde ehdolle', 'uudenmaan-vihreat' ); ?>
       </a>
     </div>
