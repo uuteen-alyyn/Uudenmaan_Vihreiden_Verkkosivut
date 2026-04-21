@@ -275,9 +275,10 @@ Alasivut:
 - [x] Kansanedustajien nimet ja sähköpostit
 - [ ] Kansanedustajien valokuvat (lisää `Pictures/`-kansioon)
 - [ ] Jäsenrekisteri-, lahjoitus- ja ehdokaslinkit
-- [ ] Some-profiilit (Facebook, Instagram, X)
-- [ ] Kalenteri-URL (Uusimaa ICS)
+- [x] Some-profiilit — Facebook: facebook.com/uudenmaanvihreat · Instagram: instagram.com/uudenmaanvihreat · X: ei käytössä
+- [x] Kalenteri-URL — toimii: tapahtumat.vihreaturku.fi/events.ics?region=01
 - [ ] Google Drive kuvapankin URL
 - [ ] Verde RSS -URL vahvistus
 - [ ] Hallintodokumenttien linkit (säännöt, tietosuoja jne.)
 - [ ] Mediayhteyshenkilön nimi ja puhelinnumero (eri kuin puheenjohtaja?)
+- [ ] Medialle-sivun latauslinkit (lisätään myöhemmin)

@@ -43,10 +43,9 @@
           <li><a href="mailto:info@uudenmaanvihreat.fi">info@uudenmaanvihreat.fi</a></li>
         </ul>
         <?php
-        $facebook  = get_theme_mod( 'uuvi_social_facebook', '' );
-        $instagram = get_theme_mod( 'uuvi_social_instagram', '' );
-        $twitter   = get_theme_mod( 'uuvi_social_twitter', '' );
-        if ( $facebook || $instagram || $twitter ) :
+        $facebook  = get_theme_mod( 'uuvi_social_facebook',  'https://www.facebook.com/uudenmaanvihreat' );
+        $instagram = get_theme_mod( 'uuvi_social_instagram', 'https://www.instagram.com/uudenmaanvihreat/' );
+        if ( $facebook || $instagram ) :
         ?>
         <h3 style="margin-top:1.25rem;"><?php esc_html_e( 'Seuraa meitä', 'uudenmaan-vihreat' ); ?></h3>
         <ul>
@@ -55,9 +54,6 @@
           <?php endif; ?>
           <?php if ( $instagram ) : ?>
           <li><a href="<?php echo esc_url( $instagram ); ?>" rel="noopener noreferrer" target="_blank">Instagram</a></li>
-          <?php endif; ?>
-          <?php if ( $twitter ) : ?>
-          <li><a href="<?php echo esc_url( $twitter ); ?>" rel="noopener noreferrer" target="_blank">X (Twitter)</a></li>
           <?php endif; ?>
         </ul>
         <?php endif; ?>

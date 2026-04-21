@@ -87,9 +87,8 @@ add_action( 'customize_register', function ( WP_Customize_Manager $wp_customize 
     ] );
 
     $some_fields = [
-        'uuvi_social_facebook'  => [ 'label' => 'Facebook URL',  'default' => '' ],
-        'uuvi_social_instagram' => [ 'label' => 'Instagram URL', 'default' => '' ],
-        'uuvi_social_twitter'   => [ 'label' => 'X (Twitter) URL', 'default' => '' ],
+        'uuvi_social_facebook'  => [ 'label' => 'Facebook URL',  'default' => 'https://www.facebook.com/uudenmaanvihreat' ],
+        'uuvi_social_instagram' => [ 'label' => 'Instagram URL', 'default' => 'https://www.instagram.com/uudenmaanvihreat/' ],
     ];
 
     foreach ( $some_fields as $id => $args ) {

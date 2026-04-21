@@ -103,7 +103,7 @@ Etsi tiedostoista nämä merkkijonot ja korvaa oikeilla arvoilla:
 | Placeholder | Sijainti | Kohde |
 |---|---|---|
 | `[Linkki Google Forms -lomakkeeseen tähän]` | page-tule-mukaan.php | Vapaaehtoislomake |
-| Some-URLit (Facebook, Instagram, X) | Ulkoasu → Mukauta → Some-profiilit | Footer-linkit |
+| Some-URLit (Instagram, Facebook) | Asetettu valmiiksi — tarkista Ulkoasu → Mukauta → Some-profiilit | X-tiliä ei ole |
 | `[Google Drive -URL tähän]` | page-medialle.php | Kuvapankki |
 | `[Latauslinkki tähän]` | page-medialle.php | Logotiedostojen latauslinkit |
 | `[lkm]` | faktalaatikot | Numerot jotka muuttuvat |
