@@ -274,7 +274,7 @@ Alasivut:
 - [x] Piirihallituksen jäsenlista 2026
 - [x] Kansanedustajien nimet ja sähköpostit
 - [ ] Kansanedustajien valokuvat (lisää `Pictures/`-kansioon)
-- [ ] Jäsenrekisteri-, lahjoitus- ja ehdokaslinkit
+- [x] Jäsenrekisteri-, lahjoitus- ja ehdokaslinkit — vihreat.fi/liity/ ja vihreat.fi/lahjoita/ kovakoodattu cta-buttons.php:hen
 - [x] Some-profiilit — Facebook: facebook.com/uudenmaanvihreat · Instagram: instagram.com/uudenmaanvihreat · X: ei käytössä
 - [x] Kalenteri-URL — toimii: tapahtumat.vihreaturku.fi/events.ics?region=01
 - [ ] Google Drive kuvapankin URL
