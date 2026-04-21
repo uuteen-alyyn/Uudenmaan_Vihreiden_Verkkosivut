@@ -28,6 +28,9 @@ add_action( 'init', function () {
     }
 } );
 
+// Piilota hallintapalkki julkiselta puolelta kaikilta käyttäjiltä
+add_filter( 'show_admin_bar', '__return_false' );
+
 // ─── Theme supports ──────────────────────────────────────────────────────────
 
 add_action( 'after_setup_theme', function () {
