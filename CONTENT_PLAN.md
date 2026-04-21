@@ -278,7 +278,7 @@ Alasivut:
 - [x] Some-profiilit — Facebook: facebook.com/uudenmaanvihreat · Instagram: instagram.com/uudenmaanvihreat · X: ei käytössä
 - [x] Kalenteri-URL — toimii: tapahtumat.vihreaturku.fi/events.ics?region=01
 - [ ] Google Drive kuvapankin URL
-- [ ] Verde RSS -URL vahvistus
+- [x] Verde RSS — toimii: verdelehti.fi/rss/
 - [ ] Hallintodokumenttien linkit (säännöt, tietosuoja jne.)
-- [ ] Mediayhteyshenkilön nimi ja puhelinnumero (eri kuin puheenjohtaja?)
+- [x] Mediayhteyshenkilö — puheenjohtaja (Santeri Leinonen) + toiminnanjohtaja (Oskari Sundström), molemmat medialle-sivulla
 - [ ] Medialle-sivun latauslinkit (lisätään myöhemmin)
