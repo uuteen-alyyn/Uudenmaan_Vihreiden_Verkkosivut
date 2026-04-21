@@ -15,8 +15,8 @@
         <?php esc_html_e( 'Lahjoita', 'uudenmaan-vihreat' ); ?>
       </a>
       <?php
-      $ehdolle_page = get_page_by_path( 'ehdolle-vaaleihin' );
-      $ehdolle_url  = $ehdolle_page ? uuvi_translated_url( $ehdolle_page->ID ) : home_url( '/vaalit/ehdolle-vaaleihin/' );
+      $ehdolle_posts = get_posts( [ 'name' => 'ehdolle-vaaleihin', 'post_type' => 'page', 'numberposts' => 1 ] );
+      $ehdolle_url   = $ehdolle_posts ? get_permalink( $ehdolle_posts[0]->ID ) : home_url( '/vaalit/ehdolle-vaaleihin/' );
       ?>
       <a class="btn btn--ghost-white" href="<?php echo esc_url( $ehdolle_url ); ?>">
         <?php esc_html_e( 'Lähde ehdolle', 'uudenmaan-vihreat' ); ?>
