@@ -15,9 +15,11 @@ $pics      = get_template_directory_uri() . '/assets/images/';
   set_query_var( 'hero_h1',      __( 'Rakennetaan parempaa Uuttamaata yhdessä', 'uudenmaan-vihreat' ) );
   set_query_var( 'hero_ingress', __( 'Uudenmaan Vihreät tekee vihreää politiikkaa kaikkialla Uudellamaalla — kunnissa, hyvinvointialueilla ja eduskunnassa.', 'uudenmaan-vihreat' ) );
   set_query_var( 'hero_image',   $pics . 'placeholders/hero-luonto.jpg' );
+  $ehdolle_posts = get_posts( [ 'name' => 'ehdolle-vaaleihin', 'post_type' => 'page', 'numberposts' => 1 ] );
+  $ehdolle_url   = $ehdolle_posts ? get_permalink( $ehdolle_posts[0]->ID ) : home_url( '/vaalit/ehdolle-vaaleihin/' );
   set_query_var( 'hero_ctas', [
-      [ 'label' => __( 'Tule mukaan', 'uudenmaan-vihreat' ),    'url' => uuvi_translated_url( 8 ),                    'style' => 'btn--primary' ],
-      [ 'label' => __( 'Ehdolle eduskuntavaaleihin?', 'uudenmaan-vihreat' ), 'url' => uuvi_translated_url( 320 ), 'style' => 'btn--ghost-white' ],
+      [ 'label' => __( 'Tule mukaan', 'uudenmaan-vihreat' ),    'url' => uuvi_translated_url( 8 ), 'style' => 'btn--primary' ],
+      [ 'label' => __( 'Ehdolle eduskuntavaaleihin?', 'uudenmaan-vihreat' ), 'url' => $ehdolle_url, 'style' => 'btn--ghost-white' ],
   ] );
   get_template_part( 'parts/hero' );
   ?>
