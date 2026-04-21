@@ -134,15 +134,19 @@ function uuvi_create_page( array $page, array $created_ids ): int {
         $parent_id = $created_ids[ $page['parent'] ];
     }
 
-    $id = wp_insert_post( [
-        'post_title'   => $page['title'],
-        'post_name'    => $page['slug'],
-        'post_content' => $page['content'] ?? '',
-        'post_status'  => 'publish',
-        'post_type'    => 'page',
-        'post_parent'  => $parent_id,
-        'post_author'  => 1,
-    ] );
+    $post_data = [
+        'post_title'    => $page['title'],
+        'post_name'     => $page['slug'],
+        'post_content'  => $page['content'] ?? '',
+        'post_status'   => 'publish',
+        'post_type'     => 'page',
+        'post_parent'   => $parent_id,
+        'post_author'   => 1,
+    ];
+    if ( ! empty( $page['password'] ) ) {
+        $post_data['post_password'] = $page['password'];
+    }
+    $id = wp_insert_post( $post_data );
 
     if ( $id && ! empty( $page['template'] ) ) {
         update_post_meta( $id, '_wp_page_template', $page['template'] );
@@ -315,6 +319,14 @@ function uuvi_page_definitions(): array {
             'title'   => 'Tietosuojaseloste',
             'content' => '',
         ],
+
+        // ── Ehdokassivusto (salasanasuojattu, ei valikossa) ───────
+        [
+            'slug'     => 'vaalit2027',
+            'title'    => 'Ehdokassivusto',
+            'password' => 'Ehdokasko?',
+            'content'  => uuvi_content_ehdokassivusto(),
+        ],
     ];
 }
 
@@ -414,3 +426,75 @@ function uuvi_content_alue( string $nimi, string $kuvaus ): string {
 <h2>Ajankohtaista alueelta</h2>
 <p>[Ajankohtainen sisältö tähän]</p>';
 }
+
+function uuvi_content_ehdokassivusto(): string {
+    return '<p>Tämä sivusto sisältää Uudenmaan Vihreiden tukimateriaaleja ehdokkaille.</p>
+<p><strong>Sisältö on luottamuksellista!</strong> Voit jakaa materiaalia oman tukiryhmäsi jäsenille, mutta varo niiden päätymistä muiden puolueiden käsiin.</p>
+
+<h2>Uuden ehdokkaan kirje</h2>
+<p>[Sisältö tähän]</p>
+
+<h2>Tekoälytyökalut</h2>
+<p>[Sisältö tähän]</p>
+
+<h2>Mainosmyynti</h2>
+<p>[Sisältö tähän]</p>
+
+<h2>Vaaliarkisto</h2>
+<p>[Sisältö tähän]</p>
+
+<h2>Ehdokasoppaat</h2>
+<p>[Sisältö tähän]</p>
+
+<h2>Koulutusmateriaalit</h2>
+<p>[Sisältö tähän]</p>
+
+<h2>Ruotsinkielinen kampanjointi</h2>
+<p>Ruotsinkieliseen kampanjointiin voit pyytää apua Finlands svenska grönalta (Grifi) tai piirin puheenjohtajalta.</p>
+<p>Piirin toive on, että vahvasti kaksikielisissä kunnissa ehdokkaiden mainokset sisältävät tekstiä myös ruotsiksi. Lisäksi piiritoimistolta saa kaksikielisiä "Ehdokas / Kandidat" -pinssejä.</p>
+<p>Seuraavat kunnat ovat vahvasti kaksikielisiä:</p>
+<ul>
+<li>Hanko</li>
+<li>Raasepori</li>
+<li>Inkoo</li>
+<li>Siuntio</li>
+<li>Kauniainen</li>
+<li>Sipoo</li>
+<li>Porvoo</li>
+<li>Loviisa</li>
+</ul>
+<p>Lisäksi seuraavissa kunnissa on isompia ruotsinkielisiä alueita:</p>
+<ul>
+<li>Lohja (erit. eteläiset liitoskunnat)</li>
+<li>Kirkkonummi (erit. eteläosat)</li>
+<li>Espoo</li>
+<li>Vantaa</li>
+</ul>';
+}
+
+// ── Kertaluonteinen migraatio: vaalit2027 ──────────────────────────────────────
+
+add_action( 'init', function (): void {
+    if ( get_option( 'uuvi_migration_vaalit2027' ) ) return;
+
+    $existing = get_posts( [
+        'name'        => 'vaalit2027',
+        'post_type'   => 'page',
+        'post_status' => [ 'publish', 'password' ],
+        'numberposts' => 1,
+    ] );
+
+    if ( ! $existing ) {
+        wp_insert_post( [
+            'post_title'    => 'Ehdokassivusto',
+            'post_name'     => 'vaalit2027',
+            'post_content'  => uuvi_content_ehdokassivusto(),
+            'post_status'   => 'publish',
+            'post_type'     => 'page',
+            'post_author'   => 1,
+            'post_password' => 'Ehdokasko?',
+        ] );
+    }
+
+    update_option( 'uuvi_migration_vaalit2027', '1' );
+} );
