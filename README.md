@@ -325,6 +325,32 @@ Repossa on valmis sisältöexport kansiossa `db-export/`. **Tämä on suositelta
 
 ---
 
+## Ehdokassivusto (salasanasuojattu)
+
+Osoitteessa `/vaalit2027/` on ehdokkaille tarkoitettu sisäinen sivusto, joka on suojattu salasanalla. Sivu ei näy navigaatiossa eikä hakutuloksissa.
+
+### Salasanan tarkistaminen
+
+1. WordPress-hallinta → **Sivut**
+2. Etsi sivu nimeltä **"Ehdokassivusto"**
+3. Vie hiiri sivun nimen päälle → klikkaa **"Muokkaa"**
+4. Oikean palkin **"Tila ja näkyvyys"** -osiossa näkyy nykyinen salasana kentässä **"Salasana"**
+
+### Salasanan vaihtaminen
+
+1. WordPress-hallinta → **Sivut → Ehdokassivusto → Muokkaa**
+2. Oikea palkki → **"Tila ja näkyvyys"** → **"Salasana"**
+3. Kirjoita uusi salasana kenttään
+4. Klikkaa **"Päivitä"** oikeassa yläkulmassa
+
+> **Huom:** Salasana tallennetaan WordPress-tietokantaan, ei koodiin — salasanan vaihto ei vaadi koodimuutoksia eikä GitHub-päivitystä.
+
+### Sivun sisällön muokkaaminen
+
+Sivu käyttää tavallista WordPress-editoria — muokkaa sisältöä kuten mitä tahansa muuta sivua. Murupolku on piilotettu tällä sivulla tarkoituksella (ei paljasta sivun sijaintia ennen eikä jälkeen kirjautumisen).
+
+---
+
 ## Sisällön päivittäminen
 
 ### Tavallinen tekstisisältö
