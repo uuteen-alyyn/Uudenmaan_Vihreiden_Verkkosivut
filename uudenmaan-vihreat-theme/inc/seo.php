@@ -237,7 +237,7 @@ add_action( 'wp_footer', function (): void {
     if ( is_front_page() ) {
         return;
     }
-    if ( post_password_required() ) {
+    if ( get_post_field( 'post_password', get_the_ID() ) ) {
         return;
     }
     if ( uuvi_seo_plugin_active() ) {
@@ -337,8 +337,8 @@ function uuvi_breadcrumb_html(): void {
     if ( is_front_page() ) {
         return;
     }
-    // Ei murupolkua salasanasuojatuilla sivuilla ennen tunnistautumista
-    if ( post_password_required() ) {
+    // Ei murupolkua salasanasuojatuilla sivuilla (ei ennen eikä jälkeen tunnistautumisen)
+    if ( get_post_field( 'post_password', get_the_ID() ) ) {
         return;
     }
 
