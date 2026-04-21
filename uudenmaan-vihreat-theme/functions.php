@@ -28,8 +28,10 @@ add_action( 'init', function () {
     }
 } );
 
-// Piilota hallintapalkki julkiselta puolelta kaikilta käyttäjiltä
-add_filter( 'show_admin_bar', '__return_false' );
+// Näytä hallintapalkki vain admineille, piilota muilta käyttäjiltä ja vierailta
+add_filter( 'show_admin_bar', function ( bool $show ): bool {
+    return current_user_can( 'manage_options' ) ? $show : false;
+} );
 
 // ─── Theme supports ──────────────────────────────────────────────────────────
 
