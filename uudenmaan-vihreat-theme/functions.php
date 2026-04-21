@@ -9,16 +9,22 @@ defined( 'ABSPATH' ) || exit;
 require_once get_template_directory() . '/inc/setup-pages.php';
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/henkilosto-cpt.php';
+require_once get_template_directory() . '/inc/henkilosto-import.php';
 require_once get_template_directory() . '/inc/tapahtumat-parser.php';
 require_once get_template_directory() . '/inc/seo.php';
 
 // Luo sivut teeman aktivoinnin yhteydessä
 add_action( 'after_switch_theme', 'uuvi_create_all_pages' );
 
-// Luo sivut myös jos niitä ei vielä ole (esim. teema on jo aktiiivinen)
+// Luo sivut myös jos niitä ei vielä ole (esim. teema on jo aktiivinen)
 add_action( 'init', function () {
     if ( ! get_option( 'uuvi_pages_created' ) ) {
         uuvi_create_all_pages();
+    }
+    // Tuo henkilöstö erikseen, jotta se toimii myös vanhoilla asennuksilla
+    if ( ! get_option( 'uuvi_henkilosto_imported' ) ) {
+        uuvi_create_henkilosto();
+        update_option( 'uuvi_henkilosto_imported', '1' );
     }
 } );
 
