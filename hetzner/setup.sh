@@ -10,8 +10,8 @@ if [ -d "$DIR" ]; then
 fi
 
 # Collect configuration up front
-read -rp "Database password: " DB_PASS
-read -rp "Site URL (e.g. http://1.2.3.4:8081): " SITE_URL
+read -rp "Database password: " DB_PASS </dev/tty
+read -rp "Site URL (e.g. http://1.2.3.4:8081): " SITE_URL </dev/tty
 
 echo ""
 echo "Cloning repository..."
