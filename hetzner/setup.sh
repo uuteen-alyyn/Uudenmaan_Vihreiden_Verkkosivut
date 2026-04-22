@@ -41,6 +41,11 @@ until docker compose exec -T db mariadb-admin ping -u wordpress -p"$DB_PASS" --s
   sleep 2
 done
 
+echo "Waiting for WordPress to initialize..."
+until docker compose exec -T wordpress test -f /var/www/html/wp-config.php 2>/dev/null; do
+  sleep 2
+done
+
 echo "Restoring database..."
 docker compose exec -T db mariadb -u wordpress -p"$DB_PASS" wordpress < local-dump.sql
 

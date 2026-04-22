@@ -6,7 +6,7 @@ Kolmikielinen: **FI / SV / EN** (Polylang 3.8+).
 
 ---
 
-## Pikakäynnistys (Docker)
+## Pikakäynnistys (Docker, paikallinen kehitys)
 
 **Vaatimukset:** Git, Docker Desktop (tai Docker Engine + Compose v2)
 
@@ -18,23 +18,101 @@ cd Uudenmaan_Vihreiden_Verkkosivut
 # 2. Käynnistä WordPress + tietokanta
 docker compose up -d
 
-# 3. Avaa selaimessa ja asenna WordPress
+# 3. Odota ~10 sekuntia tietokannan käynnistymistä, sitten palauta dumppi
+docker compose exec -T db mariadb -u wordpress -pwordpress wordpress \
+  < db-export/local-dump.sql
+
+# 4. Avaa selaimessa — dumppi on jo paikallinen, URL-korvaus ei tarvita
 open http://localhost:8081
-# Seuraa asennusvelhoa — tietokanta-asetukset täyttyvät automaattisesti
 ```
 
-**Asennuksen jälkeen:**
+> **Kirjautuminen:** käyttäjätunnus `admin`, salasana on sama kuin mitä käytit paikallisessa asennuksessa kun dump luotiin. Jos et tiedä salasanaa, nollaa se alla olevalla komennolla.
 
-1. **Aktivoi teema:** Hallinta → Ulkoasu → Teemat → *Uudenmaan Vihreät* → Aktivoi
-   - Teema luo kaikki sivut, navigaation ja tuo henkilöstön kuvat automaattisesti
-2. **Asenna laajennokset:** Hallinta → Lisäosat → Lisää uusi → etsi ja aktivoi:
-   - **Polylang** (monikielisyys)
-   - **ICS Calendar** (tapahtumakalenteri)
-3. **Tuo sisältö:** Hallinta → Työkalut → Tuo → WordPress → valitse `db-export/uudenmaanvihret.WordPress.2026-04-21.xml`
-   - Valitse tekijäksi oma käyttäjäsi
-   - **Älä ruksaa** "Lataa ja tuo liitetiedostot" — kuvat ovat jo teeman mukana
+```bash
+# Nollaa admin-salasana
+docker compose exec wordpress wp user update admin --user_pass=uusisalasana --allow-root
+```
 
 Sivusto on valmis käytettäväksi. Katso tarkemmat ohjeet ja vianetsintä alta.
+
+---
+
+## Käyttöönotto perinteisellä web-hostingilla
+
+Tämä ohje sopii jaettuun hostingiin, hallittuun WordPress-hostingiin (WP Engine, Kinsta, SiteGround jne.) tai mihin tahansa ympäristöön jossa ei ole Dockeria.
+
+**Mitä tarvitset:**
+- WordPress-asennus palvelimella (useimmilla hosteilla automaattinen "yhden klikkauksen asennus")
+- pääsy phpMyAdmin-työkaluun tai hosting-paneelin tietokantatyökaluihin
+- tiedostojen hallinta FTP:llä tai hosting-paneelin kautta
+
+### Vaihe 1 — Asenna WordPress
+
+Asenna WordPress hosting-paneelista (Softaculous, Fantastico, tai manuaalisesti). Huomioi:
+- Käytä **oletustauluprefixiä `wp_`** — dumppi käyttää tätä
+- Asenna suomenkielisenä jos mahdollista
+
+### Vaihe 2 — Tuo tietokanta
+
+1. Avaa **phpMyAdmin** hosting-paneelista
+2. Valitse WordPress-tietokantasi vasemmasta valikosta
+3. Klikkaa **"Operaatiot"** (tai "Operations") → **"Tyhjennä tietokanta"** (poistaa kaikki vanhat taulut)
+4. Klikkaa **"Tuo"** (Import) → valitse `db-export/local-dump.sql` → klikkaa **"Suorita"**
+
+### Vaihe 3 — Päivitä sivuston URL
+
+phpMyAdmin-näkymässä (sama tietokanta):
+
+```sql
+-- Korvaa https://sinun-domain.fi oikealla osoitteellasi
+UPDATE wp_options
+SET option_value = 'https://sinun-domain.fi'
+WHERE option_name IN ('siteurl', 'home');
+```
+
+Klikkaa **"SQL"**-välilehteä, liitä yllä oleva ja aja se. Korvaa `https://sinun-domain.fi` todellisella domain-osoitteellasi.
+
+> **Linkit sisällössä:** yllä oleva päivittää vain pääasetukset. Sivujen sisällössä olevat `localhost:8081`-linkit korjataan joko WP-CLI:llä (vaihe 4) tai asennuksen jälkeen [Search & Replace](https://wordpress.org/plugins/search-replace/) -lisäosalla.
+
+### Vaihe 4 — Päivitä URL:t sisällössä (suositeltava)
+
+Jos hostingisi tarjoaa **WP-CLI**-tuen (monet hallitut hostit kuten Kinsta ja WP Engine tarjoavat):
+
+```bash
+wp search-replace 'http://localhost:8081' 'https://sinun-domain.fi' --all-tables
+```
+
+Jos WP-CLI ei ole saatavilla, asenna WordPress-lisäosa **"Better Search Replace"** ja aja haku-korvaus sieltä.
+
+### Vaihe 5 — Lataa teema
+
+1. Pakkaa teemakansio omalla koneellasi:
+   ```bash
+   zip -r uudenmaan-vihreat-theme.zip uudenmaan-vihreat-theme/
+   ```
+2. WordPress-hallinta → **Ulkoasu → Teemat → Lisää uusi → Lataa teema**
+3. Valitse zip-tiedosto → **Asenna → Aktivoi**
+
+> **Huom:** Teema on jo asennettuna dumpissa (tietokantarivit), mutta teematiedostot täytyy silti ladata palvelimelle erikseen.
+
+### Vaihe 6 — Asenna laajennokset
+
+WordPress-hallinta → **Lisäosat → Lisää uusi** → etsi ja aktivoi:
+- **Polylang** (monikielisyys FI/SV/EN)
+- **ICS Calendar** (tapahtumakalenteri)
+
+### Kirjautuminen
+
+Tietokannadumpissa on alkuperäisen paikallisen asennuksen admin-tunnukset. Jos et tiedä salasanaa tai haluat vaihtaa sen:
+
+1. phpMyAdmin → taulukko `wp_users` → muokkaa admin-käyttäjää
+2. Tyhjennä `user_pass`-kenttä ja kirjoita uusi salasana tekstinä
+3. Vaihda **Function**-sarakkeessa arvoksi `MD5` → **Suorita**
+
+Tai jos WP-CLI on käytettävissä:
+```bash
+wp user update admin --user_pass=uusisalasana
+```
 
 ---
 
@@ -185,26 +263,16 @@ docker exec wordpress cp /tmp/uudenmaan-vihreat-sv_SE.mo \
 Kaikki sivupohjat käyttävät FI-sivutunnisteita navigointilinkeissä:
 
 ```php
-uuvi_translated_url( int $fi_page_id )   // palauttaa käännetyn sivun URL:n
-uuvi_translated_title( int $fi_page_id ) // palauttaa käännetyn sivun otsikon
+uuvi_translated_url( string $fi_slug )   // palauttaa käännetyn sivun URL:n
+uuvi_translated_title( string $fi_slug ) // palauttaa käännetyn sivun otsikon
 ```
 
-Tärkeimmät FI-sivutunnisteet:
+Funktiot hakevat sivun slugin perusteella suoraan SQL-kyselyllä (ohittaa Polylangin filter-hookin joka muuten pudottaa alirakenteiset sivut). Käytä aina FI-sivun slugia kielestä riippumatta:
 
-| ID | Sivu |
-|---|---|
-| 7 | Ajankohtaista |
-| 8 | Tule mukaan |
-| 9 | Vaalit |
-| 10 | Hyvinvointialueet |
-| 11 | Yhteystiedot |
-| 12 | Medialle |
-| 13 | Yleiskokous |
-| 17 | Ehdolle vaaleihin |
-| 25 | Piiritoimisto |
-| 26 | Piirihallitus |
-| 27 | Kansanedustajat |
-| 130 | Meistä |
+```php
+uuvi_translated_url( 'tule-mukaan' )   // → /tule-mukaan/ (FI) tai /sv/bli-med/ (SV) jne.
+uuvi_translated_url( 'piiritoimisto' ) // → toimii myös alirakenteiset sivut
+```
 
 ---
 
@@ -218,14 +286,12 @@ Tärkeimmät FI-sivutunnisteet:
 # 1. Käynnistä WordPress + MariaDB
 docker compose up -d
 
-# 2. Avaa selaimessa
+# 2. Odota ~10 sekuntia tietokannan käynnistymistä, sitten palauta dumppi
+docker compose exec -T db mariadb -u wordpress -pwordpress wordpress \
+  < db-export/local-dump.sql
+
+# 3. Avaa selaimessa — sivusto on heti valmis
 open http://localhost:8081
-
-# 3. Asenna WordPress (seuraa ohjattua asennusta)
-#    Tietokanta-asetukset täytetään automaattisesti docker-compose.yml:stä
-
-# 4. Aktivoi teema
-#    WordPress-hallinta → Ulkoasu → Teemat → Uudenmaan Vihreät → Aktivoi
 ```
 
 Teeman tiedostot on liitetty Docker-volyymiin — muutokset näkyvät suoraan selaimessa ilman kontin uudelleenkäynnistystä.
@@ -313,18 +379,19 @@ Asenna nämä **ennen** kuin alat muokata sisältöä:
 
 > **Huom:** Teema toimii ilman Polylangia (sivusto on silloin pelkästään suomenkielinen), mutta monikielisyys ei toimi. Ilman ICS Calendaria tapahtumakalenteri-sivu on tyhjä. Teema näyttää adminissa varoituksen kummastakin, jos ne puuttuvat.
 
-### Sisällön tuominen (WP Export)
+### Sisällön tuominen (MySQL-dumppi)
 
-Repossa on valmis sisältöexport kansiossa `db-export/`. **Tämä on suositeltava tapa** — se luo kaikki sivut oikeilla slugeilla ja sisällöillä automaattisesti, eikä sinun tarvitse luoda sivuja käsin alla olevan taulukon mukaan.
+Repossa on täydellinen MySQL-dumppi kansiossa `db-export/local-dump.sql`. **Tämä on suositeltava tapa** — se sisältää kaiken sisällön, Polylang-käännössuhteet, navigaatiorakenteet ja henkilöstötiedot täydellisesti.
 
-1. Hallinta → **Työkalut → Tuo → WordPress** (asenna tuoja-laajennus jos pyydetään)
-2. Valitse tiedosto `db-export/uudenmaanvihret.WordPress.2026-04-21.xml`
-3. Klikkaa **Lataa tiedosto ja tuo**
-4. Valitse tekijäksi oma WordPress-käyttäjäsi
-5. Ruksaa **Lataa ja tuo liitetiedostot** jos haluat kuvat mukaan
-6. Klikkaa **Lähetä**
+**Docker-ympäristössä:**
+```bash
+docker compose exec -T db mariadb -u wordpress -pwordpress wordpress \
+  < db-export/local-dump.sql
+```
 
-> **Huom:** Export päivitetään aina kun sivujen sisältöä muutetaan merkittävästi. Uusin versio löytyy aina `db-export/`-kansiosta.
+**Perinteisessä hostingissa:** katso "Käyttöönotto perinteisellä web-hostingilla" -osio yllä.
+
+> **Huom XML-exportista:** Kansiossa on myös XML-exportteja (`.xml`), mutta niiden käyttöä ei suositella — Polylang-käännössuhteet eivät siirry luotettavasti XML:n kautta. Käytä SQL-dumpppia.
 
 ### Luo sivut näillä slugeilla
 
