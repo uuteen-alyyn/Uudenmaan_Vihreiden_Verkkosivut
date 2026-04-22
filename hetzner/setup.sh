@@ -50,11 +50,8 @@ echo "Restoring database..."
 docker compose exec -T db mariadb -u wordpress -p"$DB_PASS" wordpress < local-dump.sql
 
 echo "Updating URLs..."
-docker run --rm \
-  --network "${DIR}_internal" \
-  --volumes-from uuvi-web \
-  wordpress:cli \
-  wp search-replace 'http://localhost:8081' "$SITE_URL" --allow-root
+docker compose exec -T db mariadb -u wordpress -p"$DB_PASS" wordpress -e \
+  "UPDATE wp_options SET option_value='$SITE_URL' WHERE option_name IN ('siteurl','home');"
 
 echo ""
 echo "Done! Open $SITE_URL to access the site."
