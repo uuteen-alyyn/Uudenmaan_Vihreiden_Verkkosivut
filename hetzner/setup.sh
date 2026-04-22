@@ -50,8 +50,10 @@ echo "Restoring database..."
 docker compose exec -T db mariadb -u wordpress -p"$DB_PASS" wordpress < local-dump.sql
 
 echo "Updating URLs..."
-docker compose exec -T db mariadb -u wordpress -p"$DB_PASS" wordpress -e \
-  "UPDATE wp_options SET option_value='$SITE_URL' WHERE option_name IN ('siteurl','home');"
+docker compose exec -T wordpress bash -c \
+  "curl -sS https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /tmp/wp.phar \
+   && php /tmp/wp.phar search-replace 'http://localhost:8081' '$SITE_URL' \
+      --all-tables --allow-root --path=/var/www/html"
 
 echo ""
 echo "Done! Open $SITE_URL to access the site."
