@@ -18,7 +18,7 @@ $pics      = get_template_directory_uri() . '/assets/images/';
   $ehdolle_posts = get_posts( [ 'name' => 'ehdolle-vaaleihin', 'post_type' => 'page', 'numberposts' => 1 ] );
   $ehdolle_url   = $ehdolle_posts ? get_permalink( $ehdolle_posts[0]->ID ) : home_url( '/vaalit/ehdolle-vaaleihin/' );
   set_query_var( 'hero_ctas', [
-      [ 'label' => __( 'Tule mukaan', 'uudenmaan-vihreat' ),    'url' => uuvi_translated_url( 8 ), 'style' => 'btn--primary' ],
+      [ 'label' => __( 'Tule mukaan', 'uudenmaan-vihreat' ),    'url' => uuvi_translated_url( 'tule-mukaan' ), 'style' => 'btn--primary' ],
       [ 'label' => __( 'Ehdolle eduskuntavaaleihin?', 'uudenmaan-vihreat' ), 'url' => $ehdolle_url, 'style' => 'btn--ghost-white' ],
   ] );
   get_template_part( 'parts/hero' );
@@ -40,7 +40,7 @@ $pics      = get_template_directory_uri() . '/assets/images/';
       </div>
       <div class="grid-3">
 
-        <a class="quick-card" href="<?php echo esc_url( uuvi_translated_url( 8 ) ); ?>">
+        <a class="quick-card" href="<?php echo esc_url( uuvi_translated_url( 'tule-mukaan' ) ); ?>">
           <img class="quick-card__image" src="<?php echo esc_url( $pics . 'placeholders/card-2.jpg' ); ?>" alt="" loading="lazy">
           <div class="quick-card__overlay" aria-hidden="true"></div>
           <div class="quick-card__body">
@@ -50,23 +50,23 @@ $pics      = get_template_directory_uri() . '/assets/images/';
           </div>
         </a>
 
-        <a class="quick-card" href="<?php echo esc_url( uuvi_translated_url( 12 ) ); ?>">
+        <a class="quick-card" href="<?php echo esc_url( uuvi_translated_url( 'medialle' ) ); ?>">
           <img class="quick-card__image" src="<?php echo esc_url( $pics . 'placeholders/card-4.jpg' ); ?>" alt="" loading="lazy">
           <div class="quick-card__overlay" aria-hidden="true"></div>
           <div class="quick-card__body">
-            <h3><?php echo esc_html( uuvi_translated_title( 12 ) ); ?></h3>
+            <h3><?php echo esc_html( uuvi_translated_title( 'medialle' ) ); ?></h3>
             <p><?php esc_html_e( 'Yhteystiedot, tiedotteet ja ladattava kuva-aineisto.', 'uudenmaan-vihreat' ); ?></p>
             <span class="btn btn--ghost-white"><?php esc_html_e( 'Mediasivu →', 'uudenmaan-vihreat' ); ?></span>
           </div>
         </a>
 
-        <a class="quick-card" href="<?php echo esc_url( uuvi_translated_url( 11 ) ); ?>">
+        <a class="quick-card" href="<?php echo esc_url( uuvi_translated_url( 'yhteystiedot' ) ); ?>">
           <img class="quick-card__image" src="<?php echo esc_url( $pics . 'placeholders/card-3.jpg' ); ?>" alt="" loading="lazy">
           <div class="quick-card__overlay" aria-hidden="true"></div>
           <div class="quick-card__body">
             <h3><?php esc_html_e( 'Ota yhteyttä', 'uudenmaan-vihreat' ); ?></h3>
             <p><?php esc_html_e( 'Löydä oikea henkilö tai ota yhteys piiritoimistoon.', 'uudenmaan-vihreat' ); ?></p>
-            <span class="btn btn--ghost-white"><?php echo esc_html( uuvi_translated_title( 11 ) ); ?> →</span>
+            <span class="btn btn--ghost-white"><?php echo esc_html( uuvi_translated_title( 'yhteystiedot' ) ); ?> →</span>
           </div>
         </a>
 
@@ -78,12 +78,12 @@ $pics      = get_template_directory_uri() . '/assets/images/';
   <section class="section section--grey" aria-labelledby="ajankohtaista-heading">
     <div class="container">
       <div class="section-header">
-        <h2 id="ajankohtaista-heading"><?php echo esc_html( uuvi_translated_title( 7 ) ); ?></h2>
+        <h2 id="ajankohtaista-heading"><?php echo esc_html( uuvi_translated_title( 'ajankohtaista' ) ); ?></h2>
         <p><?php esc_html_e( 'Uutisia, kannanottoja ja tietoa Uudenmaan Vihreiden toiminnasta.', 'uudenmaan-vihreat' ); ?></p>
       </div>
       <?php get_template_part( 'parts/cards-latest' ); ?>
       <p class="mt-2 text-center">
-        <a class="btn btn--outline" href="<?php echo esc_url( uuvi_translated_url( 7 ) ); ?>">
+        <a class="btn btn--outline" href="<?php echo esc_url( uuvi_translated_url( 'ajankohtaista' ) ); ?>">
           <?php esc_html_e( 'Kaikki uutiset →', 'uudenmaan-vihreat' ); ?>
         </a>
       </p>
@@ -109,7 +109,7 @@ $pics      = get_template_directory_uri() . '/assets/images/';
           <p class="ingress" style="margin-bottom:1.5rem;">
             <?php esc_html_e( 'Tule mukaan Uudenmaan Vihreiden tapahtumiin — kalenterista löydät menotiedot koko Uudellamaalla!', 'uudenmaan-vihreat' ); ?>
           </p>
-          <a class="btn btn--primary" href="<?php echo esc_url( uuvi_translated_url( 14 ) ); ?>">
+          <a class="btn btn--primary" href="<?php echo esc_url( uuvi_translated_url( 'tapahtumakalenteri' ) ); ?>">
             <?php esc_html_e( 'Katso tapahtumakalenteri →', 'uudenmaan-vihreat' ); ?>
           </a>
         </div>

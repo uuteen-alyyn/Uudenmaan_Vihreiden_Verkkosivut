@@ -13,54 +13,48 @@
 <?php
 /**
  * Fallback nav — shown when no menu is assigned in wp-admin.
- * Uses Finnish page IDs as the canonical reference; uuvi_translated_url()
+ * Uses Finnish page slugs as the canonical reference; uuvi_translated_url()
  * and uuvi_translated_title() return the correct language version via Polylang.
- *
- * FI page IDs:
- *   7=Ajankohtaista, 15=Tiedotteet, 14=Tapahtumakalenteri, 13=Yleiskokous,
- *   8=Tule mukaan, 9=Vaalit, 320=Ehdokkaamme, 16=Vaalitavoitteemme, 17=Ehdolle vaaleihin, 229=Aiemmat vaalit,
- *   10=Hyvinvointialueet, 18=Länsi, 19=Keski, 20=Itä, 21=Vantaa-Kerava, 22=HUS, 23=Kunnat,
- *   11=Yhteystiedot, 130=Meistä, 12=Medialle, 27=Kansanedustajat, 26=Piirihallitus, 25=Toimisto
  */
 function uuvi_fallback_nav(): void {
     $menu = [
         [
-            'id'       => 7,
+            'slug'     => 'ajankohtaista',
             'children' => [
-                [ 'id' => 15 ],
-                [ 'id' => 14 ],
-                [ 'id' => 13 ],
+                [ 'slug' => 'tiedotteet' ],
+                [ 'slug' => 'tapahtumakalenteri' ],
+                [ 'slug' => 'yleiskokous' ],
             ],
         ],
-        [ 'id' => 8 ],
+        [ 'slug' => 'tule-mukaan' ],
         [
-            'id'       => 9,
+            'slug'     => 'vaalit',
             'children' => [
-                [ 'id' => 320 ],
-                [ 'id' => 16 ],
-                [ 'id' => 17 ],
-                [ 'id' => 229 ],
-            ],
-        ],
-        [
-            'id'       => 10,
-            'children' => [
-                [ 'id' => 18 ],
-                [ 'id' => 19 ],
-                [ 'id' => 20 ],
-                [ 'id' => 21 ],
-                [ 'id' => 22 ],
-                [ 'id' => 23 ],
+                [ 'slug' => 'ehdokkaamme' ],
+                [ 'slug' => 'vaalitavoitteemme' ],
+                [ 'slug' => 'ehdolle-vaaleihin' ],
+                [ 'slug' => 'aiemmat-vaalit' ],
             ],
         ],
         [
-            'id'       => 11,
+            'slug'     => 'hyvinvointialueet',
             'children' => [
-                [ 'id' => 130 ],
-                [ 'id' => 12  ],
-                [ 'id' => 27  ],
-                [ 'id' => 26  ],
-                [ 'id' => 25  ],
+                [ 'slug' => 'lansi-uusimaa' ],
+                [ 'slug' => 'keski-uusimaa' ],
+                [ 'slug' => 'ita-uusimaa' ],
+                [ 'slug' => 'vantaa-kerava' ],
+                [ 'slug' => 'hus-ja-maakunnalliset' ],
+                [ 'slug' => 'kuntapolitiikka' ],
+            ],
+        ],
+        [
+            'slug'     => 'yhteystiedot',
+            'children' => [
+                [ 'slug' => 'meista' ],
+                [ 'slug' => 'medialle' ],
+                [ 'slug' => 'kansanedustajat' ],
+                [ 'slug' => 'piirihallitus' ],
+                [ 'slug' => 'piiritoimisto' ],
             ],
         ],
     ];
@@ -69,14 +63,14 @@ function uuvi_fallback_nav(): void {
     foreach ( $menu as $item ) {
         $has_children = ! empty( $item['children'] );
         echo '<li class="' . ( $has_children ? 'has-children' : '' ) . '">';
-        echo '<a href="' . esc_url( uuvi_translated_url( $item['id'] ) ) . '">'
-             . esc_html( uuvi_translated_title( $item['id'] ) )
+        echo '<a href="' . esc_url( uuvi_translated_url( $item['slug'] ) ) . '">'
+             . esc_html( uuvi_translated_title( $item['slug'] ) )
              . '</a>';
         if ( $has_children ) {
             echo '<ul class="sub-menu">';
             foreach ( $item['children'] as $child ) {
-                echo '<li><a href="' . esc_url( uuvi_translated_url( $child['id'] ) ) . '">'
-                     . esc_html( uuvi_translated_title( $child['id'] ) )
+                echo '<li><a href="' . esc_url( uuvi_translated_url( $child['slug'] ) ) . '">'
+                     . esc_html( uuvi_translated_title( $child['slug'] ) )
                      . '</a></li>';
             }
             echo '</ul>';

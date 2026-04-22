@@ -12,7 +12,7 @@
         <?php the_content(); ?>
       </div>
       <p style="margin-top:2rem;">
-        <a href="<?php echo esc_url( uuvi_translated_url( 3 ) ); ?>"><?php esc_html_e( 'Tietosuojaseloste →', 'uudenmaan-vihreat' ); ?></a>
+        <a href="<?php echo esc_url( uuvi_translated_url( 'tietosuoja' ) ); ?>"><?php esc_html_e( 'Tietosuojaseloste →', 'uudenmaan-vihreat' ); ?></a>
       </p>
     </div>
   </section>

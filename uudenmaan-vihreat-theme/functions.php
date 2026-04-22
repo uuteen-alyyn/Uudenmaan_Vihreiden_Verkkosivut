@@ -90,22 +90,28 @@ add_action( 'after_setup_theme', function () {
 } );
 
 // ─── Polylang translation helpers ────────────────────────────────────────────
-// Returns the permalink for a page in the current language, given the FI page ID.
-function uuvi_translated_url( int $fi_id ): string {
+// Returns the permalink for a page in the current language, given the FI page slug.
+function uuvi_translated_url( string $slug ): string {
+    $page = get_page_by_path( $slug );
+    if ( ! $page ) {
+        return '#';
+    }
+    $id = $page->ID;
     if ( function_exists( 'pll_get_post' ) ) {
-        $id = pll_get_post( $fi_id ) ?: $fi_id;
-    } else {
-        $id = $fi_id;
+        $id = pll_get_post( $id ) ?: $id;
     }
     return get_permalink( $id ) ?: '#';
 }
 
-// Returns the title for a page in the current language, given the FI page ID.
-function uuvi_translated_title( int $fi_id ): string {
+// Returns the title for a page in the current language, given the FI page slug.
+function uuvi_translated_title( string $slug ): string {
+    $page = get_page_by_path( $slug );
+    if ( ! $page ) {
+        return '';
+    }
+    $id = $page->ID;
     if ( function_exists( 'pll_get_post' ) ) {
-        $id = pll_get_post( $fi_id ) ?: $fi_id;
-    } else {
-        $id = $fi_id;
+        $id = pll_get_post( $id ) ?: $id;
     }
     return get_the_title( $id );
 }

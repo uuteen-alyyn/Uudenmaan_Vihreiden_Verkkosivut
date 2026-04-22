@@ -18,18 +18,17 @@
 
       <div class="grid-3">
         <?php
-        // FI page IDs → card descriptions
         $alueet = [
-            [ 'fi_id' => 18, 'desc' => __( 'Vihreät Länsi-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 19, 'desc' => __( 'Vihreät Keski-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 20, 'desc' => __( 'Vihreät Itä-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 21, 'desc' => __( 'Vihreät Vantaa–Keravan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 22, 'desc' => __( 'Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 23, 'desc' => __( 'Paikallisyhdistykset ja kuntavaikuttaminen.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'lansi-uusimaa',       'desc' => __( 'Vihreät Länsi-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'keski-uusimaa',        'desc' => __( 'Vihreät Keski-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'ita-uusimaa',          'desc' => __( 'Vihreät Itä-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'vantaa-kerava',        'desc' => __( 'Vihreät Vantaa–Keravan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'hus-ja-maakunnalliset','desc' => __( 'Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'kuntapolitiikka',      'desc' => __( 'Paikallisyhdistykset ja kuntavaikuttaminen.', 'uudenmaan-vihreat' ) ],
         ];
         foreach ( $alueet as $alue ) :
-            $url   = uuvi_translated_url( $alue['fi_id'] );
-            $title = uuvi_translated_title( $alue['fi_id'] );
+            $url   = uuvi_translated_url( $alue['slug'] );
+            $title = uuvi_translated_title( $alue['slug'] );
         ?>
           <a class="region-card" href="<?php echo esc_url( $url ); ?>">
             <h3><?php echo esc_html( $title ); ?></h3>

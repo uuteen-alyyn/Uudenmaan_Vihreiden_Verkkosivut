@@ -18,17 +18,16 @@
 
       <div class="grid-2">
         <?php
-        // FI page IDs → card descriptions
         $cards = [
-            [ 'fi_id' => 130, 'desc' => __( 'Piirin missio, hallinto ja dokumentit.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 25,  'desc' => __( 'Henkilökunta, puheenjohtaja ja yleinen osoite.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 26,  'desc' => __( 'Hallituksen jäsenet, varajäsenet ja työalat.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 12,  'desc' => __( 'Mediayhteyshenkilö, logot ja tiedotteet.', 'uudenmaan-vihreat' ) ],
-            [ 'fi_id' => 27,  'desc' => __( 'Uudeltamaalta valitut Vihreiden kansanedustajat.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'meista',          'desc' => __( 'Piirin missio, hallinto ja dokumentit.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'piiritoimisto',   'desc' => __( 'Henkilökunta, puheenjohtaja ja yleinen osoite.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'piirihallitus',   'desc' => __( 'Hallituksen jäsenet, varajäsenet ja työalat.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'medialle',        'desc' => __( 'Mediayhteyshenkilö, logot ja tiedotteet.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'kansanedustajat', 'desc' => __( 'Uudeltamaalta valitut Vihreiden kansanedustajat.', 'uudenmaan-vihreat' ) ],
         ];
         foreach ( $cards as $card ) :
-            $url   = uuvi_translated_url( $card['fi_id'] );
-            $title = uuvi_translated_title( $card['fi_id'] );
+            $url   = uuvi_translated_url( $card['slug'] );
+            $title = uuvi_translated_title( $card['slug'] );
         ?>
           <a class="card" href="<?php echo esc_url( $url ); ?>" style="text-decoration:none;">
             <div class="card__body">

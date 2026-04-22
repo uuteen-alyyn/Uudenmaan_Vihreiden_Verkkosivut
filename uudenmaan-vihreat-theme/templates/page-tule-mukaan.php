@@ -93,9 +93,9 @@ $pics = get_template_directory_uri() . '/assets/images/placeholders/';
             <span class="card__link"><?php esc_html_e( 'Avaa Vihko →', 'uudenmaan-vihreat' ); ?></span>
           </div>
         </a>
-        <a class="card" href="<?php echo esc_url( uuvi_translated_url( 14 ) ); ?>" style="text-decoration:none;">
+        <a class="card" href="<?php echo esc_url( uuvi_translated_url( 'tapahtumakalenteri' ) ); ?>" style="text-decoration:none;">
           <div class="card__body">
-            <h3 class="card__title" style="font-size:1.1rem;"><?php echo esc_html( uuvi_translated_title( 14 ) ); ?></h3>
+            <h3 class="card__title" style="font-size:1.1rem;"><?php echo esc_html( uuvi_translated_title( 'tapahtumakalenteri' ) ); ?></h3>
             <p class="card__excerpt"><?php esc_html_e( 'Tulevat tapahtumat, kokoukset ja koulutukset Uudellamaalla.', 'uudenmaan-vihreat' ); ?></p>
             <span class="card__link"><?php esc_html_e( 'Katso kalenteri →', 'uudenmaan-vihreat' ); ?></span>
           </div>
@@ -121,7 +121,7 @@ $pics = get_template_directory_uri() . '/assets/images/placeholders/';
           <p class="ingress" style="margin-bottom:1.5rem;">
             <?php esc_html_e( 'Vihreät tarvitsee rohkeita ehdokkaita joka kunnasta. Sinulla on annettavaa — autamme sinut matkaan.', 'uudenmaan-vihreat' ); ?>
           </p>
-          <a class="btn btn--primary" href="<?php echo esc_url( uuvi_translated_url( 17 ) ); ?>"><?php esc_html_e( 'Lähde ehdolle →', 'uudenmaan-vihreat' ); ?></a>
+          <a class="btn btn--primary" href="<?php echo esc_url( uuvi_translated_url( 'ehdolle-vaaleihin' ) ); ?>"><?php esc_html_e( 'Lähde ehdolle →', 'uudenmaan-vihreat' ); ?></a>
         </div>
       </div>
     </div>

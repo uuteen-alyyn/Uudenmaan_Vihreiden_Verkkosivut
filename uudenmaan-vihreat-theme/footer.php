@@ -22,17 +22,16 @@
         </p>
       </div>
 
-      <!-- Quick links — uses Finnish page IDs; uuvi_translated_url/title handle language -->
       <div class="footer-col">
         <h3><?php esc_html_e( 'Sivusto', 'uudenmaan-vihreat' ); ?></h3>
         <ul>
           <li><a href="<?php echo esc_url( function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' ) ); ?>"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a></li>
-          <li><a href="<?php echo esc_url( uuvi_translated_url( 7 ) ); ?>"><?php echo esc_html( uuvi_translated_title( 7 ) ); ?></a></li>
-          <li><a href="<?php echo esc_url( uuvi_translated_url( 8 ) ); ?>"><?php echo esc_html( uuvi_translated_title( 8 ) ); ?></a></li>
-          <li><a href="<?php echo esc_url( uuvi_translated_url( 9 ) ); ?>"><?php echo esc_html( uuvi_translated_title( 9 ) ); ?></a></li>
-          <li><a href="<?php echo esc_url( uuvi_translated_url( 10 ) ); ?>"><?php echo esc_html( uuvi_translated_title( 10 ) ); ?></a></li>
-          <li><a href="<?php echo esc_url( uuvi_translated_url( 12 ) ); ?>"><?php echo esc_html( uuvi_translated_title( 12 ) ); ?></a></li>
-          <li><a href="<?php echo esc_url( uuvi_translated_url( 11 ) ); ?>"><?php echo esc_html( uuvi_translated_title( 11 ) ); ?></a></li>
+          <li><a href="<?php echo esc_url( uuvi_translated_url( 'ajankohtaista' ) ); ?>"><?php echo esc_html( uuvi_translated_title( 'ajankohtaista' ) ); ?></a></li>
+          <li><a href="<?php echo esc_url( uuvi_translated_url( 'tule-mukaan' ) ); ?>"><?php echo esc_html( uuvi_translated_title( 'tule-mukaan' ) ); ?></a></li>
+          <li><a href="<?php echo esc_url( uuvi_translated_url( 'vaalit' ) ); ?>"><?php echo esc_html( uuvi_translated_title( 'vaalit' ) ); ?></a></li>
+          <li><a href="<?php echo esc_url( uuvi_translated_url( 'hyvinvointialueet' ) ); ?>"><?php echo esc_html( uuvi_translated_title( 'hyvinvointialueet' ) ); ?></a></li>
+          <li><a href="<?php echo esc_url( uuvi_translated_url( 'medialle' ) ); ?>"><?php echo esc_html( uuvi_translated_title( 'medialle' ) ); ?></a></li>
+          <li><a href="<?php echo esc_url( uuvi_translated_url( 'yhteystiedot' ) ); ?>"><?php echo esc_html( uuvi_translated_title( 'yhteystiedot' ) ); ?></a></li>
         </ul>
       </div>
 
@@ -65,7 +64,7 @@
       <span>© <span class="js-current-year"><?php echo esc_html( date( 'Y' ) ); ?></span> Uudenmaan Vihreät ry</span>
       <span style="color:rgba(255,255,255,.45);font-size:.8rem;">Kuvat: Reima Kuukka; Kansanedustajien kuvat Eduskunta</span>
       <span>
-        <a href="<?php echo esc_url( uuvi_translated_url( 3 ) ); ?>"><?php esc_html_e( 'Tietosuojaseloste →', 'uudenmaan-vihreat' ); ?></a>
+        <a href="<?php echo esc_url( uuvi_translated_url( 'tietosuoja' ) ); ?>"><?php esc_html_e( 'Tietosuojaseloste →', 'uudenmaan-vihreat' ); ?></a>
         &nbsp;·&nbsp;
         <a href="<?php echo esc_url( home_url( '/saavutettavuus/' ) ); ?>">Saavutettavuusseloste</a>
       </span>
