@@ -101,6 +101,8 @@ WordPress-hallinta → **Lisäosat → Lisää uusi** → etsi ja aktivoi:
 - **Polylang** (monikielisyys FI/SV/EN)
 - **ICS Calendar** (tapahtumakalenteri)
 
+> **Tärkeää — järjestys on oikein:** Polylang täytyy asentaa *tietokantadupin jälkeen*, ei ennen sitä. Dumppi sisältää valmiit Polylang-käännösrakenteet (sivujen kielisuhteet, käännetyt sisällöt). WordPress poistaa Polylangin aktiivilistalta automaattisesti tuonnin yhteydessä kun laajennoksen tiedostot puuttuvat — käännösdata säilyy kuitenkin koskemattomana. Kun asennat Polylangin tämän jälkeen, se löytää valmiin datan ja monikielisyys toimii heti ilman lisäkonfigurointia.
+
 ### Kirjautuminen
 
 Tietokannadumpissa on alkuperäisen paikallisen asennuksen admin-tunnukset. Jos et tiedä salasanaa tai haluat vaihtaa sen:
