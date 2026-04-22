@@ -90,29 +90,35 @@ add_action( 'after_setup_theme', function () {
 } );
 
 // ─── Polylang translation helpers ────────────────────────────────────────────
+// Resolves a Finnish page slug to its ID using a direct DB query, bypassing
+// Polylang's get_page_by_path filter which drops child pages.
+function uuvi_fi_id_by_slug( string $slug ): int {
+    global $wpdb;
+    return (int) $wpdb->get_var(
+        $wpdb->prepare(
+            "SELECT ID FROM {$wpdb->posts} WHERE post_name = %s AND post_type = 'page' AND post_status = 'publish' LIMIT 1",
+            $slug
+        )
+    );
+}
+
 // Returns the permalink for a page in the current language, given the FI page slug.
 function uuvi_translated_url( string $slug ): string {
-    $page = get_page_by_path( $slug );
-    if ( ! $page ) {
+    $fi_id = uuvi_fi_id_by_slug( $slug );
+    if ( ! $fi_id ) {
         return '#';
     }
-    $id = $page->ID;
-    if ( function_exists( 'pll_get_post' ) ) {
-        $id = pll_get_post( $id ) ?: $id;
-    }
+    $id = function_exists( 'pll_get_post' ) ? ( pll_get_post( $fi_id ) ?: $fi_id ) : $fi_id;
     return get_permalink( $id ) ?: '#';
 }
 
 // Returns the title for a page in the current language, given the FI page slug.
 function uuvi_translated_title( string $slug ): string {
-    $page = get_page_by_path( $slug );
-    if ( ! $page ) {
+    $fi_id = uuvi_fi_id_by_slug( $slug );
+    if ( ! $fi_id ) {
         return '';
     }
-    $id = $page->ID;
-    if ( function_exists( 'pll_get_post' ) ) {
-        $id = pll_get_post( $id ) ?: $id;
-    }
+    $id = function_exists( 'pll_get_post' ) ? ( pll_get_post( $fi_id ) ?: $fi_id ) : $fi_id;
     return get_the_title( $id );
 }
 

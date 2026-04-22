@@ -96,13 +96,17 @@ add_action( 'save_post_uuvi_henkilo', function ( int $post_id ): void {
  * @param string|string[] $ryhma  Ryhmä tai ryhmien lista. Tyhjä = kaikki.
  */
 function uuvi_get_henkilot( $ryhma = '' ): array {
+    $lang   = function_exists( 'pll_current_language' ) ? pll_current_language() : 'fi';
+    $suffix = in_array( $lang, [ 'sv', 'en' ], true ) ? "_{$lang}" : '';
+
     $args = [
-        'post_type'      => 'uuvi_henkilo',
-        'post_status'    => 'publish',
-        'posts_per_page' => -1,
-        'meta_key'       => 'uuvi_jarjestys',
-        'orderby'        => 'meta_value_num',
-        'order'          => 'ASC',
+        'post_type'        => 'uuvi_henkilo',
+        'post_status'      => 'publish',
+        'posts_per_page'   => -1,
+        'meta_key'         => 'uuvi_jarjestys',
+        'orderby'          => 'meta_value_num',
+        'order'            => 'ASC',
+        'suppress_filters' => true,
     ];
 
     if ( $ryhma ) {
@@ -116,14 +120,16 @@ function uuvi_get_henkilot( $ryhma = '' ): array {
 
     $posts = get_posts( $args );
 
-    return array_map( function ( WP_Post $p ): array {
+    return array_map( function ( WP_Post $p ) use ( $suffix ): array {
         return [
-            'name'   => $p->post_title,
-            'role'   => get_post_meta( $p->ID, 'uuvi_nimike',  true ),
-            'group'  => get_post_meta( $p->ID, 'uuvi_ryhma',   true ),
-            'email'  => get_post_meta( $p->ID, 'uuvi_email',   true ),
-            'phone'  => get_post_meta( $p->ID, 'uuvi_puhelin', true ),
-            'photo'  => get_the_post_thumbnail_url( $p->ID, 'large' ) ?: get_the_post_thumbnail_url( $p->ID, 'full' ) ?: '',
+            'name'  => $p->post_title,
+            'role'  => get_post_meta( $p->ID, "uuvi_nimike{$suffix}", true )
+                    ?: get_post_meta( $p->ID, 'uuvi_nimike', true ),
+            'group' => get_post_meta( $p->ID, "uuvi_ryhma{$suffix}", true )
+                    ?: get_post_meta( $p->ID, 'uuvi_ryhma', true ),
+            'email' => get_post_meta( $p->ID, 'uuvi_email',   true ),
+            'phone' => get_post_meta( $p->ID, 'uuvi_puhelin', true ),
+            'photo' => get_the_post_thumbnail_url( $p->ID, 'large' ) ?: get_the_post_thumbnail_url( $p->ID, 'full' ) ?: '',
         ];
     }, $posts );
 }

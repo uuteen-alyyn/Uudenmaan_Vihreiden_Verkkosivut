@@ -24,7 +24,7 @@
             [ 'slug' => 'ita-uusimaa',          'desc' => __( 'Vihreät Itä-Uudenmaan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
             [ 'slug' => 'vantaa-kerava',        'desc' => __( 'Vihreät Vantaa–Keravan hyvinvointialueella.', 'uudenmaan-vihreat' ) ],
             [ 'slug' => 'hus-ja-maakunnalliset','desc' => __( 'Vihreät HUS-alueella ja maakunnallisissa luottamustoimissa.', 'uudenmaan-vihreat' ) ],
-            [ 'slug' => 'kuntapolitiikka',      'desc' => __( 'Paikallisyhdistykset ja kuntavaikuttaminen.', 'uudenmaan-vihreat' ) ],
+            [ 'slug' => 'kunnat',               'desc' => __( 'Paikallisyhdistykset ja kuntavaikuttaminen.', 'uudenmaan-vihreat' ) ],
         ];
         foreach ( $alueet as $alue ) :
             $url   = uuvi_translated_url( $alue['slug'] );

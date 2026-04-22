@@ -44,7 +44,7 @@ function uuvi_fallback_nav(): void {
                 [ 'slug' => 'ita-uusimaa' ],
                 [ 'slug' => 'vantaa-kerava' ],
                 [ 'slug' => 'hus-ja-maakunnalliset' ],
-                [ 'slug' => 'kuntapolitiikka' ],
+                [ 'slug' => 'kunnat' ],
             ],
         ],
         [
