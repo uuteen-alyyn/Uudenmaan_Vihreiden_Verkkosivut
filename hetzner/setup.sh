@@ -53,15 +53,21 @@ docker compose exec -T db mariadb -u wordpress -p"$DB_PASS" wordpress < local-du
 echo "Copying uploads (staff photos)..."
 docker cp "$DIR/uploads/." uuvi-web:/var/www/html/wp-content/uploads/
 
-echo "Updating URLs..."
+echo "Activating theme and plugins..."
 docker compose exec -T wordpress bash -c \
   "curl -sS https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /tmp/wp.phar \
-   && php /tmp/wp.phar search-replace 'http://localhost:8081' '$SITE_URL' \
+   && php /tmp/wp.phar theme activate uudenmaan-vihreat-theme --allow-root --path=/var/www/html \
+   && php /tmp/wp.phar plugin activate polylang --allow-root --path=/var/www/html"
+
+echo "Updating URLs..."
+docker compose exec -T wordpress bash -c \
+  "php /tmp/wp.phar search-replace 'http://localhost:8081' '$SITE_URL' \
       --all-tables --allow-root --path=/var/www/html"
 
 echo ""
 echo "Done! Open $SITE_URL to access the site."
 echo "Admin login: $SITE_URL/wp-admin"
+echo "Theme and Polylang are already activated — no manual steps needed."
 echo ""
 echo "To tear down later:"
 echo "  docker compose down -v && cd .. && rm -rf $DIR"
