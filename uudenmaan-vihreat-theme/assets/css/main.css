@@ -932,7 +932,22 @@ p:last-child { margin-bottom: 0; }
 }
 .lang-switcher a:hover { background: rgba(255,255,255,.15); color: #fff; }
 .lang-switcher .current-lang a { background: var(--color-bright-green); color: #fff; }
-@media (max-width: 768px) { .lang-switcher { display: none; } }
+/* Mobile variant hidden on desktop; header variant hidden on mobile */
+.lang-switcher--mobile { display: none; }
+@media (max-width: 768px) {
+  .lang-switcher:not(.lang-switcher--mobile) { display: none; }
+  .lang-switcher--mobile {
+    display: flex;
+    margin: 1.5rem 1.5rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,.15);
+    gap: .5rem;
+  }
+  .lang-switcher--mobile a {
+    font-size: .9rem;
+    padding: .4rem .75rem;
+  }
+}
 
 /* Ehdokkaat-lista */
 .ehdokkaat-lista {
