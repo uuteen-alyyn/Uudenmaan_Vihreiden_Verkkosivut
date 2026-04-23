@@ -23,6 +23,7 @@ mkdir -p "$DIR"
 cp "$TMP/hetzner/docker-compose.yml" "$DIR/docker-compose.yml"
 cp -r "$TMP/uudenmaan-vihreat-theme" "$DIR/theme"
 cp "$TMP/db-export/local-dump.sql" "$DIR/local-dump.sql"
+cp -r "$TMP/db-export/uploads" "$DIR/uploads"
 rm -rf "$TMP"
 
 cat > "$DIR/.env" <<EOF
@@ -48,6 +49,9 @@ done
 
 echo "Restoring database..."
 docker compose exec -T db mariadb -u wordpress -p"$DB_PASS" wordpress < local-dump.sql
+
+echo "Copying uploads (staff photos)..."
+docker cp "$DIR/uploads/." uuvi-web:/var/www/html/wp-content/uploads/
 
 echo "Updating URLs..."
 docker compose exec -T wordpress bash -c \
