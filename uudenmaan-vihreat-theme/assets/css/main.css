@@ -932,16 +932,21 @@ p:last-child { margin-bottom: 0; }
 }
 .lang-switcher a:hover { background: rgba(255,255,255,.15); color: #fff; }
 .lang-switcher .current-lang a { background: var(--color-bright-green); color: #fff; }
-/* Mobile variant hidden on desktop; header variant hidden on mobile */
+/* Mobile variant hidden always — shown only when burger menu is open */
 .lang-switcher--mobile { display: none; }
 @media (max-width: 768px) {
   .lang-switcher:not(.lang-switcher--mobile) { display: none; }
-  .lang-switcher--mobile {
+  .nav-menu.is-open ~ .lang-switcher--mobile {
     display: flex;
-    margin: 1.5rem 1.5rem 0;
-    padding-top: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1.5rem;
+    background: var(--color-dark-bg);
     border-top: 1px solid rgba(255,255,255,.15);
     gap: .5rem;
+    z-index: 100;
   }
   .lang-switcher--mobile a {
     font-size: .9rem;
